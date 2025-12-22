@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y git colcon cmake libfreeimage-dev libfr
 RUN cd /usr/lib/x86_64-linux-gnu \
     && ln -s libglut.so.3.12.0 libglut.so.3
 
-RUN git clone https://github.com/XPhantomad/Context-Role-Oriented-Transport-Chain-Swarm.git
+RUN git clone -b flocking https://github.com/XPhantomad/Context-Role-Oriented-Transport-Chain-Swarm.git
 
 # Install ARGoS3
 RUN cd Context-Role-Oriented-Transport-Chain-Swarm \
