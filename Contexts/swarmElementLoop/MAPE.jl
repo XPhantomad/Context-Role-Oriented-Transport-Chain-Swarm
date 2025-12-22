@@ -2,20 +2,21 @@ include("ChainCROM.jl")
 include("functions.jl")
 
 # Constants
-NEST_AND_PREY_LOADING_RANGE = 0.5
-MIN_TRANSFERPOINT_DISTANCE = 0.2
-ROBOT_PROXIMITY = 0.2	# depending on the light blob of the other robot, not on the outer radius of the robots
+NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the prey light which is around 0.7
+MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
+ROBOT_PROXIMITY = 0.2	# distance to the detected light blob of the other robot sufficient for load transfer procedure 
 
 # Message Types
-msg_joinerDetected = "Joiner detected"
-msg_robotWithLoadDetected = "Robot with Load detected"
-msg_preyDetected = "Prey detected"
-msg_ChainmemberDetected = "Chainmember detected"
-msg_joinerLoadingDetected = "Joiner with Loading State detected"
+msg_Joiner = "Joiner"
+msg_robotWithLoad = "Robot with Load"
+msg_prey = "Prey"
+msg_Chainmember_Join = "Chainmember(Join)"
+msg_Joiner_Loading = "Joiner with Loading State"
+msg_nothing = "nothing"
 
 # Initials
 nest = Position(-3,1.2)
-obj = Object(2,2000)
+obj = Object(2)
 first_time = true
 
 function disassignAllRoles()
@@ -82,9 +83,9 @@ end
 function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing}, Union{String, Nothing}, Union{String, Nothing}}
 	global robotSelf, nest, first_time
 	
-	#1. Monitor State and behavior of the robot and write it into the model
+	#1. Monitor state and behavior of the robot and implement it into the runtime model
 
-	# add load state of the robot into swarm-model and robot attributes 
+	# add load state of the robot into swarm runtime model
 	if getRoles(robotSelf) !== nothing
 		if dataMiddle.load == true
 			#println(keys(getRoles(robotSelf)[nothing]))
@@ -112,11 +113,12 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		end
 	end
 
-	# if goalreached in SRL switches from true to false --> it is sure, that the goal is given
+	# if goalReached in SRL switches from true to false --> it is sure, that the goal has been successfully given to the SRL
 	if (robotSelf.goalReached && !dataMiddle.goalReached)
 		robotSelf.goalGiven = true
 	end
-	# add Information from Single-Robot-Loop into robotSelf data structure
+	
+	# add Information from Single-Robot-Loop into robotSelf data structure of the swarm runtime model
 	robotSelf.goalReached=dataMiddle.goalReached
 	robotSelf.load=dataMiddle.load
 	robotSelf.position.x=dataMiddle.x
@@ -125,7 +127,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 
 	# ---------------------------------------
 
-	#2. Analyse Messages and Robot Data (State) and change model accordingly 
+	#2. Analyse Messages and Robot Data (State) and change swarm runtime model accordingly 
 
 	println(getFirstTeam(robotSelf))
 	if timeout
@@ -133,7 +135,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		robotSelf.goalGiven = false
 	end
 
-	# ChainMember is no longer approximate--> switch to driving state
+	# perceived ChainMember is no longer in proximity --> switch back to driving state
 	if hasRole(robotSelf, JoinChainMember, JoinChainTeam) && !robotSelf.proximity && !robotSelf.load
 		# switch attribute of the JoinChainMember to LoadingActivated = false
 		@changeRoles JoinChainTeam 37 begin
@@ -142,29 +144,24 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		end	
 	end
 
-
+	# to close to nest --> skip role changes
 	if getDistance(robotSelf.position, nest) < (NEST_AND_PREY_LOADING_RANGE+0.15)
 		println("To close to nest")
 		open("time.txt", "a") do file
 			write(file, "to close to nest")
 		end
 
-	# check that robot is not to close to prey before before trigger role changes 
-	# exclude Joiner, because no prey setted in this case
+	# robot is to close to prey --> skip role changes
 	elseif !timeout && getFirstTeam(robotSelf) !== nothing && getObjectsOfRole(getFirstTeam(robotSelf), Prey) != [] && getDistance(robotSelf.position, getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]) < (NEST_AND_PREY_LOADING_RANGE+0.15)
 		println("To close to prey")
-		if hasRole(robotSelf, JoinChainMember, JoinChainTeam) 
-			disassignJoinChainTeams()
-			println("disassign JoinChain1 because of prey")
-		end
 		open("time.txt", "a") do file
 			write(file, "to close to prey")
 		end
 	
-	# JoinChainmember which is ready to receive load detected
-	elseif hasRole(robotSelf, ChainMember, JoinChainTeam) && infoInMessage(message,  msg_joinerLoadingDetected)!=false && robotSelf.load
+	# JoinChainmember which is ready to receive load perceived --> enable load transfer
+	elseif hasRole(robotSelf, ChainMember, JoinChainTeam) && infoInMessage(message,  msg_Joiner_Loading)!=false && robotSelf.load
 		# switch attribute of the JoinChainMember to LoadingActivated= true
-		if getDistance(infoInMessage(message,  msg_joinerLoadingDetected), robotSelf.position) <= ROBOT_PROXIMITY
+		if getDistance(infoInMessage(message,  msg_Joiner_Loading), robotSelf.position) <= ROBOT_PROXIMITY
 			joiner = getObjectsOfRole(getDynamicTeam(JoinChainTeam, 77), JoinChainMember)[1]
 			@changeRoles JoinChainTeam 77 begin
 				joiner << JoinChainMember
@@ -175,10 +172,10 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "Release Load (JoinChainTeam:ChainMember)")
 		end
 
-	# JoinChainMember is approximated --> switch to load state
-	elseif hasRole(robotSelf, JoinChainMember, JoinChainTeam) && robotSelf.proximity && !robotSelf.load && infoInMessage(message,  msg_ChainmemberDetected)!=false
+	# JoinChainMember has approximated to the perceived ChainMember --> switch to load state
+	elseif hasRole(robotSelf, JoinChainMember, JoinChainTeam) && robotSelf.proximity && !robotSelf.load && infoInMessage(message,  msg_Chainmember_Join)!=false
 		# switch attribute of the JoinChainMember to LoadingActivated = true
-		if getDistance(infoInMessage(message,  msg_ChainmemberDetected), robotSelf.position) <= ROBOT_PROXIMITY
+		if getDistance(infoInMessage(message,  msg_Chainmember_Join), robotSelf.position) <= ROBOT_PROXIMITY
 			@changeRoles JoinChainTeam 37 begin
 				robotSelf << JoinChainMember
 				robotSelf >> JoinChainMember(true)
@@ -187,19 +184,18 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		open("time.txt", "a") do file
 			write(file, "Receive Load (JoinChainTeam:JoinChainMember)")
 		end
-	
+
 	# robot with load disappeares --> fall back to last meaningful state
-	elseif hasRole(robotSelf, JoinChainMember, JoinChainTeam) && !robotSelf.load && ((infoInMessage(message,  msg_robotWithLoadDetected)==false && infoInMessage(message, msg_ChainmemberDetected)==false) || timeout) 
-		# if robot in ChainTeam or SingleRobotChainTeam --> remember old knowledge and drive to prey/pred
+	elseif hasRole(robotSelf, JoinChainMember, JoinChainTeam) && !robotSelf.load && ((infoInMessage(message,  msg_robotWithLoad)==false && infoInMessage(message, msg_Chainmember_Join)==false) || timeout) 
+		# if robot in ChainTeam or SingleRobotChainTeam --> remember old knowledge and drive to prey/predecessor
 		disassignJoinChainTeams()
-		#println(message)
 		println("disassign JoinChain1")
 		open("time.txt", "a") do file
 			write(file, "deactivateJoinChain() (JoinChainTeam:JoinChainMember)")
 		end
 
 	# joiner disappeares --> fall back to last meaningful state
-	elseif hasRole(robotSelf, ChainMember, JoinChainTeam) && ((infoInMessage(message, msg_joinerDetected)==false && infoInMessage(message, msg_joinerLoadingDetected)==false) || timeout)
+	elseif hasRole(robotSelf, ChainMember, JoinChainTeam) && ((infoInMessage(message, msg_Joiner)==false && infoInMessage(message, msg_Joiner_Loading)==false) || timeout)
 		@changeRoles ChainTeam 3 begin
 			getDynamicTeam(JoinChainTeam, 77) << RobotJoining
 		end
@@ -210,11 +206,12 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "deactivateJoinChain() (JoinChainTeam:ChainMember)")
 		end
 	
-	# timeout at pred/succ load/release point
+	# timeout at pred/succ waiting point or prey/nest  --> fall back to the last meaningful state
 	elseif timeout 
 		# Robot is Intermediate with load --> remove successor, switch to tail
 		if robotSelf.load && hasRole(robotSelf, Intermediate, ChainTeam)
-			# TODO: Automate --> switch back to Tail, if Successor of intermediate is removed
+
+			# TODO: Automate --> switch back to Tail automatically, if Successor of Intermediate is removed
 			if !isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Successor))
 				@changeRoles ChainTeam 3 begin
 					getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Successor)[1] << Successor
@@ -224,15 +221,16 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				robotSelf << Intermediate
 				robotSelf >> Tail()
 			end
+			# END TODO: Automate
 			println("timeout: succ removed")
 
-		# Robot has no Prey in History and has no load --> switch back to Exploration
+		# Robot has no Prey in history and has no load --> switch back to Exploration
 		elseif getDynamicTeam(ChainTeam, 3) !== nothing && isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Prey)) && !robotSelf.load
 			disassignAllRoles()
 			println("timeout: only chain disassigned")
 		
-		# Robot is Head or Tail and prey is known --> switch back to SingleRobotChainTeam
-		# TODO: more history --> put it here
+		# Robot is Head or Tail and Prey is known --> switch back to SingleRobotChainTeam
+		# TODO: more history knwoledge of previous transfer points --> put it here
 		elseif hasRole(robotSelf, Head, ChainTeam) || hasRole(robotSelf, Tail, ChainTeam)
 			prey = getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Prey)[1]
 			if robotSelf.load # robot is Head
@@ -244,7 +242,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				assignSingleRobotChainTeams(prey)
 			end
 
-		# Robot is intermediate without load and knows the prey --> remove predecessor, switch to head
+		# Robot is Intermediate without load and knows the Prey --> remove Predecessor, switch to Head
 		elseif !robotSelf.load && hasRole(robotSelf, Intermediate, ChainTeam)
 			if !isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Predecessor))
 				@changeRoles ChainTeam 3 begin
@@ -262,24 +260,23 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "timeout")
 		end
 
-	# prey detected initially or later on --> assign SingleRobot chain team, disassign JoinChainTeam
-	elseif infoInMessage(message, msg_preyDetected)!=false
+	# Prey detected initially or later on --> assign SingleRobot chain team, disassign JoinChainTeam
+	elseif infoInMessage(message, msg_prey)!=false
 		println("prey detected")
 		if hasRole(robotSelf, JoinChainMember, JoinChainTeam) 
 			disassignJoinChainTeams()
 			println("disassign JoinChain1 because of prey")
 		end
 		if getRoles(robotSelf) === nothing
-			prey = infoInMessage(message, msg_preyDetected)
+			prey = infoInMessage(message, msg_prey)
 			assignSingleRobotChainTeams(prey)
 		end
 		open("time.txt", "a") do file
 			write(file, "prey detected")
 		end
 
-	# Load transferred successfully: Joiner -> Knackpunkt
+	# Load transferred successfully: Joiner -> Intermediate or Tail
 	elseif hasRole(robotSelf, JoinChainMember, JoinChainTeam) && robotSelf.load
-		println("Transfer successful 1")
 		# robot is head and joins with other robot in SingleRobotChain-Mode 
 		if hasRole(robotSelf, Head, ChainTeam)
 			@changeRoles ChainTeam 3 begin
@@ -287,7 +284,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				robotSelf >> Intermediate()
 			end
 		# check that Chain Team has no Tail or Intermediate before assign self as Tail
-		# first real chain
+		# --> first real chain established
 		elseif isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Tail)) && isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Intermediate))		
 			@changeRoles ChainTeam 3 begin
 				robotSelf >> Tail()
@@ -295,21 +292,24 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), Load)[1] >> Load()
 			end
 		end
-		# robot returns from nest and found other Robot with Load -> do nothing --> 3 standard role changes
+		# robot returns from Nest and finds other Robot with Load -> do nothing -> except of the 3 standard role changes in this case
+		
+		# 3 standard role changes: 
 		transferpoint = Position(robotSelf.position.x, robotSelf.position.y)
-		# remove current predecessor if one exists
+		# 1)remove current predecessor if one exists
 		if !isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Predecessor))
 			@changeRoles ChainTeam 3 begin
 				getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Predecessor)[1] << Predecessor
 			end
 		end
+		# 2)set perceived Chainmember as Predecessor and disassign JoinChainTeam
 		@changeRoles ChainTeam 3 begin
 			getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), ChainMember)[1] >> Predecessor(transferpoint)
 			getDynamicTeam(JoinChainTeam, 37) << RobotJoining
 		end	
 		disassignRoles(JoinChainTeam, 37)
 
-		# disassign SingleRobot-Chain-Team and transfer Prey position to Chain
+		# 3)disassign SingleRobot-Chain-Team if one exists and overtake Prey position to Chain
 		if getDynamicTeam(SingleRobotChainTeam, 2) !== nothing
 			@changeRoles ChainTeam 3 begin
 				getDynamicTeam(SingleRobotChainTeam, 2) << SingleRobotChain
@@ -321,9 +321,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "Load received (JoinChainTeam:JoinChainMember)")
 		end
 
-	# Load transferred successfully: Chainmember
+	# Load transferred successfully: Chainmember --> Intermediate or Head
 	elseif hasRole(robotSelf, ChainMember, JoinChainTeam) && !robotSelf.load
-		println("Transfer successful 2")
 		# robot drives to nest and ohter robot joins who takes the tail role for him
 		if hasRole(robotSelf, Tail, ChainTeam)
 			@changeRoles ChainTeam 3 begin
@@ -332,28 +331,30 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			end
 		# check that Chain Team has no Head before assign self as Head	
 		elseif isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Head)) && isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Intermediate)) 
-			#println(string(getRoles(robotSelf)))
 			@changeRoles ChainTeam 3 begin
 				robotSelf >> Head()
 			end	
 		end
-		# robot comes again from prey and other robot will join him --> do nothing --> 2 standard role changes
-		transferpoint = Position(robotSelf.position.x, robotSelf.position.y)
 		
-		# remove current successor if one exists
+		# robot comes again from prey and other robot will join him --> do nothing --> except of the 3 standard role changes
+		
+		# 3 Standard role changes: 
+		transferpoint = Position(robotSelf.position.x, robotSelf.position.y)
+		# 1)remove current successor if one exists
 		if !isempty(getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Successor))
 			@changeRoles ChainTeam 3 begin
 				getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Successor)[1] << Successor
 			end
 		end
+
+		# 2)set perceived JoinChainMember as Successor and disassign JoinChainTeam
 		@changeRoles ChainTeam 3 begin
 			getObjectsOfRole(getDynamicTeam(JoinChainTeam, 77), JoinChainMember)[1] >> Successor(transferpoint)
 			getDynamicTeam(JoinChainTeam, 77) << RobotJoining
 		end
-
 		disassignRoles(JoinChainTeam, 77)
 		
-		# disassign SingleRobot-Chain-Team and transfer Prey position to Chain
+		# 3)disassign SingleRobot-Chain-Team if one exists and overtake Prey position to Chain
 		if getDynamicTeam(SingleRobotChainTeam, 2) !== nothing
 			@changeRoles ChainTeam 3 begin
 				getDynamicTeam(SingleRobotChainTeam, 2) << SingleRobotChain
@@ -365,24 +366,24 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "Load released (JoinChainTeam:ChainMember)")
 		end
 		
-	# Robot with load detected	
-	elseif !robotSelf.load && infoInMessage(message, msg_robotWithLoadDetected)!=false && !hasRole(robotSelf, JoinChainMember, JoinChainTeam) && infoInMessage(message, msg_preyDetected)==false
-		otherRobot = PerceivedRobot("Dummy", 122, infoInMessage(message, msg_robotWithLoadDetected), true) 
-		# IF Distance Robot-Nest >= Distance RobotwithLoad-Nest --> Robot is in wrong direction for Joining
-		if getDistance(robotSelf.position, nest)+MIN_TRANSFERPOINT_DISTANCE < getDistance(infoInMessage(message, msg_robotWithLoadDetected), nest)
+	# Robot with load detected --> activate JoinChainTeam (if all constraints are fulfilled)
+	elseif !robotSelf.load && infoInMessage(message, msg_robotWithLoad)!=false && !hasRole(robotSelf, JoinChainMember, JoinChainTeam) && infoInMessage(message, msg_prey)==false
+		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_robotWithLoad), true) 
+		# IF Distance Robot to Nest >= Distance RobotwithLoad to Nest --> Robot is in wrong direction for Joining
+		if getDistance(robotSelf.position, nest)+MIN_TRANSFERPOINT_DISTANCE < getDistance(perceivedRobot.position, nest)
 			@assignRoles JoinChainTeam begin
 				name = 37
 				robotSelf >> JoinChainMember(false)
-				otherRobot >> ChainMember()
+				perceivedRobot >> ChainMember()
 			end
 			println("JoinChain executed")
 			
-			# case 1: robot in chain/SingleRobot chain, who drives back to prey empty
+			# case 1: robot is in chain/SingleRobotChain, and drives back to Prey emptily
 			if getDynamicTeam(ChainTeam, 3) !== nothing
 				@changeRoles ChainTeam 3 begin
 					getDynamicTeam(JoinChainTeam, 37) >> RobotJoining()
 				end
-			# case 2: explorer
+			# case 2: robot is in exploration state
 			else 
 				@assignRoles ChainTeam begin
 					name = 3
@@ -397,32 +398,32 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		open("time.txt", "a") do file
 			write(file, "Robot with Load perceived")
 		end
-	# refresh RobotWithLoad Position
-	elseif !robotSelf.load && infoInMessage(message, msg_ChainmemberDetected)!=false && hasRole(robotSelf, JoinChainMember, JoinChainTeam)
-		println("Robot with load Position updated----------------------------------------")
-		#println(infoInMessage(message, msg_ChainmemberDetected))
-		otherRobot = PerceivedRobot("Dummy", 122, infoInMessage(message, msg_ChainmemberDetected), true) 
+	# refresh RobotWithLoad Position -> renew the ChainMember(Join) role
+	elseif !robotSelf.load && infoInMessage(message, msg_Chainmember_Join)!=false && hasRole(robotSelf, JoinChainMember, JoinChainTeam)
+		#println("Robot with load Position updated----------------------------------------")
+		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_Chainmember_Join), true) 
 		@changeRoles JoinChainTeam 37 begin
 			getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), ChainMember)[1] << ChainMember
-			otherRobot >> ChainMember()
+			perceivedRobot >> ChainMember()
 		end
 		open("time.txt", "a") do file
 			write(file, "Drive to Perceived Robot (update)")
 		end
 
-	# enable Join procedure, only if no other robot wich is already part of the JoinChainTeam is perceived
-	elseif getRoles(robotSelf) != nothing && robotSelf.load && infoInMessage(message, msg_joinerDetected)!=false && !hasRole(robotSelf, ChainMember, JoinChainTeam) && infoInMessage(message, msg_ChainmemberDetected)==false
-		otherRobot = PerceivedRobot("Dummy", 12, Position(1,2), false) 
-		#println(msg_joinerDetected)
-		# prevent that robot switch to chainmember(join) mode whilst rotating at the last transferpoint
+	# Joiner detected, --> activate JoinChainTeam (only if no other robot, wich is already part of the JoinChainTeam is perceived)
+	elseif getRoles(robotSelf) != nothing && robotSelf.load && infoInMessage(message, msg_Joiner)!=false && !hasRole(robotSelf, ChainMember, JoinChainTeam) && infoInMessage(message, msg_Chainmember_Join)==false
+		
+		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_Joiner), false) 
+		
+		# check ditance to last transferpoint, to prevent that robot switch to chainmember(join) mode whilst rotating at the last transferpoint
 		role = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Predecessor)
-		if role === nothing || getDistance(role.transferpoint_receive, robotSelf.position) > MIN_TRANSFERPOINT_DISTANCE
-			# filter out joiners, which are further afar from nest, than self
-			if getDistance(robotSelf.position, nest) > getDistance(infoInMessage(message, msg_joinerDetected), nest)
+		if role === nothing || getDistance(role.transferpointReceive, robotSelf.position) > MIN_TRANSFERPOINT_DISTANCE
+			# filter out joiners, which are further afar from nest, than the robot itself
+			if getDistance(robotSelf.position, nest) > getDistance(perceivedRobot.position, nest)
 				@assignRoles JoinChainTeam begin
 					name = 77
 					robotSelf >> ChainMember()
-					otherRobot >> JoinChainMember(false)
+					perceivedRobot >> JoinChainMember(false)
 					# get Load from Team where Robot is in (SingleRobotChainTeam or ChainTeam)
 					getObjectsOfRole(getFirstTeam(robotSelf), Load)[1] >> Load()
 				end		
@@ -444,7 +445,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		end
 	end
 
-	#4+5. Execute (Operation im Modell anhand empfangener Nachrichten und Sensordaten)
+	#3. Plan ascertain the subsequent behavior based on the current state of the swarm runtime model
 
 	# 0 Exploration
 	areaPos1 = Position(3,0) # do not change to values<0 (otherwise tests may crash)
@@ -462,68 +463,65 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				first_time = false
 			end
 		end
-		return position, "driving", "black"
+		return position, "driving", msg_nothing
 	end
 
-	# 1 Robot is Joiner
+
+	# 1 Robot is JoinChainMember
 	if hasRole(robotSelf, JoinChainMember, JoinChainTeam)
-		robotSelf.goalGiven = true
 		if getRoleOfTeam(getDynamicTeam(JoinChainTeam, 37), JoinChainMember).loadActive == true
 			robotSelf.waiting = true
-			return (nothing, "load", "white")
+			return (nothing, "load", msg_Joiner_Loading)
 		end
 		pos = getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), ChainMember)[1].position
-		return pos, "driving", "green"
+		return pos, "driving", msg_Joiner
 
-	# 2 Roboter ist in JoinChain Team (Robot with load is always ChainMember!!!)
+
+	# 2 Roboter ist in ChainMember(Join) (Robot with load is always ChainMember!!!)
 	elseif hasRole(robotSelf, ChainMember, JoinChainTeam)
-		robotSelf.goalGiven = true
 		robotSelf.waiting = true
 		if getRoleOfTeam(getDynamicTeam(JoinChainTeam, 77), JoinChainMember).loadActive == true
-			return (nothing, "unload", "magenta")
+			return (nothing, "unload", msg_Chainmember_Join)
 		end
-		return (nothing, "waiting", "magenta")
+		return (nothing, "waiting", msg_Chainmember_Join)
 
-	# 3 Roboter is in SingleRobot Chain Team
+	# 3 Robot is in SingleRobotChain Team 
 	elseif hasRole(robotSelf, ChainMember, SingleRobotChainTeam) && !robotSelf.load && !robotSelf.goalReached
 		robotSelf.goalGiven = true
 		pos = getObjectsOfRole(getDynamicTeam(SingleRobotChainTeam, 2), Prey)[1]
-		return pos, "driving", "black"
+		return pos, "driving", msg_nothing
 	
 	elseif robotSelf.load && !robotSelf.goalGiven
-		# set goal Given to true if goal reached is already false - otherwise it would be set in the next iteration
+		# robot released/received load before reaching the goal --> set goalGiven to true
 		if !robotSelf.goalReached 
 			robotSelf.goalGiven = true
 		end
-		# Robot is the only one or the tail --> drive to nest
+		# Robot is in SingleRobotChain Team or in the Tail role --> drive to nest
 		if hasRole(robotSelf, ChainMember, SingleRobotChainTeam) || hasRole(robotSelf, Tail, ChainTeam)
 			pos = getObjectsOfRole(getDynamicTeam(ChainTeam, 3), Nest)[1]
-			return pos, "driving", "yellow"
-		# Robot is not alone and not tail (robot is head or intermediate)--> drive to transferpoint
+		# Robot is Head or Intermediate --> drive to transferpoint
 		else
-			pos = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Successor).transferpoint_release
-			return pos, "driving", "yellow"
+			pos = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Successor).transferpointRelease
 		end
+		return pos, "driving", msg_robotWithLoad
+	
 	elseif !robotSelf.load && !robotSelf.goalGiven
-		# set goal Given to true if goal reached is already false - otherwise it would be set in the next iteration
+		# robot has released/received load before reaching the goal --> set goalGiven to true
 		if !robotSelf.goalReached 
 			robotSelf.goalGiven = true
 		end
 		println("Load released")
-		# Robot is the only one or the head --> drive to Prey
+		# Robot is in SingleRobotChain Team or in the Head role --> drive to Prey
 		if hasRole(robotSelf, ChainMember, SingleRobotChainTeam) || hasRole(robotSelf, Head, ChainTeam)
 			pos = getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]
-			return pos, "driving", "black"
-		# Robot is not alone and not head --> drive to transferpoint
+		# Robot is Tail or Intermediate --> drive to transferpoint
 		else
-			pos = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Predecessor).transferpoint_receive
-			return pos, "driving", "black"
+			pos = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Predecessor).transferpointReceive
 		end
-	# UDP wahrscheinlich das Problem
-	# goal given auf true setzen, wenn goal reached von true auf false wechselt
+		return pos, "driving", msg_nothing
 
 	# Any goal reached --> waiting
-	elseif robotSelf.goalReached # TODO check correctnes of goal reached in case of huge delay between applications
+	elseif robotSelf.goalReached
 		println("Roles: " * string(keys(getRoles(robotSelf)[nothing])) * " wait")
 		robotSelf.waiting = true
 		#load at the prey

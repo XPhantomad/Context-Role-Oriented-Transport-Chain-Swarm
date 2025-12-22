@@ -18,7 +18,7 @@ HOST = "127.0.0.1"
 PORT = 3004
 BUFFER_SIZE = 1024
 
-# full Path is neccessary for the Systemtest
+# full path is neccessary for the Systemtest
 app = Flask("swarmDisplay", template_folder=os.path.dirname(__file__) + "/templates/")
 app.config['SECRET_KEY'] = 'donsky!'
 socketio = SocketIO(app, cors_allowed_origins='*')

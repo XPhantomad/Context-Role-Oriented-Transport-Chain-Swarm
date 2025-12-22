@@ -80,7 +80,25 @@ CColor CForagingLoopFunctions::GetFloorColor(const CVector2& c_position_on_plane
          return CColor::BLACK;
       }
    }
-   return CColor::WHITE;
+   // 
+   Real spacing = 0.25;
+   Real thickness = 0.005;
+
+     auto mod = [](Real value, Real spacing) {
+       return fmod(fmod(value, spacing) + spacing, spacing);
+   };
+
+   Real x_mod = mod(c_position_on_plane.GetX(), spacing);
+   Real y_mod = mod(c_position_on_plane.GetY(), spacing);
+
+   if (x_mod < thickness || y_mod < thickness) {
+       return CColor::GRAY50;  // Gridlinie
+   }
+
+
+   return CColor::WHITE;  // Bodenfarbe dazwischen
+
+
 }
 
 /****************************************/

@@ -1,12 +1,12 @@
 
 from .robotModel import getEClassifier, eClassifiers
 from .robotModel import name, nsURI, nsPrefix, eClass
-from .robotModel import Model, Robot, State
+from .robotModel import Model, Robot, State, Message
 
 
 from . import robotModel
 
-__all__ = ['Model', 'Robot', 'State']
+__all__ = ['Model', 'Robot', 'State', 'Message']
 
 eSubpackages = []
 eSuperPackage = None
@@ -15,7 +15,9 @@ robotModel.eSuperPackage = eSuperPackage
 
 Model.robots.eType = Robot
 Model.states.eType = State
+Model.messages.eType = Message
 Robot.state.eType = State
+Robot.message.eType = Message
 
 otherClassifiers = []
 

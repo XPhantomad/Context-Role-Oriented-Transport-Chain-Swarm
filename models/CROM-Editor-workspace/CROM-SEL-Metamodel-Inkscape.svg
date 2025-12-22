@@ -1,0 +1,4092 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="crom-diagram_2_file:///home/adrian/Dokumente/mapr-nick-ruider/client/workspace/base.crom"
+   class="sprotty-graph"
+   version="1.1"
+   viewBox="-31.414318 64.990921 968.71802 1201.144"
+   width="968.71802"
+   height="1201.144"
+   style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;-webkit-locale:'en'"
+   sodipodi:docname="CROM-SEL-Metamodel-Inkscape.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2460">
+    <rect
+       x="449.05222"
+       y="1139.1144"
+       width="40.552273"
+       height="16.008692"
+       id="rect8210" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview2458"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2700621"
+     inkscape:cx="588.16021"
+     inkscape:cy="947.59145"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="crom-diagram_2_file:///home/adrian/Dokumente/mapr-nick-ruider/client/workspace/base.crom" />
+  <g
+     id="g2455">
+    <g
+       id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8"
+       transform="translate(507.73722,621.81442)"
+       class="compartment-type-node compartment_type">
+      <rect
+         x="0"
+         y="0"
+         width="402.85742"
+         height="230.09929"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect1654" />
+      <line
+         x1="0"
+         y1="24"
+         x2="402.85742"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1656" />
+      <line
+         x1="0"
+         y1="29"
+         x2="402.85742"
+         y2="29"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1658" />
+      <line
+         x1="0"
+         y1="34"
+         x2="402.85742"
+         y2="34"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1660" />
+      <g
+         transform="translate(118.99902)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_header_label"
+           transform="translate(82.429687,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">SingleRobotChainTeam</text>
+      </g>
+      <g
+         transform="translate(199.42871,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_comp_attributes"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_e008e065-06a5-478e-8d3c-ae9cf0377b1f">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_ef64d8f0-62ac-4146-9ed8-d3c8e5c11b33"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         transform="translate(199.42871,30)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_3bb17543-6953-45fa-8a15-8beae3f67e72">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_3d5a8e44-e003-430c-b894-7241430d44fb"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_comp_roles"
+         class="structured"
+         transform="translate(0,35)">
+        <rect
+           x="0"
+           y="0"
+           width="402.85742"
+           height="195.09929"
+           class="sprotty-comp"
+           style="fill:context-fill"
+           id="rect1670" />
+        <g
+           id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0"
+           transform="translate(250.28494,60.099295)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="120.09375"
+             height="98"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1672" />
+          <line
+             x1="0"
+             y1="24"
+             x2="120.09375"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1674" />
+          <line
+             x1="0"
+             y1="29"
+             x2="120.09375"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1676" />
+          <g
+             transform="translate(9.4848633)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0_header_label"
+               transform="translate(50.289062,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">ChainMember</text>
+          </g>
+          <g
+             transform="translate(58.046875,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_3bc1fcec-d2cf-4ba5-8738-2986287d7086">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_3566749b-e782-43db-ac51-9ba681275881"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(0,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(25.6875,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_323b8d6c-131d-4a7d-afc8-94ee014369b6">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_323b8d6c-131d-4a7d-afc8-94ee014369b6_feature_name_label"
+                 transform="translate(11.34375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">load</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_f9a81440-c75b-4cb5-8a19-f5221b0a4e7b"
+                 transform="translate(30.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_323b8d6c-131d-4a7d-afc8-94ee014369b6_type_label"
+                 transform="translate(53.039062,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(5.0195312,20)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_191032ef-ff7a-4562-82a3-2f3977fea63c">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_191032ef-ff7a-4562-82a3-2f3977fea63c_feature_name_label"
+                 transform="translate(31.679687,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToNest</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_3c7309a7-5336-4bd1-8644-a91c5d410fc9"
+                 transform="translate(71.359375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_191032ef-ff7a-4562-82a3-2f3977fea63c_type_label"
+                 transform="translate(94.375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(5.3515625,36)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_3b2cd904-d804-4459-a523-70cdf62e2f98">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_3b2cd904-d804-4459-a523-70cdf62e2f98_feature_name_label"
+                 transform="translate(31.679687,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToPrey</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_dafcb6dc-bfd4-48d3-a2ff-c3097f30818d"
+                 transform="translate(70.695312,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_3b2cd904-d804-4459-a523-70cdf62e2f98_type_label"
+                 transform="translate(93.710937,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(4,52)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_71510f89-6c98-4ecb-a43c-795bafce081b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_71510f89-6c98-4ecb-a43c-795bafce081b_feature_name_label"
+                 transform="translate(33.03125,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">releaseLoad</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_3779a52b-b963-4441-a82f-a5ef46a7a14c"
+                 transform="translate(73.398437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_71510f89-6c98-4ecb-a43c-795bafce081b_type_label"
+                 transform="translate(96.414062,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(53.375,-9)"
+             id="g1701">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_79007a88-b2d1-474a-aa2d-5aad687d99d0_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">1..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927"
+           transform="translate(137.09929,28)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="64"
+             height="32"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1704" />
+          <line
+             x1="0"
+             y1="24"
+             x2="64"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1706" />
+          <line
+             x1="2"
+             y1="29"
+             x2="62"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1708" />
+          <g
+             transform="translate(11.273438)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927_header_label"
+               transform="translate(20.726562,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Load</text>
+          </g>
+          <g
+             transform="translate(30,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_b3ac5a08-15bb-42ea-b6cd-d2b46bea23fb">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_d539a62b-766b-4094-a09a-e72be2d55fb6"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(30,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_5e176b7e-f9c1-4916-b47c-ab605f6db1ec">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_cfe6b157-e50f-45d4-9b56-56f71ade3948"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(25.328125,-9)"
+             id="g1719">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_8652b12d-5f43-40ed-81ac-db720a3c2927_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22"
+           transform="translate(48.005204,88.056526)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="69.219925"
+             height="49.029743"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1722" />
+          <line
+             x1="0"
+             y1="24"
+             x2="69.219925"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1724" />
+          <line
+             x1="2"
+             y1="29"
+             x2="67.219925"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1726" />
+          <g
+             transform="translate(15.323831)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22_header_label"
+               transform="translate(19.179687,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Prey</text>
+          </g>
+          <g
+             transform="translate(32.609963,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_6d03539b-545f-4ec7-8b9e-734c6439d670">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_a35cc537-d852-49e7-ae55-7cd9889b08d9"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(32.609963,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_15cfdd99-1a10-4ca5-bab1-55a4dac8f63f">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_9292a484-eaaa-468a-8ae2-13e78302b8f9"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(27.938088,-9)"
+             id="g1737">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_97bd9724-683f-43a5-a663-40add68d3f22_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">1..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224"
+           transform="translate(136.71397,148.63677)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="67.337891"
+             height="32"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1740" />
+          <line
+             x1="0"
+             y1="24"
+             x2="67.337891"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1742" />
+          <line
+             x1="2"
+             y1="29"
+             x2="65.337891"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1744" />
+          <g
+             transform="translate(14.327637)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224_header_label"
+               transform="translate(19.179687,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Nest</text>
+          </g>
+          <g
+             transform="translate(31.668945,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_548c8e42-709f-43fa-8386-07f33f9a817b">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_329b6e32-4cc5-4b60-bb3c-d9dd05e5eb8f"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(31.668945,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_d8e13645-cbfb-4308-9e7d-a67c087ec1a8">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_0e8a5ca5-4f12-4f29-be4c-714f7bd653cc"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(26.99707,-9)"
+             id="g1755">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_ebb57564-d448-43a7-bf81-c33b43a65224_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">1..1</text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="crom-diagram_2_cb2750cd-9e20-4a89-b3a8-dc87f77bf003"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 201.09929,93.749985 49.18565,22.671485"
+           id="path1759" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_cb2750cd-9e20-4a89-b3a8-dc87f77bf003_edge_name_label"
+           transform="translate(219.08817,101.58573)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_cb2750cd-9e20-4a89-b3a8-dc87f77bf003_edge_first_multiplicity_label"
+           transform="translate(203.71597,92.517133)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_cb2750cd-9e20-4a89-b3a8-dc87f77bf003_edge_second_multiplicity_label"
+           transform="translate(243.06449,110.65432)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_41333912-e794-4a86-b641-54b9324c3ab7"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 250.28494,145.01486 -133.05981,2.02882"
+           id="path1765" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_41333912-e794-4a86-b641-54b9324c3ab7_edge_name_label"
+           transform="translate(166.89964,142.52927)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_41333912-e794-4a86-b641-54b9324c3ab7_edge_first_multiplicity_label"
+           transform="translate(229.86771,141.71774)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_41333912-e794-4a86-b641-54b9324c3ab7_edge_second_multiplicity_label"
+           transform="translate(123.41987,143.3408)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_1dc1ff2b-4330-4dfa-8e6d-69700e3b3540"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 250.28494,167.92836 -46.23308,18.34719"
+           id="path1771" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_1dc1ff2b-4330-4dfa-8e6d-69700e3b3540_edge_name_label"
+           transform="translate(202.00163,173.60196)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_1dc1ff2b-4330-4dfa-8e6d-69700e3b3540_edge_first_multiplicity_label"
+           transform="translate(234.65119,166.26308)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_1dc1ff2b-4330-4dfa-8e6d-69700e3b3540_edge_second_multiplicity_label"
+           transform="translate(197.66472,180.94083)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365"
+       transform="translate(9.5913993,64.99092)"
+       class="compartment-type-node compartment_type">
+      <rect
+         x="0"
+         y="0"
+         width="902.92584"
+         height="531"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect1778" />
+      <line
+         x1="0"
+         y1="24"
+         x2="902.92584"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1780" />
+      <line
+         x1="0"
+         y1="29"
+         x2="902.92584"
+         y2="29"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1782" />
+      <line
+         x1="0"
+         y1="68"
+         x2="902.92584"
+         y2="68"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line1784" />
+      <g
+         transform="translate(410.24416)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365_header_label"
+           transform="translate(41.21875,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">ChainTeam</text>
+      </g>
+      <g
+         transform="translate(449.46291,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365_comp_attributes"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_d40da394-e8eb-4db4-b96a-d662945228c8">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_2562c696-4350-40bb-a8d8-4c8bc1de452c"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         transform="translate(343.72853,30)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365_comp_operations"
+         style="fill:context-fill">
+        <g
+           transform="translate(25.685547,4)"
+           class="operation sprotty-comp operation-label-compartment"
+           id="crom-diagram_2_5794d01c-2025-452b-a9e5-db786446dd73">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_5794d01c-2025-452b-a9e5-db786446dd73_feature_name_label"
+             transform="translate(58.03125,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">createJoinChainTeam</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_d3c2faf4-a72a-4a15-9f9a-4acc4c013540"
+             transform="translate(124.40234,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_5794d01c-2025-452b-a9e5-db786446dd73_type_label"
+             transform="translate(148.41797,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+        </g>
+        <g
+           transform="translate(4,20)"
+           class="operation sprotty-comp operation-label-compartment"
+           id="crom-diagram_2_d6aefd74-da26-4a32-91a1-4b095cae4bf5">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_d6aefd74-da26-4a32-91a1-4b095cae4bf5_feature_name_label"
+             transform="translate(79.71875,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">createSingleRobotChainTeam</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_8fd6dc0d-1cc8-4e82-bd7e-79667f407676"
+             transform="translate(167.77344,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_d6aefd74-da26-4a32-91a1-4b095cae4bf5_type_label"
+             transform="translate(191.78906,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+        </g>
+      </g>
+      <g
+         id="crom-diagram_2_82f7afad-e2ff-46eb-a2f8-9bd66d67e365_comp_roles"
+         class="structured"
+         transform="translate(0,69)">
+        <rect
+           x="0"
+           y="0"
+           width="902.92584"
+           height="462"
+           class="sprotty-comp"
+           style="fill:context-fill"
+           id="rect1800" />
+        <g
+           id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a"
+           transform="translate(483.99651,37.713451)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="163.63477"
+             height="116.36781"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1802" />
+          <line
+             x1="0"
+             y1="24"
+             x2="163.63477"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1804" />
+          <line
+             x1="0"
+             y1="47"
+             x2="163.63477"
+             y2="47"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1806" />
+          <g
+             transform="translate(31.255371)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a_header_label"
+               transform="translate(50.289062,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">ChainMember</text>
+          </g>
+          <g
+             transform="translate(40.457031,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a_comp_attributes"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="attribute sprotty-comp attribute-label-compartment"
+               id="crom-diagram_2_49040915-2ad8-4dfa-8c2d-ddb38af3d110">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_49040915-2ad8-4dfa-8c2d-ddb38af3d110_feature_name_label"
+                 transform="translate(19.679687,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">timeout</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_d852a497-8f54-4792-9883-6d4bcc1c2c45"
+                 transform="translate(41.689453,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_49040915-2ad8-4dfa-8c2d-ddb38af3d110_type_label"
+                 transform="translate(59.041016,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(0,46)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(35.77832,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_1cc88cf8-7f69-4fe9-8999-631de3dbdf52">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_1cc88cf8-7f69-4fe9-8999-631de3dbdf52_feature_name_label"
+                 transform="translate(23.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">hasLoad</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_650a733c-ce1a-4173-b2c9-7b0a8596b7f1"
+                 transform="translate(53.382812,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_1cc88cf8-7f69-4fe9-8999-631de3dbdf52_type_label"
+                 transform="translate(76.398437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(25.106445,20)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_349c6df8-e49f-4524-8c7b-e99ed810e34b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_349c6df8-e49f-4524-8c7b-e99ed810e34b_feature_name_label"
+                 transform="translate(33.695312,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferLoad</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_a2f5f215-2ede-447f-811b-8317ccce93e7"
+                 transform="translate(74.726562,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_349c6df8-e49f-4524-8c7b-e99ed810e34b_type_label"
+                 transform="translate(97.742187,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(4,36)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_3d2173f9-84ac-4f53-bca4-533b1ec4d26e">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_3d2173f9-84ac-4f53-bca4-533b1ec4d26e_feature_name_label"
+                 transform="translate(54.46875,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToTransferpoint</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_f48dc282-aa72-4d95-90f2-4f2e689993ca"
+                 transform="translate(116.93945,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_3d2173f9-84ac-4f53-bca4-533b1ec4d26e_type_label"
+                 transform="translate(139.95508,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(13.668945,52)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_41d70366-74e8-430c-8bea-4f1c7e4b6b42">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_41d70366-74e8-430c-8bea-4f1c7e4b6b42_feature_name_label"
+                 transform="translate(45.132812,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">timeoutTriggered</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_9d3cd461-b3c8-42a1-9935-682447de0606"
+                 transform="translate(97.601562,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_41d70366-74e8-430c-8bea-4f1c7e4b6b42_type_label"
+                 transform="translate(120.61719,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(75.145508,-9)"
+             id="g1833">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_f99de8bb-2636-43c4-bb50-ff8a1f46649a_part_amount_label"
+               transform="translate(6.0078125,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..*</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba"
+           transform="translate(49.175351,239.06843)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="253.90869"
+             height="82"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1836" />
+          <line
+             x1="0"
+             y1="24"
+             x2="253.90869"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1838" />
+          <line
+             x1="0"
+             y1="29"
+             x2="253.90869"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1840" />
+          <g
+             transform="translate(105.83716)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba_header_label"
+               transform="translate(21.117187,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Head</text>
+          </g>
+          <g
+             transform="translate(124.95435,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_b9f0f42d-79f3-4035-a2d2-13a7aa2ba992">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_95b9daf6-38ca-4b53-91f6-45c0b2e3f555"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(5.2072749,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(67.051758,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_8cc7b84b-8d40-4300-b654-c2f40a68ba3d">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_8cc7b84b-8d40-4300-b654-c2f40a68ba3d_feature_name_label"
+                 transform="translate(31.679687,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToPrey</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_47c40739-3dbf-4d98-a197-25acf31db242"
+                 transform="translate(70.695312,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_8cc7b84b-8d40-4300-b654-c2f40a68ba3d_type_label"
+                 transform="translate(93.710937,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(4,20)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_5249e80b-d558-4153-bdde-e18180bb41b6">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_5249e80b-d558-4153-bdde-e18180bb41b6_feature_name_label"
+                 transform="translate(38.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">addSuccessor</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_9b686a82-6219-48f3-b142-440d99d2c73e"
+                 transform="translate(78.046875,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">(</text>
+              <g
+                 transform="translate(80.046875)"
+                 class="comp sprotty-comp parameter-compartment"
+                 id="crom-diagram_2_5249e80b-d558-4153-bdde-e18180bb41b6_comp">
+                <g
+                   class="parameter sprotty-comp parameter-label-compartment"
+                   id="crom-diagram_2_dc8c4e45-f70b-4871-99c1-b0e6c496fcdf">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_dc8c4e45-f70b-4871-99c1-b0e6c496fcdf_feature_name_label"
+                     transform="translate(33.351562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpoint</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_1eb5b392-b343-4ac8-a1c9-59550ea99ce2"
+                     transform="translate(69.041016,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_dc8c4e45-f70b-4871-99c1-b0e6c496fcdf_type_label"
+                     transform="translate(92.064453,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+                </g>
+              </g>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_9a2753d5-6014-4bc3-9b1d-753efc7a5734"
+                 transform="translate(198.79883,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">) :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_5249e80b-d558-4153-bdde-e18180bb41b6_type_label"
+                 transform="translate(219.81445,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(87.387695,36)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_fe2b3fdb-540e-451d-b843-01d4ef201bea">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_fe2b3fdb-540e-451d-b843-01d4ef201bea_feature_name_label"
+                 transform="translate(11.34375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">load</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_c594a9f4-9f2b-4de0-96b2-d2d91c76dae0"
+                 transform="translate(30.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_fe2b3fdb-540e-451d-b843-01d4ef201bea_type_label"
+                 transform="translate(53.039062,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(120.28247,-9)"
+             id="g1867">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_390e98a0-a7dc-47f3-b902-258f15292aba_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6"
+           transform="translate(620.74417,237.0556)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="266.18164"
+             height="82.248062"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1870" />
+          <line
+             x1="0"
+             y1="24"
+             x2="266.18164"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1872" />
+          <line
+             x1="0"
+             y1="29"
+             x2="266.18164"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1874" />
+          <g
+             transform="translate(117.55176)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6_header_label"
+               transform="translate(15.539063,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Tail</text>
+          </g>
+          <g
+             transform="translate(131.09082,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_5598fbc1-ae83-4a43-bb7c-8ca8059b809b">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_1d2d76c5-c550-425d-ae84-ebc9babf159b"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(0,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(78.063477,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_f5f4406b-a8cb-408b-8124-78cc0e55e36a">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_f5f4406b-a8cb-408b-8124-78cc0e55e36a_feature_name_label"
+                 transform="translate(31.679687,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToNest</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_15d452a4-0bdf-4f2d-a4e3-59c15d1f5d55"
+                 transform="translate(71.359375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_f5f4406b-a8cb-408b-8124-78cc0e55e36a_type_label"
+                 transform="translate(94.375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(4,20)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_918b1ac8-b14a-4eac-9dc5-4638d9a6ab4b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_918b1ac8-b14a-4eac-9dc5-4638d9a6ab4b_feature_name_label"
+                 transform="translate(43.695312,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">addPredecessor</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_e2f5be8f-8517-4083-b7b3-ea7c01c92360"
+                 transform="translate(89.390625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">(</text>
+              <g
+                 transform="translate(91.390625)"
+                 class="comp sprotty-comp parameter-compartment"
+                 id="crom-diagram_2_918b1ac8-b14a-4eac-9dc5-4638d9a6ab4b_comp">
+                <g
+                   class="parameter sprotty-comp parameter-label-compartment"
+                   id="crom-diagram_2_0915f10a-5726-4e53-a622-dd91a4798e28">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_0915f10a-5726-4e53-a622-dd91a4798e28_feature_name_label"
+                     transform="translate(33.351562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpoint</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_babe95da-91dc-473d-bdeb-094ba91689ce"
+                     transform="translate(69.041016,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_0915f10a-5726-4e53-a622-dd91a4798e28_type_label"
+                     transform="translate(92.064453,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+                </g>
+              </g>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_22e025d7-aea3-49b7-a6e4-8258432a6399"
+                 transform="translate(210.14258,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">) :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_918b1ac8-b14a-4eac-9dc5-4638d9a6ab4b_type_label"
+                 transform="translate(236.83008,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+            </g>
+            <g
+               transform="translate(92.051758,36)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_808a0946-86d3-4a66-a8e6-e21424c749bf">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_808a0946-86d3-4a66-a8e6-e21424c749bf_feature_name_label"
+                 transform="translate(18.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">unload</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_f4aa8ede-6be3-46f3-a587-322d65b16e64"
+                 transform="translate(43.382812,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_808a0946-86d3-4a66-a8e6-e21424c749bf_type_label"
+                 transform="translate(66.398437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(126.41895,-9)"
+             id="g1901">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_0c0e110d-5344-4661-84f6-646a6e2a44f6_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4"
+           transform="translate(318.278,238.91446)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="265.48438"
+             height="66.188187"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1904" />
+          <line
+             x1="0"
+             y1="24"
+             x2="265.48438"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1906" />
+          <line
+             x1="0"
+             y1="29"
+             x2="265.48438"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1908" />
+          <g
+             transform="translate(87.01123)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4_header_label"
+               transform="translate(45.625,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Intermediate</text>
+          </g>
+          <g
+             transform="translate(130.74219,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_ce39f920-d8be-4349-ae3c-0b041e3c105f">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_8d6882fb-c077-414c-8c73-e23ee56b3af5"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(5.3232422,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(9.671875,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_cd5100fc-0cde-47f5-be30-d2e27b4a051b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_cd5100fc-0cde-47f5-be30-d2e27b4a051b_feature_name_label"
+                 transform="translate(38.023437,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">addSuccessor</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_ca434dd8-2aad-4ad1-a300-93181ba7b783"
+                 transform="translate(78.046875,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">(</text>
+              <g
+                 transform="translate(80.046875)"
+                 class="comp sprotty-comp parameter-compartment"
+                 id="crom-diagram_2_cd5100fc-0cde-47f5-be30-d2e27b4a051b_comp">
+                <g
+                   class="parameter sprotty-comp parameter-label-compartment"
+                   id="crom-diagram_2_86e1ec81-db1f-413d-b0f6-e1bc671a8f65">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_86e1ec81-db1f-413d-b0f6-e1bc671a8f65_feature_name_label"
+                     transform="translate(33.351562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpoint</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_b64b7bbc-42f3-44ff-a42a-e17c1d0082a9"
+                     transform="translate(69.041016,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_86e1ec81-db1f-413d-b0f6-e1bc671a8f65_type_label"
+                     transform="translate(92.064453,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+                </g>
+              </g>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_78c1c1a8-6dab-43a7-94eb-1ddb15088a2d"
+                 transform="translate(198.79883,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">) :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_cd5100fc-0cde-47f5-be30-d2e27b4a051b_type_label"
+                 transform="translate(219.81445,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+            <g
+               transform="translate(4,20)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_770f9189-6ee9-4d50-aa3f-e5f707735cb8">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_770f9189-6ee9-4d50-aa3f-e5f707735cb8_feature_name_label"
+                 transform="translate(43.695312,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">addPredecessor</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_6d528e50-345a-4ec6-85d3-45ea7c93fe47"
+                 transform="translate(89.390625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">(</text>
+              <g
+                 transform="translate(91.390625)"
+                 class="comp sprotty-comp parameter-compartment"
+                 id="crom-diagram_2_770f9189-6ee9-4d50-aa3f-e5f707735cb8_comp">
+                <g
+                   class="parameter sprotty-comp parameter-label-compartment"
+                   id="crom-diagram_2_5c12131c-ccfe-4731-b3cd-02ed3bae8186">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_5c12131c-ccfe-4731-b3cd-02ed3bae8186_feature_name_label"
+                     transform="translate(33.351562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpoint</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_36d8b608-40b7-4c75-afe9-116594bae723"
+                     transform="translate(69.041016,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_5c12131c-ccfe-4731-b3cd-02ed3bae8186_type_label"
+                     transform="translate(92.064453,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+                </g>
+              </g>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_c2159493-d76b-4cf6-86a0-2cfc327f42ef"
+                 transform="translate(210.14258,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">) :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_770f9189-6ee9-4d50-aa3f-e5f707735cb8_type_label"
+                 transform="translate(231.1582,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(126.07031,-9)"
+             id="g1937">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_c54465db-e415-4b03-be67-0b734982fbd4_part_amount_label"
+               transform="translate(6.0078125,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..*</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9"
+           transform="translate(749.66232,61.714042)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="129.32812"
+             height="50.128307"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1940" />
+          <line
+             x1="0"
+             y1="24"
+             x2="129.32812"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1942" />
+          <line
+             x1="0"
+             y1="29"
+             x2="129.32812"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1944" />
+          <g
+             class="header sprotty-comp"
+             id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9_header_label"
+               transform="translate(64.664062,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">SingleRobotChain</text>
+          </g>
+          <g
+             transform="translate(62.664062,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_e81e5b74-24c4-4722-9ce6-c61972d009fd">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_1501533a-3140-4c40-8286-de4d7db8814f"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(16.470703,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_3abdf6c4-8473-4ff7-89ea-200b92018d1b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_3abdf6c4-8473-4ff7-89ea-200b92018d1b_feature_name_label"
+                 transform="translate(21.015625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">execute</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_5ea9869a-e736-473a-8fac-423ac486f189"
+                 transform="translate(49.691406,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_3abdf6c4-8473-4ff7-89ea-200b92018d1b_type_label"
+                 transform="translate(72.707031,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(57.992187,-9)"
+             id="g1957">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_7a58259e-5aa5-445d-89fd-4b20508d24c9_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b"
+           transform="translate(780.65553,143.54213)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="98.203125"
+             height="50.128307"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1960" />
+          <line
+             x1="0"
+             y1="24"
+             x2="98.203125"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1962" />
+          <line
+             x1="0"
+             y1="29"
+             x2="98.203125"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1964" />
+          <g
+             class="header sprotty-comp"
+             id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b_header_label"
+               transform="translate(49.101562,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">RobotJoining</text>
+          </g>
+          <g
+             transform="translate(47.101562,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_de4d11dd-c3bb-4d71-ac87-9b906bdf3789">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_02f3e52b-4dda-4ff6-8481-e0a9f72d178a"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(0.90820313,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_bd2d596a-1499-4b4f-9ab7-3cc02d10f2e8">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_bd2d596a-1499-4b4f-9ab7-3cc02d10f2e8_feature_name_label"
+                 transform="translate(21.015625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">execute</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_ac1cd1df-b497-41ba-87e7-971715014aa2"
+                 transform="translate(49.691406,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_bd2d596a-1499-4b4f-9ab7-3cc02d10f2e8_type_label"
+                 transform="translate(72.707031,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+            </g>
+          </g>
+          <g
+             transform="translate(42.429687,-9)"
+             id="g1977">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_32da1661-1179-4935-abd5-a5983bc9689b_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a"
+           transform="translate(141.93546,155.59345)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="68.71875"
+             height="50.128307"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1980" />
+          <line
+             x1="0"
+             y1="24"
+             x2="68.71875"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1982" />
+          <line
+             x1="2"
+             y1="29"
+             x2="66.71875"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line1984" />
+          <g
+             transform="translate(15.073242)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a_header_label"
+               transform="translate(19.179687,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Prey</text>
+          </g>
+          <g
+             transform="translate(32.359375,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_322d5c21-33fe-4a32-99d6-8c8f35a6021a">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_d868dc8e-d7f9-4453-a973-48dbb2b6afb8"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(32.359375,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_668c092a-5f6b-4991-bfe3-e4d18e8cdf6c">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_874f2399-f6ff-4753-ac94-162524ef47f4"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(27.6875,-9)"
+             id="g1995">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_2f699d17-62e9-42c6-81d5-d709e51df89a_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f"
+           transform="translate(253.41019,101.3625)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="64"
+             height="32.068428"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect1998" />
+          <line
+             x1="0"
+             y1="24"
+             x2="64"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2000" />
+          <line
+             x1="2"
+             y1="29"
+             x2="62"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2002" />
+          <g
+             transform="translate(12.658691)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f_header_label"
+               transform="translate(19.179687,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Nest</text>
+          </g>
+          <g
+             transform="translate(30,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_d93bee91-c054-43ae-9f5b-c9f3f702114c">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_56f89c8e-f567-42cc-8342-5dd860165d7a"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(30,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_0e3b14d8-f63b-4c30-95c6-a8fe1508ea43">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_72e553d4-c693-4390-b4e3-6c702c24b3a5"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(25.328125,-9)"
+             id="g2013">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_273cb4ca-9725-4bf9-a819-fc9edea8039f_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc"
+           transform="translate(250.40163,48.105892)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="67.361504"
+             height="32.068428"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect2016" />
+          <line
+             x1="0"
+             y1="24"
+             x2="67.361504"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2018" />
+          <line
+             x1="2"
+             y1="29"
+             x2="65.361504"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2020" />
+          <g
+             transform="translate(12.954189)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc_header_label"
+               transform="translate(20.726562,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Load</text>
+          </g>
+          <g
+             transform="translate(31.680752,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_5d179606-b6d6-47ed-b03b-0af18d70cec8">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_ddeef996-a01d-4047-882a-5247a9811013"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(31.680752,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_544ba2ef-a2f9-451d-8fa2-d8b562479aaf">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_da1f5781-8c02-4e05-8c56-e37d47737ab8"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(27.008877,-9)"
+             id="g2031">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_74544f16-2d7c-4769-b5ab-1e1d73cc0efc_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33"
+           transform="translate(232.32037,366.49159)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="165.10352"
+             height="68"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect2034" />
+          <line
+             x1="0"
+             y1="24"
+             x2="165.10352"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2036" />
+          <line
+             x1="0"
+             y1="47"
+             x2="165.10352"
+             y2="47"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2038" />
+          <g
+             transform="translate(42.865723)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33_header_label"
+               transform="translate(39.414062,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Successor</text>
+          </g>
+          <g
+             transform="translate(0,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33_comp_attributes"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="attribute sprotty-comp attribute-label-compartment"
+               id="crom-diagram_2_8a32d44a-be92-48c0-a3c3-5e4b023b071b">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_8a32d44a-be92-48c0-a3c3-5e4b023b071b_feature_name_label"
+                 transform="translate(55.367187,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpointRelease</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_0fefa84d-30bb-4033-90b3-8884fa9e28e9"
+                 transform="translate(112.72852,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_8a32d44a-be92-48c0-a3c3-5e4b023b071b_type_label"
+                 transform="translate(135.75195,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+            </g>
+          </g>
+          <g
+             transform="translate(6.0634766,46)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_385ba3bc-19c5-4e1e-97e4-8e6fbe6853b0">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_385ba3bc-19c5-4e1e-97e4-8e6fbe6853b0_feature_name_label"
+                 transform="translate(43.46875,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">getTransferpoint</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_9ca0a40f-b454-466a-b5bc-db60d96bcbb1"
+                 transform="translate(94.9375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_385ba3bc-19c5-4e1e-97e4-8e6fbe6853b0_type_label"
+                 transform="translate(123.625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+            </g>
+          </g>
+          <g
+             transform="translate(75.879883,-9)"
+             id="g2053">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_bd01ea27-3e00-4419-b9f7-85a39cc2cd33_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b"
+           transform="translate(529.68897,366.49159)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="164.42969"
+             height="68"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect2056" />
+          <line
+             x1="0"
+             y1="24"
+             x2="164.42969"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2058" />
+          <line
+             x1="0"
+             y1="47"
+             x2="164.42969"
+             y2="47"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2060" />
+          <g
+             transform="translate(35.911621)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b_header_label"
+               transform="translate(46.03125,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Predecessor</text>
+          </g>
+          <g
+             transform="translate(0,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b_comp_attributes"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="attribute sprotty-comp attribute-label-compartment"
+               id="crom-diagram_2_ea97c872-d278-4f99-927c-285375af5833">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_ea97c872-d278-4f99-927c-285375af5833_feature_name_label"
+                 transform="translate(55.03125,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferpointReceive</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_416108bf-4924-4882-86b9-928258765b70"
+                 transform="translate(112.05469,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_ea97c872-d278-4f99-927c-285375af5833_type_label"
+                 transform="translate(135.07812,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+            </g>
+          </g>
+          <g
+             transform="translate(5.7265625,46)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b_comp_operations"
+             style="fill:context-fill">
+            <g
+               transform="translate(4,4)"
+               class="operation sprotty-comp operation-label-compartment"
+               id="crom-diagram_2_a1951a80-1080-43d6-bd51-6d7528fd5544">
+              <text
+                 class="typed_element_name sprotty-label"
+                 id="crom-diagram_2_a1951a80-1080-43d6-bd51-6d7528fd5544_feature_name_label"
+                 transform="translate(43.46875,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">getTransferpoint</text>
+              <text
+                 class="label sprotty-label"
+                 id="crom-diagram_2_c4916b5b-fb65-42f9-aeb1-ac9ff2f6e8be"
+                 transform="translate(94.9375,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+              <text
+                 class="typed_element_type sprotty-label"
+                 id="crom-diagram_2_a1951a80-1080-43d6-bd51-6d7528fd5544_type_label"
+                 transform="translate(123.625,11)"
+                 style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+            </g>
+          </g>
+          <g
+             transform="translate(75.542969,-9)"
+             id="g2075">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_64e9de70-4fe2-4871-abeb-91ebac95862b_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="crom-diagram_2_e5e9123c-9c09-440b-899d-dd63e3b7e698"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 176.1978,308.06843 0.0554,-33.34667"
+           id="path2079" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_e5e9123c-9c09-440b-899d-dd63e3b7e698_edge_name_label"
+           transform="translate(141.71378,293.8824)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_e5e9123c-9c09-440b-899d-dd63e3b7e698_edge_first_multiplicity_label"
+           transform="translate(160.80881,307.22107)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_e5e9123c-9c09-440b-899d-dd63e3b7e698_edge_second_multiplicity_label"
+           transform="translate(160.85313,280.54374)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_33b68f42-81fc-47d6-b3a9-b8b0032dd124"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="M 483.99651,155.67476 317.76314,136.93666"
+           id="path2085" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_33b68f42-81fc-47d6-b3a9-b8b0032dd124_edge_name_label"
+           transform="translate(386.94733,142.80571)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_33b68f42-81fc-47d6-b3a9-b8b0032dd124_edge_first_multiplicity_label"
+           transform="translate(461.63317,150.30095)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_33b68f42-81fc-47d6-b3a9-b8b0032dd124_edge_second_multiplicity_label"
+           transform="translate(328.64648,135.31047)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_c3c2e242-95bc-4b1b-82fe-7e24eb4736cf"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="M 483.99651,171.17053 317.41019,183.94319"
+           id="path2091" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_c3c2e242-95bc-4b1b-82fe-7e24eb4736cf_edge_name_label"
+           transform="translate(382.44313,174.05686)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_c3c2e242-95bc-4b1b-82fe-7e24eb4736cf_edge_first_multiplicity_label"
+           transform="translate(459.56757,168.9478)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_c3c2e242-95bc-4b1b-82fe-7e24eb4736cf_edge_second_multiplicity_label"
+           transform="translate(326.29852,179.16592)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_f658382b-c714-4a7a-86ff-c902c91a4ee7"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 706.11454,388.30366 -54.75702,47.18793"
+           id="path2097" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_f658382b-c714-4a7a-86ff-c902c91a4ee7_edge_name_label"
+           transform="translate(645.92336,408.39762)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_f658382b-c714-4a7a-86ff-c902c91a4ee7_edge_first_multiplicity_label"
+           transform="translate(686.0414,389.52245)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_f658382b-c714-4a7a-86ff-c902c91a4ee7_edge_second_multiplicity_label"
+           transform="translate(642.23578,427.2728)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_c7c74d65-2931-422d-804c-f84ab3495ec2"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 492.45987,374.10265 76.86989,61.38894"
+           id="path2103" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_c7c74d65-2931-422d-804c-f84ab3495ec2_edge_name_label"
+           transform="translate(529.83845,401.29712)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_c7c74d65-2931-422d-804c-f84ab3495ec2_edge_first_multiplicity_label"
+           transform="translate(500.44757,376.74154)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_c7c74d65-2931-422d-804c-f84ab3495ec2_edge_second_multiplicity_label"
+           transform="translate(561.94348,425.8527)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_70fd9979-d19a-4ba8-beb5-5d804e2420c4"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="M 415.95177,374.10265 350.9005,435.49159"
+           id="path2109" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_70fd9979-d19a-4ba8-beb5-5d804e2420c4_edge_name_label"
+           transform="translate(349.57827,401.29712)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_70fd9979-d19a-4ba8-beb5-5d804e2420c4_edge_first_multiplicity_label"
+           transform="translate(394.36355,376.74154)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_70fd9979-d19a-4ba8-beb5-5d804e2420c4_edge_second_multiplicity_label"
+           transform="translate(342.32254,425.8527)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_ba2d194d-6d81-4135-85fc-8d479f6e5a2a"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="M 275.69991,435.49159 223.36679,390.06843"
+           id="path2115" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_ba2d194d-6d81-4135-85fc-8d479f6e5a2a_edge_name_label"
+           transform="translate(249.41552,409.28001)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_ba2d194d-6d81-4135-85fc-8d479f6e5a2a_edge_first_multiplicity_label"
+           transform="translate(271.20761,427.44927)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_ba2d194d-6d81-4135-85fc-8d479f6e5a2a_edge_second_multiplicity_label"
+           transform="translate(229.34111,391.11075)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_a051e6b8-bc1c-424c-9523-62520b9bb0af"
+         class="sprotty-edge role-prohibition-edge role_prohibition"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px;stroke-dasharray:6px">
+        <path
+           d="M 405.42389,469.49159 H 521.68897"
+           id="path2121" />
+        <path
+           d="M 6,-6 0,0 6,6"
+           transform="rotate(180,202.71195,234.7458)"
+           class="sprotty-edge triangle"
+           style="fill:#ffffff;stroke-width:1.5px;stroke-dasharray:none"
+           id="path2123" />
+        <path
+           d="M 6,-6 0,0 6,6"
+           transform="translate(521.68897,469.49159)"
+           class="sprotty-edge triangle"
+           style="fill:#ffffff;stroke-width:1.5px;stroke-dasharray:none"
+           id="path2125" />
+        <path
+           d="M 506.30619,1175.41 H 622.57127"
+           id="path2121-0"
+           style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;stroke:#000000;stroke-width:2px;stroke-dasharray:6px;-webkit-locale:'en'" />
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0"
+       transform="translate(423.48293,876.16705)"
+       class="compartment-type-node compartment_type">
+      <rect
+         x="0"
+         y="0"
+         width="486.84406"
+         height="239.9675"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect2129" />
+      <line
+         x1="0"
+         y1="24"
+         x2="486.84406"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2131" />
+      <line
+         x1="0"
+         y1="29"
+         x2="486.84406"
+         y2="29"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2133" />
+      <line
+         x1="0"
+         y1="34"
+         x2="486.84406"
+         y2="34"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2135" />
+      <g
+         transform="translate(187.82047)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0_header_label"
+           transform="translate(55.601562,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">JoinChainTeam</text>
+      </g>
+      <g
+         transform="translate(241.42203,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0_comp_attributes"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_19ffc865-2d18-48a5-8bbb-da7047bbb978">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_b3104d65-14c9-403c-95de-79b994324fe7"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         transform="translate(241.42203,30)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_9dfda46b-e556-4dd6-809f-9c5ff6308f53">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_576ed638-1336-41b4-ad20-39223098251b"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         id="crom-diagram_2_96200de7-231e-4d57-af2c-e2df42f458c0_comp_roles"
+         class="structured"
+         transform="translate(0,35)">
+        <rect
+           x="0"
+           y="0"
+           width="486.84406"
+           height="204.9675"
+           class="sprotty-comp"
+           style="fill:context-fill"
+           id="rect2145" />
+        <g
+           id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68"
+           transform="translate(21.7818,18)"
+           class="role-group-node has-multiplicity role_group">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="449.06226"
+             height="129"
+             class="sprotty-node"
+             style="fill:context-fill;stroke:#000000;stroke-dasharray:4px, 2px"
+             id="rect2147" />
+          <g
+             transform="translate(172.51063)"
+             class="header sprotty-comp"
+             id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label cursive-title"
+               id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68_role_group_name_label"
+               transform="translate(36.132812,17)"
+               style="font-style:italic;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">JoinChain</text>
+            <text
+               class="label sprotty-label"
+               id="crom-diagram_2_81b99218-c684-4c6f-80c5-183e507381ac"
+               transform="translate(69.475586,16)"
+               style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">(</text>
+            <text
+               class="role_group_multiplicity sprotty-label role-group-multiplicity-label cursive-title"
+               id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68_role_group_multiplicity_label"
+               transform="translate(84.155273,17)"
+               style="font-style:italic;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">2..2</text>
+            <text
+               class="label sprotty-label"
+               id="crom-diagram_2_7c82aaa3-c6cc-457f-8271-39c2ed37e604"
+               transform="translate(98.041016,16)"
+               style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">)</text>
+          </g>
+          <g
+             id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68_comp_roles"
+             class="structured"
+             transform="translate(0,24)">
+            <rect
+               x="0"
+               y="0"
+               width="449.06226"
+               height="105"
+               class="sprotty-comp"
+               style="fill:context-fill"
+               id="rect2154" />
+            <g
+               id="crom-diagram_2_d2111084-6eda-48e0-89ce-a54e81d4df5d"
+               transform="translate(19,7)"
+               class="role-type-node no-multiplicity role_type">
+              <rect
+                 x="0"
+                 y="0"
+                 rx="8"
+                 ry="8"
+                 width="172.77539"
+                 height="82"
+                 class="sprotty-node"
+                 style="fill:#e3e3e3;stroke:#000000"
+                 id="rect2156" />
+              <line
+                 x1="0"
+                 y1="24"
+                 x2="172.77539"
+                 y2="24"
+                 class="separator-line"
+                 style="stroke:#000000"
+                 id="line2158" />
+              <line
+                 x1="0"
+                 y1="29"
+                 x2="172.77539"
+                 y2="29"
+                 class="separator-line"
+                 style="stroke:#000000"
+                 id="line2160" />
+              <g
+                 transform="translate(35.825684)"
+                 class="header sprotty-comp"
+                 id="crom-diagram_2_d2111084-6eda-48e0-89ce-a54e81d4df5d_header"
+                 style="fill:context-fill">
+                <text
+                   class="header_name sprotty-label bold-title"
+                   id="crom-diagram_2_d2111084-6eda-48e0-89ce-a54e81d4df5d_header_label"
+                   transform="translate(50.289062,17)"
+                   style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">ChainMember</text>
+              </g>
+              <g
+                 transform="translate(84.387695,24)"
+                 class="comp sprotty-comp"
+                 id="crom-diagram_2_d2111084-6eda-48e0-89ce-a54e81d4df5d_comp_attributes"
+                 style="fill:context-fill">
+                <g
+                   class="comp sprotty-comp"
+                   id="crom-diagram_2_05f23216-18ec-4c48-9f73-e433cf3f61d5">
+                  <rect
+                     width="4"
+                     height="4"
+                     fill="none"
+                     id="crom-diagram_2_e7def82b-012c-4298-98c0-d9ecc59c958e"
+                     x="0"
+                     y="0" />
+                </g>
+              </g>
+              <g
+                 transform="translate(0,28)"
+                 class="comp sprotty-comp"
+                 id="crom-diagram_2_d2111084-6eda-48e0-89ce-a54e81d4df5d_comp_operations"
+                 style="fill:context-fill">
+                <g
+                   transform="translate(26.856445,4)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_31bbd376-d9dc-4178-9858-c516d1729e72">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_31bbd376-d9dc-4178-9858-c516d1729e72_feature_name_label"
+                     transform="translate(37.015625,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">waitForJoiner</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_dde64c6a-8bda-48d2-821c-bbf6e84292d7"
+                     transform="translate(80.367187,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_31bbd376-d9dc-4178-9858-c516d1729e72_type_label"
+                     transform="translate(103.38281,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+                <g
+                   transform="translate(4,20)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_cfa74629-626c-49e8-bc2d-fce5f0e6efad">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_cfa74629-626c-49e8-bc2d-fce5f0e6efad_feature_name_label"
+                     transform="translate(59.039062,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">acceptJoiningRequest</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_e448cb61-39f3-4bb3-b1bc-f7bad7fee047"
+                     transform="translate(126.08008,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_cfa74629-626c-49e8-bc2d-fce5f0e6efad_type_label"
+                     transform="translate(149.0957,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+                <g
+                   transform="translate(29.676758,36)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_ea0c9aa1-54f4-4656-a606-41e6cd3eee2b">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_ea0c9aa1-54f4-4656-a606-41e6cd3eee2b_feature_name_label"
+                     transform="translate(33.695312,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferLoad</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_e990f4c3-21e9-4653-9255-4b2ec1113905"
+                     transform="translate(74.726562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_ea0c9aa1-54f4-4656-a606-41e6cd3eee2b_type_label"
+                     transform="translate(97.742187,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+              </g>
+            </g>
+            <g
+               id="crom-diagram_2_6f47f111-b9c2-4ca6-9509-a2dd41dc7802"
+               transform="translate(252.36009,7)"
+               class="role-type-node no-multiplicity role_type">
+              <rect
+                 x="0"
+                 y="0"
+                 rx="8"
+                 ry="8"
+                 width="180.70218"
+                 height="82"
+                 class="sprotty-node"
+                 style="fill:#e3e3e3;stroke:#000000"
+                 id="rect2181" />
+              <line
+                 x1="0"
+                 y1="24"
+                 x2="180.70218"
+                 y2="24"
+                 class="separator-line"
+                 style="stroke:#000000"
+                 id="line2183" />
+              <line
+                 x1="0"
+                 y1="29"
+                 x2="180.70218"
+                 y2="29"
+                 class="separator-line"
+                 style="stroke:#000000"
+                 id="line2185" />
+              <g
+                 transform="translate(25.39943)"
+                 class="header sprotty-comp"
+                 id="crom-diagram_2_6f47f111-b9c2-4ca6-9509-a2dd41dc7802_header"
+                 style="fill:context-fill">
+                <text
+                   class="header_name sprotty-label bold-title"
+                   id="crom-diagram_2_6f47f111-b9c2-4ca6-9509-a2dd41dc7802_header_label"
+                   transform="translate(64.679687,17)"
+                   style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">JoinChainMember</text>
+              </g>
+              <g
+                 transform="translate(88.35109,24)"
+                 class="comp sprotty-comp"
+                 id="crom-diagram_2_6f47f111-b9c2-4ca6-9509-a2dd41dc7802_comp_attributes"
+                 style="fill:context-fill">
+                <g
+                   class="comp sprotty-comp"
+                   id="crom-diagram_2_2c5cd619-e5a3-4323-b0e1-68e13197f7f9">
+                  <rect
+                     width="4"
+                     height="4"
+                     fill="none"
+                     id="crom-diagram_2_1998820f-69b4-457e-9f2e-e90b0942d5a4"
+                     x="0"
+                     y="0" />
+                </g>
+              </g>
+              <g
+                 transform="translate(6.3100743,28)"
+                 class="comp sprotty-comp"
+                 id="crom-diagram_2_6f47f111-b9c2-4ca6-9509-a2dd41dc7802_comp_operations"
+                 style="fill:context-fill">
+                <g
+                   transform="translate(4,4)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_874a0515-2c4a-40f8-9977-b7c4ec84b020">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_874a0515-2c4a-40f8-9977-b7c4ec84b020_feature_name_label"
+                     transform="translate(57.023437,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">driveToChainmember</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_2e79c086-1bf8-47d0-8a14-4ebebad525cf"
+                     transform="translate(121.38672,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_874a0515-2c4a-40f8-9977-b7c4ec84b020_type_label"
+                     transform="translate(144.40234,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+                <g
+                   transform="translate(6.3203125,20)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_5db8dff9-4297-400f-b5cf-6d40f45d52e3">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_5db8dff9-4297-400f-b5cf-6d40f45d52e3_feature_name_label"
+                     transform="translate(54.375,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">sendJoiningRequest</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_1b4015ed-b707-493a-ad0e-929991bb897d"
+                     transform="translate(116.74609,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_5db8dff9-4297-400f-b5cf-6d40f45d52e3_type_label"
+                     transform="translate(139.76172,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+                <g
+                   transform="translate(27.330078,36)"
+                   class="operation sprotty-comp operation-label-compartment"
+                   id="crom-diagram_2_26e72adb-a14e-4c40-b2e7-50f6a5bfea20">
+                  <text
+                     class="typed_element_name sprotty-label"
+                     id="crom-diagram_2_26e72adb-a14e-4c40-b2e7-50f6a5bfea20_feature_name_label"
+                     transform="translate(33.695312,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">transferLoad</text>
+                  <text
+                     class="label sprotty-label"
+                     id="crom-diagram_2_ed46a200-5b44-486b-ab77-4483f0ac6d20"
+                     transform="translate(74.726562,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">() :</text>
+                  <text
+                     class="typed_element_type sprotty-label"
+                     id="crom-diagram_2_26e72adb-a14e-4c40-b2e7-50f6a5bfea20_type_label"
+                     transform="translate(97.742187,11)"
+                     style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g
+             transform="translate(217.85926,-9)"
+             id="g2208">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_e060a1b4-4baf-4c70-9c29-690b040d3f68_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e"
+           transform="translate(71.39432,163.35657)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="123.85742"
+             height="32"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect2211" />
+          <line
+             x1="0"
+             y1="24"
+             x2="123.85742"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2213" />
+          <line
+             x1="2"
+             y1="29"
+             x2="121.85742"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2215" />
+          <g
+             class="header sprotty-comp"
+             id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e_header_label"
+               transform="translate(61.828125,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">LoadToExchange</text>
+          </g>
+          <g
+             transform="translate(59.928711,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_828be316-4407-4267-819c-7ae565c3efdb">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_5a859943-56ab-4b0e-8763-2665770832ac"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(59.928711,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_259eeb5f-6d13-4eee-85ab-9bcab06075d0">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_d0ed9340-ff5e-4122-a3e0-78f4c5c9df94"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(55.256836,-9)"
+             id="g2226">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_6a1fdb21-208c-41ba-a714-f41812245c3e_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a"
+           transform="translate(326.58085,163.90773)"
+           class="role-type-node has-multiplicity role_type">
+          <rect
+             x="0"
+             y="0"
+             rx="8"
+             ry="8"
+             width="97.792969"
+             height="32"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000"
+             id="rect2229" />
+          <line
+             x1="0"
+             y1="24"
+             x2="97.792969"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2231" />
+          <line
+             x1="2"
+             y1="29"
+             x2="95.792969"
+             y2="29"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2233" />
+          <g
+             class="header sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_header"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_header_label"
+               transform="translate(48.734375,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Transferpoint</text>
+          </g>
+          <g
+             transform="translate(46.896484,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_comp_attributes"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_bd19282c-598d-4e8a-972b-ab5b909a2c3d">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_3f4e4658-c032-44c2-b704-266e0823ef6e"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(46.896484,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_comp_operations"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_d53d03ff-7570-4fff-84f5-a61126fe2ef3">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_d427d9a9-51b3-485d-a85b-2270be041d7d"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(42.224609,-9)"
+             id="g2244">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_part_amount_label"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <g
+           id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a-8"
+           transform="matrix(1.1066371,0,0,0.99917926,-45.527868,234.58675)"
+           class="role-type-node has-multiplicity role_type"
+           style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;-webkit-locale:'en'">
+          <rect
+             x="0.051489104"
+             y="0.051489104"
+             rx="7.9915757"
+             ry="9.7427464"
+             width="97.689987"
+             height="38.970985"
+             class="sprotty-node"
+             style="fill:#e3e3e3;stroke:#000000;stroke-width:1.10298"
+             id="rect2229-1" />
+          <line
+             x1="0"
+             y1="24"
+             x2="97.792969"
+             y2="24"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2231-3" />
+          <line
+             x1="2"
+             y1="31"
+             x2="95.792969"
+             y2="31"
+             class="separator-line"
+             style="stroke:#000000"
+             id="line2233-1" />
+          <g
+             class="header sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_header-1"
+             style="fill:context-fill">
+            <text
+               class="header_name sprotty-label bold-title"
+               id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_header_label-0"
+               transform="translate(48.734375,17)"
+               style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Role Type</text>
+          </g>
+          <g
+             transform="translate(46.896484,24)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_comp_attributes-3"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_bd19282c-598d-4e8a-972b-ab5b909a2c3d-4">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_3f4e4658-c032-44c2-b704-266e0823ef6e-0"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(46.896484,28)"
+             class="comp sprotty-comp"
+             id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_comp_operations-3"
+             style="fill:context-fill">
+            <g
+               class="comp sprotty-comp"
+               id="crom-diagram_2_d53d03ff-7570-4fff-84f5-a61126fe2ef3-9">
+              <rect
+                 width="4"
+                 height="4"
+                 fill="none"
+                 id="crom-diagram_2_d427d9a9-51b3-485d-a85b-2270be041d7d-1"
+                 x="0"
+                 y="0" />
+            </g>
+          </g>
+          <g
+             transform="translate(42.224609,-9)"
+             id="g2244-9">
+            <text
+               class="part_amount sprotty-label part-amount-label"
+               id="crom-diagram_2_0164cd6b-6a46-4364-9dd5-5954043d423a_part_amount_label-6"
+               transform="translate(6.671875,7)"
+               style="font-size:8px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">0..1</text>
+          </g>
+        </g>
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect8204"
+           width="112.027"
+           height="46.143768"
+           x="-48.374943"
+           y="286.27957"
+           rx="7.9915757"
+           ry="9.7427464" />
+        <text
+           xml:space="preserve"
+           transform="translate(-454.89725,-846.17613)"
+           id="text8208"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect8210);display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+           x="6.3037386"
+           y="301.11954"
+           id="text8216"><tspan
+             sodipodi:role="line"
+             id="tspan8214"
+             x="6.3037386"
+             y="301.11954" /></text>
+      </g>
+      <g
+         id="crom-diagram_2_ddf65897-457d-496c-a449-a9e4ecd99126"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 274.14189,125 h -60.5847"
+           id="path2248" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_ddf65897-457d-496c-a449-a9e4ecd99126_edge_name_label"
+           transform="translate(227.34368,121.5)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_ddf65897-457d-496c-a449-a9e4ecd99126_edge_first_multiplicity_label"
+           transform="translate(261.13615,121.5)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">1..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_ddf65897-457d-496c-a449-a9e4ecd99126_edge_second_multiplicity_label"
+           transform="translate(212.6684,121.5)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">1..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_a9576cd0-252b-4700-acbb-a384da83c8a2"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 129.99296,166 2.22823,32.35657"
+           id="path2254" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_a9576cd0-252b-4700-acbb-a384da83c8a2_edge_name_label"
+           transform="translate(132.60707,184.15302)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_a9576cd0-252b-4700-acbb-a384da83c8a2_edge_first_multiplicity_label"
+           transform="translate(131.71578,171.2104)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_a9576cd0-252b-4700-acbb-a384da83c8a2_edge_second_multiplicity_label"
+           transform="translate(133.49837,197.09565)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_d04cfbd2-e5ee-43e0-951f-e9d1a2ac8d44"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 213.55719,156.2794 117.73123,42.62833"
+           id="path2260" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_d04cfbd2-e5ee-43e0-951f-e9d1a2ac8d44_edge_name_label"
+           transform="translate(263.88129,174.09357)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_d04cfbd2-e5ee-43e0-951f-e9d1a2ac8d44_edge_first_multiplicity_label"
+           transform="translate(222.11944,157.04224)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_d04cfbd2-e5ee-43e0-951f-e9d1a2ac8d44_edge_second_multiplicity_label"
+           transform="translate(316.30442,191.14489)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_9767c33b-b473-4271-ab9d-bf1a8010f9b3"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 274.14189,159.92436 -99.42605,38.43221"
+           id="path2266" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_9767c33b-b473-4271-ab9d-bf1a8010f9b3_edge_name_label"
+           transform="translate(199.46684,175.64047)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_9767c33b-b473-4271-ab9d-bf1a8010f9b3_edge_first_multiplicity_label"
+           transform="translate(253.28489,160.26758)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_9767c33b-b473-4271-ab9d-bf1a8010f9b3_edge_second_multiplicity_label"
+           transform="translate(173.74405,191.01335)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <g
+         id="crom-diagram_2_3fda425c-b07b-4efb-96bc-1cde03dde78e"
+         class="sprotty-edge association-edge association"
+         style="fill:context-fill;stroke:#000000;stroke-width:2px">
+        <path
+           d="m 369.5021,166 4.02046,32.90773"
+           id="path2272" />
+        <text
+           class="edge_name sprotty-label edge-label"
+           id="crom-diagram_2_3fda425c-b07b-4efb-96bc-1cde03dde78e_edge_name_label"
+           transform="translate(373.01233,184.02513)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">relatesTo</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_3fda425c-b07b-4efb-96bc-1cde03dde78e_edge_first_multiplicity_label"
+           transform="translate(371.40415,170.86204)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+        <text
+           class="edge_multiplicity sprotty-label edge-label"
+           id="crom-diagram_2_3fda425c-b07b-4efb-96bc-1cde03dde78e_edge_second_multiplicity_label"
+           transform="translate(374.62051,197.18822)"
+           style="font-size:8px;font-family:sans-serif;fill:#cccccc;stroke-width:0px">0..1</text>
+      </g>
+      <path
+         d="M 209.01179,346.35718 91.261054,345.71239"
+         id="path2266-3"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;stroke:#000000;stroke-width:2.09888px;-webkit-locale:'en'" />
+    </g>
+    <g
+       id="crom-diagram_2_72979512-6dbe-4c06-afa3-3faf04b59e10"
+       transform="translate(253.18903,854.57293)"
+       class="natural-type-node natural_type">
+      <rect
+         x="0"
+         y="0"
+         rx="0"
+         ry="0"
+         width="128.125"
+         height="100"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect2279" />
+      <line
+         x1="0"
+         y1="24"
+         x2="128.125"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2281" />
+      <line
+         x1="0"
+         y1="95"
+         x2="128.125"
+         y2="95"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2283" />
+      <g
+         transform="translate(39.679687)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_72979512-6dbe-4c06-afa3-3faf04b59e10_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_72979512-6dbe-4c06-afa3-3faf04b59e10_header_label"
+           transform="translate(24.21875,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Robot</text>
+      </g>
+      <g
+         transform="translate(0,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_72979512-6dbe-4c06-afa3-3faf04b59e10_comp_attributes"
+         style="fill:context-fill">
+        <g
+           transform="translate(4,4)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_bd4bf2b7-9c95-4126-af96-6b09b22b68c6">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_bd4bf2b7-9c95-4126-af96-6b09b22b68c6_feature_name_label"
+             transform="translate(15.015625,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">name</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_1fe9c596-f67f-4a7a-ba61-312b26a17164"
+             transform="translate(33.015625,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_bd4bf2b7-9c95-4126-af96-6b09b22b68c6_type_label"
+             transform="translate(51.367187,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+        </g>
+        <g
+           transform="translate(4,20)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_cdb46987-c34b-4eb1-925c-7de4247b0f6e">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_cdb46987-c34b-4eb1-925c-7de4247b0f6e_feature_name_label"
+             transform="translate(11.34375,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">load</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_3f577d01-dbe3-42f6-8f55-f261e9389190"
+             transform="translate(25.359375,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_cdb46987-c34b-4eb1-925c-7de4247b0f6e_type_label"
+             transform="translate(50.054687,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Boolean</text>
+        </g>
+        <g
+           transform="translate(4,36)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_10a98751-2220-4c9c-8587-2b4d5af1086b">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_10a98751-2220-4c9c-8587-2b4d5af1086b_feature_name_label"
+             transform="translate(19.679687,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">waiting</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_56828d7b-9bda-438b-a507-c2c6ffa2409d"
+             transform="translate(41.03125,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_10a98751-2220-4c9c-8587-2b4d5af1086b_type_label"
+             transform="translate(65.726562,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Boolean</text>
+        </g>
+        <g
+           transform="translate(4,52)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_5bcd34d1-6167-4a02-8692-4d5ca1fd499b">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_5bcd34d1-6167-4a02-8692-4d5ca1fd499b_feature_name_label"
+             transform="translate(35.367187,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">goalReached</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_5b0012ea-c7ea-41be-886a-91d6e4733871"
+             transform="translate(73.40625,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_5bcd34d1-6167-4a02-8692-4d5ca1fd499b_type_label"
+             transform="translate(98.101562,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Boolean</text>
+        </g>
+      </g>
+      <g
+         transform="translate(0,96)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_72979512-6dbe-4c06-afa3-3faf04b59e10_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_41623df9-2dfd-473a-a86a-c0091839be1b">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_8a708332-2c35-42f9-8cd8-b0a6b68778df"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_a4d29aba-c213-45d5-843b-8e4c1fa0790f"
+       transform="translate(265.59574,732.04103)"
+       class="natural-type-node natural_type">
+      <rect
+         x="0"
+         y="0"
+         rx="0"
+         ry="0"
+         width="114.92383"
+         height="68"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect2308" />
+      <line
+         x1="0"
+         y1="24"
+         x2="114.92383"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2310" />
+      <line
+         x1="0"
+         y1="63"
+         x2="114.92383"
+         y2="63"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2312" />
+      <g
+         class="header sprotty-comp"
+         id="crom-diagram_2_a4d29aba-c213-45d5-843b-8e4c1fa0790f_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_a4d29aba-c213-45d5-843b-8e4c1fa0790f_header_label"
+           transform="translate(57.296875,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">PerceivedRobot</text>
+      </g>
+      <g
+         transform="translate(0,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_a4d29aba-c213-45d5-843b-8e4c1fa0790f_comp_attributes"
+         style="fill:context-fill">
+        <g
+           transform="translate(4,4)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_9617d946-2285-4ae3-b531-e53bc2216362">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_9617d946-2285-4ae3-b531-e53bc2216362_feature_name_label"
+             transform="translate(15.015625,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">name</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_a8631b44-4b05-4586-a01a-3fb5e57c5838"
+             transform="translate(33.015625,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_9617d946-2285-4ae3-b531-e53bc2216362_type_label"
+             transform="translate(51.367187,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">String</text>
+        </g>
+        <g
+           transform="translate(4,20)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_d994b147-84a8-4c2c-abc8-884bea864eec">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_d994b147-84a8-4c2c-abc8-884bea864eec_feature_name_label"
+             transform="translate(11.34375,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">load</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_c49c23ca-c48c-4023-b46a-50c457b00c6f"
+             transform="translate(25.359375,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_d994b147-84a8-4c2c-abc8-884bea864eec_type_label"
+             transform="translate(50.054687,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Boolean</text>
+        </g>
+      </g>
+      <g
+         transform="translate(0,64)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_a4d29aba-c213-45d5-843b-8e4c1fa0790f_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_7dc5dcd4-8125-4bc5-ba5e-b2ead286f4c8">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_296f965f-e8ae-4ae5-9426-fbf672843e8e"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_1fe53a54-f503-45fe-a6d9-beed61ba3a49"
+       transform="translate(72.074318,870.58822)"
+       class="natural-type-node natural_type">
+      <rect
+         x="0"
+         y="0"
+         rx="0"
+         ry="0"
+         width="79"
+         height="34"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect2329" />
+      <line
+         x1="0"
+         y1="24"
+         x2="79"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2331" />
+      <line
+         x1="0"
+         y1="29"
+         x2="79"
+         y2="29"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2333" />
+      <g
+         transform="translate(13.54834)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_1fe53a54-f503-45fe-a6d9-beed61ba3a49_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_1fe53a54-f503-45fe-a6d9-beed61ba3a49_header_label"
+           transform="translate(25.789062,17)"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Object</text>
+      </g>
+      <g
+         transform="translate(0,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_1fe53a54-f503-45fe-a6d9-beed61ba3a49_comp_attributes"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_01c2e197-6990-4b9d-8212-61910d58896a">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_e56ca9aa-71e6-4ca0-817d-b2765f2d74ec"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         transform="translate(0,30)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_1fe53a54-f503-45fe-a6d9-beed61ba3a49_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_e3dba316-882b-440c-b02d-444ce567e157">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_ae458106-3cd9-4da4-a582-9973c8abe8f7"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894"
+       transform="translate(-9.50911,622.69306)"
+       class="data-type-node data_type">
+      <rect
+         x="0"
+         y="0"
+         rx="0"
+         ry="0"
+         width="111.73242"
+         height="68"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000"
+         id="rect2344" />
+      <line
+         x1="0"
+         y1="24"
+         x2="111.73242"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2346" />
+      <line
+         x1="0"
+         y1="63"
+         x2="111.73242"
+         y2="63"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2348" />
+      <g
+         transform="translate(24.249023)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-cursive-title"
+           id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header_label"
+           transform="translate(31.617187,17)"
+           style="font-style:italic;font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Position</text>
+      </g>
+      <g
+         transform="translate(0,25)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_comp_attributes"
+         style="fill:context-fill">
+        <g
+           transform="translate(4,4)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_75f6d1af-ed44-40c5-ae45-dbd66ca93d45">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_75f6d1af-ed44-40c5-ae45-dbd66ca93d45_feature_name_label"
+             transform="translate(3,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">x</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_3a39afa6-1d5f-47d8-825e-bd9fe88add7e"
+             transform="translate(8.671875,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_75f6d1af-ed44-40c5-ae45-dbd66ca93d45_type_label"
+             transform="translate(30.023437,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Integer</text>
+        </g>
+        <g
+           transform="translate(4,20)"
+           class="attribute sprotty-comp attribute-label-compartment"
+           id="crom-diagram_2_dc597008-559d-416f-a2f1-227234cf1926">
+          <text
+             class="typed_element_name sprotty-label"
+             id="crom-diagram_2_dc597008-559d-416f-a2f1-227234cf1926_feature_name_label"
+             transform="translate(3,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">y</text>
+          <text
+             class="label sprotty-label"
+             id="crom-diagram_2_26fb04ff-61db-4b2c-a077-bb6c7b3e76df"
+             transform="translate(8.671875,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">:</text>
+          <text
+             class="typed_element_type sprotty-label"
+             id="crom-diagram_2_dc597008-559d-416f-a2f1-227234cf1926_type_label"
+             transform="translate(30.023437,11)"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Integer</text>
+        </g>
+      </g>
+      <g
+         transform="translate(0,64)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_comp_operations"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_81c648b0-c63f-4dd0-b705-6c4f7ff863df">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_b592dbf4-f9ff-4a7d-9687-8b573e234faa"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_a11cbf13-902a-41d9-a280-4b78208d1a01"
+       class="sprotty-edge inheritance-edge inheritance"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="M 272.47224,373.05935 491.77968,269.4111"
+         id="path2365" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(154.70382,216.16085,189.77297)"
+         class="sprotty-edge triangle"
+         style="fill:#ffffff;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2367" />
+    </g>
+    <g
+       id="crom-diagram_2_2962fc91-5298-4bf4-bbf4-6207546871dd"
+       class="sprotty-edge inheritance-edge inheritance"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 482.18314,372.90538 54.20429,-83.15771"
+         id="path2370" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(123.09732,190.19288,289.92543)"
+         class="sprotty-edge triangle"
+         style="fill:#ffffff;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2372" />
+    </g>
+    <g
+       id="crom-diagram_2_90b76945-0524-493f-9b01-0b88a71ecf62"
+       class="sprotty-edge inheritance-edge inheritance"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="M 721.00764,371.04652 636.85697,289.46431"
+         id="path2375" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(44.112121,-38.289477,929.42139)"
+         class="sprotty-edge triangle"
+         style="fill:#ffffff;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2377" />
+    </g>
+    <g
+       id="crom-diagram_2_d4a82587-49bc-4843-8349-4579e4617c37"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 910.59464,740.40459 26.27582,0.46185 0.43294,-518.788 -46.72169,-0.53952"
+         id="path2380" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(0.66159431,-18739.84,77149.992)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2382" />
+    </g>
+    <g
+       id="crom-diagram_2_b115d89d-7db5-414d-8aea-d75520bc5db0"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 910.327,1005.7126 13.43494,0.5277 -0.71826,-705.17817 -32.59396,0.59781"
+         id="path2385" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-1.0507578,16894.193,-48347.772)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2387" />
+    </g>
+    <g
+       id="crom-diagram_2_4e8914cc-1d08-40eb-8369-f7a4f73b3bb2"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 318.67125,854.57293 0.70528,-24.83857 -350.790849,-2.42444 7.54507,-689.15934 597.499399,0.5942 0.60299,30.95997"
+         id="path2390" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-91.115768,370.83243,-196.23632)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2392" />
+    </g>
+    <g
+       id="crom-diagram_2_0d5df403-b2e2-44ce-b3ae-eed02a2c9a0a"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 323.02291,732.04103 -0.128,-125.29213 298.99907,1.09055 -0.20307,-37.35697"
+         id="path2395" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(89.688542,24.549418,597.27833)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2397" />
+    </g>
+    <g
+       id="crom-diagram_2_f113efc2-d68f-4d8d-888e-8419258bd404"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 323.26408,732.04103 0.98088,-161.55856"
+         id="path2400" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(90.347861,-120.8922,445.88542)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2402" />
+    </g>
+    <g
+       id="crom-diagram_2_d5b77c1d-2905-4ef3-8072-95e290871f0a"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 380.51956,764.83113 19.08085,-0.40176 -0.88494,226.51245 44.54937,0.44786"
+         id="path2405" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-179.42401,224.62402,494.58332)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2407" />
+    </g>
+    <g
+       id="crom-diagram_2_b0bb223c-c60e-4a13-912c-e922a8ca38dd"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 317.48507,954.57293 0.20417,43.71011 125.57567,-1.64625"
+         id="path2410" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(179.24892,218.86621,499.76782)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2412" />
+    </g>
+    <g
+       id="crom-diagram_2_50af6944-c2eb-413c-99d2-2f51c1f40410"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 72.074318,887.27063 -91.392369,-0.73482 7.606888,-690.98759 269.704273,2.28104"
+         id="path2415" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-179.51543,129.91483,98.371257)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2417" />
+    </g>
+    <g
+       id="crom-diagram_2_2b46aad1-09c2-4f91-95af-99566b2d0955"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 112.03744,870.58822 4.69882,-172.48311 526.10028,2.54485"
+         id="path2420" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-179.72285,322.76556,349.54881)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2422" />
+    </g>
+    <g
+       id="crom-diagram_2_f01ff2ad-ff96-4169-a9c7-afc2b6bb53d7"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 111.31381,904.58822 -2.82083,184.07628 384.38429,1.594"
+         id="path2425" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-179.76239,248.06896,544.6193)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2427" />
+    </g>
+    <g
+       id="crom-diagram_2_4d1a2f15-7b7a-42eb-a088-f6a6e9ad44aa"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 45.821458,690.69306 -6.594227,418.56934 702.868039,0.2925 6.06644,-1.9715"
+         id="path2430" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(161.99679,286.85297,612.97181)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2432" />
+    </g>
+    <g
+       id="crom-diagram_2_83ab342b-b44e-4e4c-b75a-33df46fad8b3"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 102.22331,657.16947 487.31725,4.1557 0.61263,81.54583"
+         id="path2435" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-90.430441,664.23208,79.063674)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2437" />
+    </g>
+    <g
+       id="crom-diagram_2_ecb29fd5-eaf9-4e9f-aae8-da7936f0d674"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="M 46.600714,622.69306 49.267786,250.46088 261.0016,251.25941"
+         id="path2440" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(-179.78392,131.2377,125.38456)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2442" />
+    </g>
+    <g
+       id="crom-diagram_2_daabbdd4-f571-4797-a702-5a4582d95755"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="M 46.664097,622.69306 49.439746,315.28874 149.52688,314.81913"
+         id="path2445" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(179.73117,74.894153,157.58379)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2447" />
+    </g>
+    <g
+       id="crom-diagram_2_91c07379-cf33-4c21-b2b2-34c26f43a175"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="fill:context-fill;stroke:#000000;stroke-width:2px">
+      <path
+         d="m 381.31403,866.42579 4.69231,-2.79412 429.78774,-2.20725 1.0602,-44.51127"
+         id="path2450" />
+      <path
+         d="M 9,-5 0,0 9,5 Z"
+         transform="rotate(91.364463,10.083696,806.78305)"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:1.5px;stroke-dasharray:none"
+         id="path2452" />
+    </g>
+    <g
+       id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894-6"
+       transform="matrix(0.91973787,0,0,0.87644169,48.476215,1200.7861)"
+       class="data-type-node data_type"
+       style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;-webkit-locale:'en'">
+      <rect
+         x="-0.07022763"
+         y="-0.070442252"
+         rx="0"
+         ry="0"
+         width="111.87288"
+         height="49.773567"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.856087"
+         id="rect2344-1" />
+      <line
+         x1="0"
+         y1="24"
+         x2="111.73242"
+         y2="24"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2346-8" />
+      <line
+         x1="0"
+         y1="37.410683"
+         x2="111.73242"
+         y2="37.410683"
+         class="separator-line"
+         style="stroke:#000000"
+         id="line2348-7" />
+      <g
+         transform="translate(24.249023)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header-9"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-cursive-title"
+           id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header_label-2"
+           transform="translate(31.617187,17)"
+           style="font-style:italic;font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px">Data Type</text>
+      </g>
+      <g
+         transform="translate(0,64)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_comp_operations-9"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_81c648b0-c63f-4dd0-b705-6c4f7ff863df-7">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_b592dbf4-f9ff-4a7d-9687-8b573e234faa-3"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <rect
+         x="-1.3426373"
+         y="-65.50531"
+         rx="0"
+         ry="0"
+         width="111.87288"
+         height="49.773567"
+         class="sprotty-node"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#ffffff;stroke:#000000;stroke-width:0.856087;-webkit-locale:'en'"
+         id="rect2344-1-6" />
+      <line
+         x1="-1.2724087"
+         y1="-41.434864"
+         x2="110.46001"
+         y2="-41.434864"
+         class="separator-line"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;stroke:#000000;-webkit-locale:'en'"
+         id="line2346-8-1" />
+      <line
+         x1="-1.2724087"
+         y1="-28.024181"
+         x2="110.46001"
+         y2="-28.024181"
+         class="separator-line"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;stroke:#000000;-webkit-locale:'en'"
+         id="line2348-7-2" />
+      <g
+         transform="translate(22.976609,-65.434866)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header-9-9"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;-webkit-locale:'en'">
+        <text
+           class="header_name sprotty-label bold-cursive-title"
+           id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_header_label-2-3"
+           transform="translate(31.617187,17)"
+           style="font-style:italic;font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
+             id="tspan5335">Natural Type</tspan></text>
+      </g>
+      <g
+         transform="translate(-1.272411,-1.4348701)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_ff38881e-3f95-4d1e-97b8-229774c93894_comp_operations-9-1"
+         style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;-webkit-locale:'en'">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_81c648b0-c63f-4dd0-b705-6c4f7ff863df-7-9">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_b592dbf4-f9ff-4a7d-9687-8b573e234faa-3-4"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8-3"
+       transform="matrix(0.86103486,0,0,0.73878091,178.30832,1139.0175)"
+       class="compartment-type-node compartment_type"
+       style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;-webkit-locale:'en'">
+      <rect
+         x="-15.370495"
+         y="6.4903603"
+         width="221.64883"
+         height="136.54961"
+         class="sprotty-node"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.571406"
+         id="rect1654-1" />
+      <line
+         x1="-15.058002"
+         y1="38.088783"
+         x2="207.53394"
+         y2="38.088783"
+         class="separator-line"
+         style="stroke:#000000;stroke-width:0.836694"
+         id="line1656-7" />
+      <line
+         x1="-15.058002"
+         y1="44.013691"
+         x2="206.45876"
+         y2="44.013691"
+         class="separator-line"
+         style="stroke:#000000;stroke-width:0.834671"
+         id="line1658-5" />
+      <line
+         x1="-15.058002"
+         y1="49.882393"
+         x2="206.43733"
+         y2="49.882393"
+         class="separator-line"
+         style="stroke:#000000;stroke-width:0.83463"
+         id="line1660-9" />
+      <g
+         transform="matrix(1.1380821,0,0,1.266995,13.524462,6.8045651)"
+         class="header sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_header-6"
+         style="fill:context-fill">
+        <text
+           class="header_name sprotty-label bold-title"
+           id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_header_label-2"
+           style="font-weight:700;font-size:14px;font-family:sans-serif;text-anchor:middle;fill:#1f1f1f;stroke:#000000;stroke-width:0px"
+           x="70.183914"
+           y="17">Compartment Type</text>
+        <rect
+           style="fill:#b3b3b3;stroke:#000000;stroke-width:1.04414;stroke-dasharray:8.3531, 8.3531;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect6774"
+           width="82.885063"
+           height="26.20117"
+           x="26.541632"
+           y="62.719589"
+           ry="12.901793" />
+      </g>
+      <g
+         transform="matrix(1.1380821,0,0,1.266995,211.90825,38.47944)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_comp_attributes-1"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_e008e065-06a5-478e-8d3c-ae9cf0377b1f-7">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_ef64d8f0-62ac-4146-9ed8-d3c8e5c11b33-8"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+      <g
+         transform="matrix(1.1380821,0,0,1.266995,211.90825,44.814415)"
+         class="comp sprotty-comp"
+         id="crom-diagram_2_6c44b3f7-0dd4-4129-b204-9c6c6f8309e8_comp_operations-5"
+         style="fill:context-fill">
+        <g
+           class="comp sprotty-comp"
+           id="crom-diagram_2_3bb17543-6953-45fa-8a15-8beae3f67e72-7">
+          <rect
+             width="4"
+             height="4"
+             fill="none"
+             id="crom-diagram_2_3d5a8e44-e003-430c-b894-7241430d44fb-4"
+             x="0"
+             y="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="crom-diagram_2_f113efc2-d68f-4d8d-888e-8419258bd404-4"
+       class="sprotty-edge fulfillment-edge fulfillment"
+       style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;stroke:#000000;stroke-width:2px;-webkit-locale:'en'"
+       transform="matrix(0.00287794,1.4167748,-0.57898559,0.00148796,929.73362,705.17329)">
+      <path
+         d="m 322.64716,712.98148 c 0.31328,-26.48057 0.65078,-76.01401 0.93984,-79.44172"
+         id="path2400-2"
+         sodipodi:nodetypes="cc"
+         style="stroke-width:1.44102px" />
+      <path
+         d="m 328.49373,650.79562 -4.90219,-19.44511 -5.03276,19.37197 z"
+         class="sprotty-edge triangle"
+         style="fill:#000000;stroke-width:2.19562px;stroke-dasharray:none"
+         id="path2402-2" />
+    </g>
+  </g>
+  <rect
+     style="fill:#000000;stroke-width:0.269407"
+     id="rect3281"
+     width="174.86931"
+     height="2.2492764"
+     x="293.82065"
+     y="607.88837"
+     ry="0"
+     transform="matrix(0.94251346,0.33416818,-0.28761286,0.95774675,0,0)" />
+  <rect
+     style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:0.360309;-webkit-locale:'en'"
+     id="rect3281-7"
+     width="247.71298"
+     height="2.8401392"
+     x="905.55029"
+     y="-540.27484"
+     ry="0"
+     transform="matrix(0.68532778,0.72823473,0.99839109,-0.05670305,0,0)" />
+  <text
+     xml:space="preserve"
+     style="font-size:12px;fill:#000000"
+     x="105.03505"
+     y="677.53088"
+     id="text3443"><tspan
+       sodipodi:role="line"
+       id="tspan3441"
+       x="105.03505"
+       y="677.53088">1..1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;-webkit-locale:'en'"
+     x="94.901443"
+     y="700.65833"
+     id="text3443-5"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3"
+       x="94.901443"
+       y="700.65833">1..1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;-webkit-locale:'en'"
+     x="247.60852"
+     y="726.75928"
+     id="text3443-3"><tspan
+       sodipodi:role="line"
+       id="tspan3441-6"
+       x="247.60852"
+       y="726.75928">0..*</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;-webkit-locale:'en'"
+     x="239.30589"
+     y="853.4715"
+     id="text3443-3-5"><tspan
+       sodipodi:role="line"
+       id="tspan3441-6-6"
+       x="239.30589"
+       y="853.4715">0..*</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:14.7564px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.84455;-webkit-locale:'en'"
+     x="234.40503"
+     y="1228.4148"
+     id="text3443-5-9"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0"
+       x="234.40503"
+       y="1228.4148"
+       style="font-size:14.7564px;stroke-width:1.84455">Card</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:14.7564px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.84455;-webkit-locale:'en'"
+     x="559.69812"
+     y="1198.1221"
+     id="text3443-5-9-2"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0-05"
+       x="559.69812"
+       y="1198.1221"
+       style="font-size:14.7564px;stroke-width:1.84455">Fills-Relation</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:14.7564px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.84455;-webkit-locale:'en'"
+     x="558.97882"
+     y="1226.1545"
+     id="text3443-5-9-2-0"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0-05-9"
+       x="558.97882"
+       y="1226.1545"
+       style="font-size:14.7564px;stroke-width:1.84455">Inheritance</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.81568;-webkit-locale:'en'"
+     x="373.84311"
+     y="1243.1328"
+     id="text3443-5-9-1"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0-0"
+       x="373.84311"
+       y="1243.1328"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial, sans-serif Italic';stroke-width:1.81568">RoleGroup (n..m)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.81568;-webkit-locale:'en'"
+     x="504.51352"
+     y="1249.9274"
+     id="text3443-5-9-1-2"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0-0-9"
+       x="504.51352"
+       y="1249.9274"
+       style="font-size:12px;stroke-width:1.81568">CardN  RST  CardM</tspan></text>
+  <text
+     xml:space="preserve"
+     style="color:#cccccc;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:#000000;stroke-width:1.81568;-webkit-locale:'en'"
+     x="517.4671"
+     y="1268.45"
+     id="text3443-5-9-1-2-2"
+     transform="scale(1.0244936,0.97609199)"><tspan
+       sodipodi:role="line"
+       id="tspan3441-3-0-0-9-8"
+       x="517.4671"
+       y="1268.45"
+       style="font-size:12px;stroke-width:1.81568">RST Constraint</tspan></text>
+  <g
+     id="crom-diagram_2_2962fc91-5298-4bf4-bbf4-6207546871dd-8"
+     class="sprotty-edge inheritance-edge inheritance"
+     style="color:#cccccc;font-size:13px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;display:block;fill:context-fill;stroke:#000000;stroke-width:2px;-webkit-locale:'en'"
+     transform="matrix(0.21744242,0.89541129,-0.33753953,0.57682251,536.24534,544.34245)">
+    <path
+       d="m 482.18314,372.90538 54.20429,-83.15771"
+       id="path2370-0" />
+    <path
+       d="m 537.96846,295.82662 10.0138,-24.29489 -17.75215,19.16675 z"
+       class="sprotty-edge triangle"
+       style="fill:#ffffff;stroke-width:2.16288px;stroke-dasharray:none"
+       id="path2372-4"
+       sodipodi:nodetypes="cccc" />
+  </g>
+</svg>

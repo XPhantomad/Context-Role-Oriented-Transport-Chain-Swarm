@@ -12,38 +12,35 @@ import sys
 name = sys.argv[1]
 number = re.findall(r'\d+', name)   
 
-global addr, udpServerSocket, bufferSize
+global addr, udpClientSocket, bufferSize
 addr = None
 start = False
 bufferSize = 1024
-HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
+HOST = "127.0.0.1"  
 PORT = 2000+int(number[0])*2 # Port to listen on (non-privileged ports are > 1023)
 addrPort = (HOST,PORT)
-DIST_TOLERANCE = 0.15
-DIST_LOADING = 0.3
+DIST_TOLERANCE = 0.15  # Distance tolerance for defining the goal as reached
+DIST_LOADING = 0.3  
 
-# receives Messages from the Webapp, 
-# if hello-Message is received the Initialisation Message is created and sent to the Webapp
-# otherwise Goal is set
+# receives Messages from the Swarm Element Loop
 def receiveMessages():
-    global start, addr, udpServerSocket    
+    global start, addr, udpClientSocket    
     while(True): 
-        msg = udpServerSocket.recv(bufferSize) # BLOCKS
+        msg = udpClientSocket.recv(bufferSize) # BLOCKS
         if(msg.decode() == "start"):
             start = True
         else:
             msg = json.loads(msg.decode())
             #print(msg)
             if(len(msg)>=2):
-                model.implementation(msg["xTarget"],msg["yTarget"], msg["state"], msg["led"])
+                model.implementation(msg["xTarget"],msg["yTarget"], msg["state"], msg["message"])
 
-# creates a Statusmessage in JSON from the Runtimemodel and sends it via Socket to the Webapp
-# Message contains Robot with its attributes
+# creates a Status message in JSON of the runtime model and sent it via Socket to the Swarm Element Loop
+# runs with 10Hz to meet the frequency of the initial checks of the SEL
 def publishMessages():
-    global start, udpServerSocket, addr
+    global start, udpClientSocket, addr
     while True:
-        if(udpServerSocket and start):       
-            # robot --> JSON  TODO: make this easier --> Outsource
+        if(udpClientSocket and start):       # The sending of messages only starts when the start message has been received.
             d = {}
             robot = model.robots
             # adds only attributes of robot to dict
@@ -53,7 +50,7 @@ def publishMessages():
                 # appends attribute name from getter function name without get and attribute Value
                 d[robot.getname()][(a[3:])] = getattr(robot, a)()
             #print(robot.getload())
-            udpServerSocket.send(str.encode(json.dumps(d)+ "\n"))
+            udpClientSocket.send(str.encode(json.dumps(d)+ "\n"))
             
         time.sleep(0.1) # depends on the performance of your PC
 
@@ -61,15 +58,28 @@ print("Staaaart")
 
 
 waiting = StateImpl(1, "waiting", 0.0)
-driving = StateImpl(2, "driving", 1.0)
+driving = StateImpl(2, "driving", 5.0)  # 5.0 for Flocking ; 1.0 for Transport Chain
+leading = StateImpl(3, "leading", 0.5)  
 load = StateImpl(5, "load", 0.0, True, False)
 unload = StateImpl(6, "unload", 0.0, False, True)
 
-model = ModelImpl(None, [waiting, driving, load, unload])
+msg_joiner = MsgImpl(1,"Joiner", "green")
+msg_robotWithLoad = MsgImpl(2, "Robot with Load", "yellow")
+#msg_prey = MsgImpl(3, "Prey", "red")
+msg_Chainmember= MsgImpl(4, "Chainmember(Join)", "magenta")
+msg_joinerLoading = MsgImpl(5, "Joiner with Loading State", "white")
+msg_nothing = MsgImpl(6, "nothing", "black")
+
+# EXTRA:Flocking
+msg_Leader = MsgImpl(7, "Leader", "purple")
+msg_Deputy = MsgImpl(8, "Deputy", "cyan")
+msg_Follower = MsgImpl(9, "Follower", "orange")
+
+model = ModelImpl(None, [waiting, driving, leading, load, unload], [msg_joiner, msg_robotWithLoad, msg_Chainmember, msg_joinerLoading, msg_nothing, msg_Leader, msg_Deputy, msg_Follower])
 robot1=RobotImpl(0.0, 0.0, 0.0,0.0, 0.0, name, 1)
 robot1.setstate(waiting)
+robot1.setmessage(msg_nothing)
 model.addRobot(robot1)
-
 
 
 # run robotSupervisor-Node
@@ -78,14 +88,14 @@ rclpy.init(args=None)
 robotSupervisor = RobotSupervisor(robot1.getname())
 threading.Thread(target=lambda: rclpy.spin(robotSupervisor)).start()
 
-# Socket for Connection to Webapp
-udpServerSocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-udpServerSocket.connect(addrPort)
+# Socket for Connection to SEL
+udpClientSocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+udpClientSocket.connect(addrPort)
 
-# Reveice from Webapp
+# Reveice from SEL
 threading.Thread(target=lambda: receiveMessages()).start()
 
-#Publish to Webapp
+#Publish to SEL
 threading.Thread(target=lambda: publishMessages()).start()
 
 measure = False
@@ -102,8 +112,7 @@ while(True):
     repulsion = robotSupervisor.getv_repulsion()
 
     #Analyse - makes the abstraction and checks if goal was Reached
-    #model.abstraction(robot1.getid()) 
-    robot1.setProximity(robotSupervisor.getProximity()) # Abstraction already made in robotSupervisor
+    robot1.setProximity(robotSupervisor.getProximity()) # Abstraction already done in robotSupervisor
     if(robot1.geDistanceToTarge()>DIST_TOLERANCE):
         robot1.goalReached = False
     else:
@@ -114,7 +123,7 @@ while(True):
         repulsion = np.array([0,0])
     
     # Plan - calculates and sets speeds for the robot
-    if(not robot1.getgoalReached() and robot1.state == driving):
+    if(not robot1.getgoalReached() and (robot1.state == driving or robot1.state == leading)):
         robot1.calculateSpeeds(repulsion)
 
     # if goal reached or state != driving
@@ -124,14 +133,12 @@ while(True):
 
     #Execute - send speeds to robotSupervisor to publish them to ROS
     if(not robot1.getgoalReached()):
-        #print(f'goal: {robot1.getgoalReached()} publish velocity({robot1.speed},{robot1.rotationSpeed})')
         robotSupervisor.publishVelocity(robot1.speed,robot1.rotationSpeed)
     
     if (robot1.speed == 0.0):
-        #print(robot1.state.getrelease())
         robotSupervisor.publishGripper(robot1.state.getgrip(), robot1.state.getrelease())
     
-    robotSupervisor.publishLight(robot1.ledColor) # TODO: with condition, publish only when changed
+    robotSupervisor.publishLight(robot1.message.getledColor()) # TODO: with condition, publish only when changed
     # if(measure):
     #     end = time.time()
     #     with open("timeSRL.txt", "a", encoding="utf-8") as f:

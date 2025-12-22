@@ -100,21 +100,21 @@ while(True):
             elif color == "brown" and not any(msg[0] == msg_Stopper for msg in messageList):
                 messageList.append([msg_Stopper, xAbs, yAbs])
 
-        if messageList == []:                           # outdent for flocking
-            messageList.append([msg_nothing, 0, 0])
+    if messageList == []:                           # outdent for flocking
+        messageList.append([msg_nothing, 0, 0])
 
     # # EXTRA Flocking
-    # angle = robotSupervisor.getGlobalLightAngle() 
-    # dist = robotSupervisor.getGlobalLightDist()
-    # if angle != 0.0 and dist != 0.0:
-    #     xAbs, yAbs = getGlobalCoordinates(angle, dist) 
-    #     messageList.append([msg_GlobalLight, xAbs, yAbs])
+    angle = robotSupervisor.getGlobalLightAngle() 
+    dist = robotSupervisor.getGlobalLightDist()
+    if angle != 0.0 and dist != 0.0:
+        xAbs, yAbs = getGlobalCoordinates(angle, dist) 
+        messageList.append([msg_GlobalLight, xAbs, yAbs])
 
-    # if messageList != messageList_old:
-    #     print(json.dumps(messageList))
-    # messageList_old = messageList
+    if messageList != messageList_old:
+        print(json.dumps(messageList))
+    messageList_old = messageList
 
-        udpClientSocket.send(str.encode(json.dumps(messageList)+ "\n"))  # outdent for Flocking
+    udpClientSocket.send(str.encode(json.dumps(messageList)+ "\n"))  # outdent for Flocking
     blobs_old = blobs
     
     # end = time.time()

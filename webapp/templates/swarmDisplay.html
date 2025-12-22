@@ -112,6 +112,17 @@
         return s.color !== ""; 
     }
 
+    const messageColorMap = {
+        "Joiner": "green",
+        "Robot with Load": "yellow",
+        "Chainmember(Join)": "magenta",
+        "Joiner with Loading State": "white",
+        "nothing": "black",
+        "Leader": "purple",
+        "Deputy": "cyan",
+        "Follower": "orange"
+    };
+
     function unifyProperties(objects) {
 
         function collectProperties(object, unifiedObject) {
@@ -238,6 +249,12 @@
         }, 0);
     }
 
+    function mapMessageToColor(value) {
+        if (isValidColor(value)) return value;
+        if (messageColorMap[value]) return messageColorMap[value];
+        return null;
+}
+
     function generateOrUpdateTable(id, robotData) {
 
         const table = document.getElementById("robotTable") || (() => {
@@ -329,10 +346,11 @@
                 });
                 td.appendChild(ul);
             }
-            else if (isValidColor(value)){
+            else if (mapMessageToColor(value) !== null){
+                color = mapMessageToColor(value)
                 td.textContent = value;
-                td.style.background = value; 
-                if(value == "black"){
+                td.style.background = color; 
+                if(color == "black"){
                     td.style.color = "white"
                 }
             }

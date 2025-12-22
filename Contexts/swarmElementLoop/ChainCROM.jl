@@ -13,7 +13,6 @@ Base.:(==)(a::Position, b::Position) = a.x == b.x && a.y == b.y
 
 mutable struct Robot <: AbstractRobot
 	name::String
-	ip::Int64
 	load::Bool
 	goalReached::Bool
 	position::Position
@@ -24,14 +23,12 @@ end
 
 mutable struct PerceivedRobot <: AbstractRobot
 	name::String
-	ip::Int64
 	position::Position
 	load::Bool
 end
 
 mutable struct Object
 	id::Int64
-	weight::Int64
 end
 
 mutable struct DatafromSRL
@@ -66,10 +63,10 @@ end
 @newDynamicTeam ChainTeam begin
 	@IDAttribute ID::Int64
 	@role Successor << PerceivedRobot [0..1] begin	
-		transferpoint_release::Position
+		transferpointRelease::Position
 	end
 	@role Predecessor << PerceivedRobot [0..1] begin 
-		transferpoint_receive::Position
+		transferpointReceive::Position
 	end
 	@role Head << Robot <: ChainMemberType [0..1] begin end
 	@role Tail << Robot <: ChainMemberType [0..1] begin end
