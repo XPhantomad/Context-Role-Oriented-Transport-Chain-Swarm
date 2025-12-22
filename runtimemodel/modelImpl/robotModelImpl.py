@@ -28,12 +28,12 @@ class RobotImpl(Robot):
     # calculates and sets the forward and roation speed of the robot
     def calculateSpeeds(self, repulsion):
         ANGLE_TOLERANCE = 0.2 # TODO spielen
-        #MAX_SPEED = 0.6 #Transport chain
-        MAX_SPEED = 0.3 # Flocking
+        MAX_SPEED = 0.6 #Transport chain
+        #MAX_SPEED = 0.3 # Flocking
         MAX_SPEED_ROT = 1.0
         MIN_SPEED_ROT = 0.8
-        #MIN_SPEED = 0.3  # transport chain
-        MIN_SPEED = 0.1 # Flocking
+        MIN_SPEED = 0.3  # transport chain
+        #MIN_SPEED = 0.1 # Flocking
         GAIN = 0.2
         ANGLE_GAIN = 0.5 #0.05           
         
