@@ -18,7 +18,7 @@ for i in range(5):
     time.sleep(2)
     # start Swarm Element Loop
     threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/Contexts/swarmElementLoopFlocking/main.jl", robotName])).start()
-    time.sleep(7) # TODO: wait until ready
+    time.sleep(9) # TODO: wait until ready
     # start Single Robot Loop 
     threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName])).start()
     time.sleep(2)

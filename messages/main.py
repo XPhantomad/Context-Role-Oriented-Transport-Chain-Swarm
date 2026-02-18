@@ -55,7 +55,7 @@ def getGlobalCoordinates(blobAngle, blobDistance):
     return xAbs, yAbs
 
 blobs_old = []
-messageList_old = []
+
 # ##### MAPE-Loop
 while(True):
     #start = time.time()
@@ -102,17 +102,6 @@ while(True):
 
         if messageList == []:                           # outdent for flocking
             messageList.append([msg_nothing, 0, 0])
-
-    # # EXTRA Flocking
-    # angle = robotSupervisor.getGlobalLightAngle() 
-    # dist = robotSupervisor.getGlobalLightDist()
-    # if angle != 0.0 and dist != 0.0:
-    #     xAbs, yAbs = getGlobalCoordinates(angle, dist) 
-    #     messageList.append([msg_GlobalLight, xAbs, yAbs])
-
-    # if messageList != messageList_old:
-    #     print(json.dumps(messageList))
-    # messageList_old = messageList
 
         udpClientSocket.send(str.encode(json.dumps(messageList)+ "\n"))  # outdent for Flocking
     blobs_old = blobs

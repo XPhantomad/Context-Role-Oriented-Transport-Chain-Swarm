@@ -40,7 +40,7 @@ message_out_old = msg_nothing
 position_old = Position(0,0)
 t1 = 0
 
-
+# send message to the Single Robot Loop if required
 function sendMessage(position, state, message_out)
 	global message_out_old
 	global position_old
@@ -59,6 +59,7 @@ function sendMessage(position, state, message_out)
 	end
 end
 
+# send message to the central Web App if required
 function sendMessageToWebapp(pos, state, message_out)
 	if isopen(streamWebApp)
 		# Fallback for pos and led
@@ -97,6 +98,7 @@ function sendMessageToWebapp(pos, state, message_out)
 end
 
 
+# receive messages from the Single Robot Loop constantly
 Threads.@spawn while true
 	global datafromSRL, t1
     if isopen(sockSRL)
@@ -107,6 +109,7 @@ Threads.@spawn while true
 	sleep(0.1)
 end
 
+# receive messages from the Messages Component constantly
 Threads.@spawn while true
     global message_in
 	if isopen(sockMSG)
@@ -115,17 +118,16 @@ Threads.@spawn while true
 	sleep(0.1)
 end
 
+# main Loop: Triggers the execution of the MAPE-K Loop conditionally
 counter = 0
 while true
 	global datafromSRL_old, message_in_old, counter, t1, robotSelf, message_in, datafromSRL
 	if datafromSRL.goalReached || robotSelf.waiting
 		counter+=1
-		#println(counter)
 	end
-	if counter >= 100 || datafromSRL.goalReached != datafromSRL_old.goalReached || message_in[1][2] != message_in_old[1][2] || message_in[1][3] != message_in_old[1][3] || size(message_in) != size(message_in_old)
+	if counter >= 100 || datafromSRL.goalReached != datafromSRL_old.goalReached || message_in != message_in_old
 		robotSelf.waiting = false
 		
-		#println(message_in[1][2] != message_in_old[1][2])
 		goal = mapeLoop(datafromSRL, message_in, counter >= 100)
 		if goal !== nothing
 			sendMessage(goal[1], goal[2], goal[3])

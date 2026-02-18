@@ -46,16 +46,15 @@ udpClientSocket.connect(addrPort)
 def getAngleDif(a,b):
     return math.pi - abs(abs(a - b) - math.pi); 
 
-def getGlobalCoordinates(blobAngle, blobDistance):
+def getGlobalCoordinates(blobAngle, blobDistance, decimalPlace):
     angle = blobAngle + robotSupervisor.getTheta()
     yPos = math.sin(angle) * (blobDistance / 100)
     xPos = math.cos(angle) * (blobDistance / 100)
-    xAbs = round(robotSupervisor.getxPos() + xPos, 2)
-    yAbs = round(robotSupervisor.getyPos() + yPos, 2)
+    xAbs = round(robotSupervisor.getxPos() + xPos, decimalPlace)
+    yAbs = round(robotSupervisor.getyPos() + yPos, decimalPlace)
     return xAbs, yAbs
 
 blobs_old = []
-messageList_old = []
 # ##### MAPE-Loop
 while(True):
     #start = time.time()
@@ -77,7 +76,7 @@ while(True):
 
         # interpret the sorted blobs to messages
         for color, blob in filteredBlobs.items():
-            xAbs, yAbs = getGlobalCoordinates(blob.angle, blob.distance)
+            xAbs, yAbs = getGlobalCoordinates(blob.angle, blob.distance, 2)
 
             if color == "red":
                 messageList.append([msg_prey, xAbs, yAbs])
@@ -100,21 +99,18 @@ while(True):
             elif color == "brown" and not any(msg[0] == msg_Stopper for msg in messageList):
                 messageList.append([msg_Stopper, xAbs, yAbs])
 
-    if messageList == []:                           # outdent for flocking
+    if messageList == []:                           
         messageList.append([msg_nothing, 0, 0])
 
-    # # EXTRA Flocking
+    # EXTRA Flocking
     angle = robotSupervisor.getGlobalLightAngle() 
     dist = robotSupervisor.getGlobalLightDist()
     if angle != 0.0 and dist != 0.0:
-        xAbs, yAbs = getGlobalCoordinates(angle, dist) 
+        xAbs, yAbs = getGlobalCoordinates(angle, dist, 0) 
         messageList.append([msg_GlobalLight, xAbs, yAbs])
 
-    if messageList != messageList_old:
-        print(json.dumps(messageList))
-    messageList_old = messageList
+    udpClientSocket.send(str.encode(json.dumps(messageList)+ "\n"))  
 
-    udpClientSocket.send(str.encode(json.dumps(messageList)+ "\n"))  # outdent for Flocking
     blobs_old = blobs
     
     # end = time.time()

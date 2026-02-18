@@ -2,7 +2,8 @@ include("ChainCROM.jl")
 include("functions.jl")
 
 # Constants
-NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the prey light which is around 0.7
+NEST_AND_PREY_LOADING_RANGE = 0.5  # range, in with Load objects can be collected or unloaded at the prey or the nest respectively
+NEST_AND_PREY_NO_ROLE_CHANGE_RANGE = 0.85  # = Prey Light range = around 0.7
 MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
 ROBOT_PROXIMITY = 0.2	# distance to the detected light blob of the other robot sufficient for load transfer procedure 
 
@@ -15,7 +16,7 @@ msg_Joiner_Loading = "Joiner with Loading State"
 msg_nothing = "nothing"
 
 # Initials
-nest = Position(-3,1.2)
+nest = Position(-5,1.2)
 obj = Object(2)
 first_time = true
 
@@ -145,14 +146,14 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	end
 
 	# to close to nest --> skip role changes
-	if getDistance(robotSelf.position, nest) < (NEST_AND_PREY_LOADING_RANGE+0.15)
+	if getDistance(robotSelf.position, nest) < (NEST_AND_PREY_NO_ROLE_CHANGE_RANGE)
 		println("To close to nest")
 		open("time.txt", "a") do file
 			write(file, "to close to nest")
 		end
 
 	# robot is to close to prey --> skip role changes
-	elseif !timeout && getFirstTeam(robotSelf) !== nothing && getObjectsOfRole(getFirstTeam(robotSelf), Prey) != [] && getDistance(robotSelf.position, getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]) < (NEST_AND_PREY_LOADING_RANGE+0.15)
+	elseif !timeout && getFirstTeam(robotSelf) !== nothing && getObjectsOfRole(getFirstTeam(robotSelf), Prey) != [] && getDistance(robotSelf.position, getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]) < (NEST_AND_PREY_NO_ROLE_CHANGE_RANGE)
 		println("To close to prey")
 		open("time.txt", "a") do file
 			write(file, "to close to prey")
@@ -367,7 +368,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		end
 		
 	# Robot with load detected --> activate JoinChainTeam (if all constraints are fulfilled)
-	elseif !robotSelf.load && infoInMessage(message, msg_robotWithLoad)!=false && !hasRole(robotSelf, JoinChainMember, JoinChainTeam) && infoInMessage(message, msg_prey)==false
+	elseif !robotSelf.load && infoInMessage(message, msg_robotWithLoad)!=false && !hasRole(robotSelf, JoinChainMember, JoinChainTeam) && infoInMessage(message, msg_prey)==false && infoInMessage(message, msg_Joiner)==false
 		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_robotWithLoad), true) 
 		# IF Distance Robot to Nest >= Distance RobotwithLoad to Nest --> Robot is in wrong direction for Joining
 		if getDistance(robotSelf.position, nest)+MIN_TRANSFERPOINT_DISTANCE < getDistance(perceivedRobot.position, nest)
@@ -448,8 +449,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	#3. Plan ascertain the subsequent behavior based on the current state of the swarm runtime model
 
 	# 0 Exploration
-	areaPos1 = Position(3,0) # do not change to values<0 (otherwise tests may crash)
-	areaPos2 = Position(6,2) # do not change to values<0 (otherwise tests may crash)
+	areaPos1 = Position(11,0) # do not change to values<0 (otherwise tests may crash)
+	areaPos2 = Position(14,2) # do not change to values<0 (otherwise tests may crash)
 	if getRoles(robotSelf) === nothing
 		position = Position(rand(areaPos1.x:areaPos2.x),rand(areaPos1.y:areaPos2.y))
 		while getDistance(position, robotSelf.position) <= MIN_TRANSFERPOINT_DISTANCE
