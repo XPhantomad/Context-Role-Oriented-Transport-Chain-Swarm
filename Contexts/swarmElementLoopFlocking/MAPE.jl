@@ -1,9 +1,10 @@
 include("FlockingCROM.jl")
 include("functions.jl")
 
-# Constants
+# Constants for the following Distance and Offset
 xDist = 0.25
 yDist = 0.15
+
 # Message Types
 msg_Leader = "Leader"
 msg_Deputy = "Deputy"
@@ -15,6 +16,7 @@ msg_Stopper = "Stopper"
 function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing}, Union{String, Nothing}, Union{String, Nothing}}
 	global robotSelf
 	
+
 	# 1. Monitor State and behavior of the robot and write it into the model
 	# add Information from Single-Robot-Loop into robotSelf data structure
 	robotSelf.position.x=dataMiddle.x
@@ -23,6 +25,9 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	# ---------------------------------------
 
 	# 2. Analyse Messages and Robot Data (State) and change model accordingly 
+	if timeout 
+		println("timeout")
+	end
 
 	# Deputy detects Leader --> update --> Follow
 	if hasRole(robotSelf, Deputy, FlockingTeam) && infoInMessage(message, msg_Leader) != false
@@ -35,12 +40,12 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		end
 
 	# Follower detects Deputy --> update --> Follow
-	elseif hasRole(robotSelf, Follower, FlockingTeam) && infoInMessage(message, msg_Deputy) != false
-		#println("update follower role")
+	# additionally check, that no Follower is closer in heading direction than the perceived Deputy
+	elseif hasRole(robotSelf, Follower, FlockingTeam) && infoInMessage(message, msg_Deputy) != false && !(infoInMessage(message, msg_Follower) != false && getDistance(infoInMessage(message, msg_Follower), robotSelf.position) < getDistance(infoInMessage(message, msg_Deputy), robotSelf.position))
 		deputy = PerceivedRobot("deputy", infoInMessage(message, msg_Deputy))
 		#println(infoInMessage(message, msg_Deputy))
 		
-		# case 1: Robot followed a Follower before (no Deputy in the team)
+		# case 1: Robot followed a Follower before (no Deputy in the team) 
 		if isempty(getObjectsOfRole(getDynamicTeam(FlockingTeam, 1), Deputy))
 			robots = getObjectsOfRole(getDynamicTeam(FlockingTeam, 1), Follower)
 			for robot in robots 
@@ -87,7 +92,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		if getRoles(robotSelf) !== nothing
 			disassignRoles(FlockingTeam, 1)
 		end
-		#println("got deputy role")
+
 		leader = PerceivedRobot("leader", infoInMessage(message, msg_Leader))
 		@assignRoles FlockingTeam begin
 			name = 1
@@ -100,7 +105,6 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		if getRoles(robotSelf) !== nothing
 			disassignRoles(FlockingTeam, 1)
 		end
-		#println("got follower role2")
 		deputy = PerceivedRobot("deputy", infoInMessage(message, msg_Deputy))
 		@assignRoles FlockingTeam begin
 			name = 1
@@ -113,7 +117,6 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		if getRoles(robotSelf) !== nothing
 			disassignRoles(FlockingTeam, 1)
 		end
-		#println("got follower role1")
 		follower = PerceivedRobot("follower", infoInMessage(message, msg_Follower))
 		@assignRoles FlockingTeam begin
 			name = 1
@@ -121,12 +124,11 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			follower >> Follower()
 		end
 
-	# nothing detected --> assign itself as the leader --> drive in direction of the Global light
+	# nothing detected --> assign itself as the Leader --> drive in direction of the Global Light
 	elseif !hasRole(robotSelf, Leader, FlockingTeam) && (infoInMessage(message, msg_nothing) != false || infoInMessage(message, msg_Stopper) != false) && infoInMessage(message, msg_GlobalLigth) != false
 		if getRoles(robotSelf) !== nothing
 			disassignRoles(FlockingTeam, 1)
 		end
-		#println("got leader role")
 		goal = infoInMessage(message, msg_GlobalLigth)
 		@assignRoles FlockingTeam begin
 			name = 1
@@ -156,37 +158,27 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 
 		# return target position to stay in the Flock
 		if predecessorPos != nothing
-			println("follower exec")
-			# nothing is returned, if the following position is behind the current
-			targetPos = claculateFollowingPosition(predecessorPos)
-
+			targetPos = claculateFollowingPosition(predecessorPos) # returns nothing, if the next position is behind the current
 			return targetPos, "driving", msg_Follower
 		end
 	
 	# 2 Deputy
 	elseif hasRole(robotSelf, Deputy, FlockingTeam)
-		println("Deputy exec")
-
 		leaderPos = getObjectsOfRole(getDynamicTeam(FlockingTeam, 1), Leader)[1].position
 		targetPos = claculateFollowingPosition(leaderPos)
 		return targetPos, "driving", msg_Deputy
 
 		
-
 	# 3 Leader
 	elseif hasRole(robotSelf, Leader, FlockingTeam)
 		globalLightPos = getObjectsOfRole(getDynamicTeam(FlockingTeam, 1), Goal)[1]
 		
 		# SPECIAL: Stopper condition: Wait until all robots are started --> Stopper will be removed by hand
 		if infoInMessage(message, msg_Stopper)!= false
-			println("stopped")
 			return nothing, "waiting", msg_Leader
 		end
-		println("normal leading behavior")
 		# normal leader behavior
 		return globalLightPos, "leading", msg_Leader
-
 	end
-
 end
 
