@@ -180,7 +180,7 @@
     <qt-opengl>
       <camera>
         <placements>
-          <placement index="0" position="0,0,8.14689" look_at="0,0,0" up="1,0,0" lens_focal_length="65" />
+          <placement index="0" position="-1.19055,-5.80947,6.80955" look_at="-0.952028,-5.20494,6.04952" up="0.278943,0.70699,0.649889" lens_focal_length="65" />
         </placements>
       </camera>
       <user_functions library="build/argos3_ros2_bridge/plugins/loop_functions/foraging_loop_functions/libforaging_qt_user_functions.so"
