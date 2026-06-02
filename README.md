@@ -43,8 +43,8 @@ Verify Installation
 - https://coral.ise.lehigh.edu/jild13/2016/07/11/hello/
     - ```sudo apt-get install libgsl-dev```
     - Download gsl-latest.tar.gz (in Folder *DownloadedPackages*)
-    - ```tar -zxvf gsl-*.*.tar.gz```
-    - ```cd gsl-1.7```
+    - ```tar -zxvf gsl-latest.tar.gz```
+    - ```cd gsl-2.8```
     - ```mkdir /home/yourname/gsl```
     - ```./configure --prefix=/home/yourname/gsl```
     - ```make``` (takes a while)
