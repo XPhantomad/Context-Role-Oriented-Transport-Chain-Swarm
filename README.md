@@ -45,8 +45,8 @@ Verify Installation
     - Download gsl-latest.tar.gz (in Folder *DownloadedPackages*)
     - ```tar -zxvf gsl-latest.tar.gz```
     - ```cd gsl-2.8```
-    - ```mkdir /home/yourname/gsl```
-    - ```./configure --prefix=/home/yourname/gsl```
+    - ```mkdir /home/[yourname]/gsl```
+    - ```./configure --prefix=/home/[yourname]/gsl```
     - ```make``` (takes a while)
     - ```make check```
     - ```make install```
