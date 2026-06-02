@@ -50,7 +50,7 @@ Verify Installation
     - ```make``` (takes a while)
     - ```make check```
     - ```make install```
-    - ```'export LD_LIBRARY_PATH=*/path/to/library*:$LD_LIBRARY_PATH' >> ~/.bashrc ```
+    - ```'export LD_LIBRARY_PATH=/home/[yourname]/gsl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc ```
 
 ## Install Application
 - ```git clone git@github.com:XPhantomad/Context-Role-Oriented-Transport-Chain-Swarm.git ```
