@@ -1,8 +1,58 @@
-# Context-Role-Oriented-Transport-Chain-Swarm
+# Using Context Role-oriented Programming for Swarms to Alleviate the Micro-Macro Problem
 
+This repository contains the code of our implmentation of a Foraging Chain Swarm in ARGoS3 using Context-Role-Oriented Programming.
+
+The overall system is comprised of multiple subsystems, which have to be installed and started independently. 
+
+We use ROS2 Jazzy, which is only easy to install if you follow the version restrictions for the underlying Linux. 
+In terms of performance, we encourage to install <b>Ubuntu 24.04 (not 24.10 or the latest version)</b> bare-bones, i.e., not in a virtual machine.
+Using a virtual machine is possible, but degrades performance considerably.
+
+A detailed description of how to install ROS2 on your system can be found [here](https://docs.ros.org/en/jazzy/Installation.html).
+
+Besides ROS2, we use ARGoS3 as simulator. Instructions on how to install the simulator can be found below.
+
+Our prototype is comprised of five main parts in the following subdirectories:
+
+- Contexts: contains the implementation of the <b>Swarm Element Loop</b> using [Contexts.jl](https://github.com/cgutsche/Contexts.jl)
+- rosWorkspace: contains the implementation of the [ROS2-ARGoS3 bridge](https://github.com/einstein07/collective-decision-making-argos-ros2) including the UI extensions for our example (e.g., showing the names of the robots in ARGoS3)
+- runtime model: contains the single robot loop implemented in Python using PyEcore for the runtime model
+- messages: contains the messages component responsible to process the monitored sensor values from the robots and to pass them to the swarm element loop
+- webapp: contains the dashboard to observe the overall system
+
+The runtime model, messages and webapp components all use Python and require an own Python Environment to install the required dependencies.
+The Contexts component requires Julia to be installed.
+
+## Demo
+
+Short Teaser: [Watch the video](https://youtu.be/W2dG7L7vDxQ)
+
+Explanation: [Watch the video](https://youtu.be/M2knKsVhV9w)
 
 ## Quickstart with Docker
 
+- install Docker
+
+### Transport Chain Swarm
+
+- ```git clone git@github.com:XPhantomad/Context-Role-Oriented-Transport-Chain-Swarm.git ```
+- move to "rosWorkspace" and run ``` sudo docker build -t argos3-ros2-tchain . ```
+- wait until image is ready
+- run the run.sh in the main folder with sudo
+- open http://localhost:5000/ in your browser to see the swarm dashboard
+
+### Flocking Swarm
+
+- (it can be necessary to delete the first created image, because otherwise only a new tag for this image will be added)
+- checkout the "flocking" branch of the repository
+- move to "rosWorkspace" and run ``` sudo docker build -t argos3-ros2-flocking . ```
+- run the run.sh in the main folder with sudo
+- open http://localhost:5000/ in your browser to see the swarm dashboard
+
+### Publish Image
+
+- Change Tag of the Image: ``` sudo docker tag [ID] xphantomad/crom-v-shape-flocking:latest ```
+- Push Image: ``` sudo docker image push xphantomad/crom-v-shape-flocking:latest ```
 
 
 ## System Requirements
