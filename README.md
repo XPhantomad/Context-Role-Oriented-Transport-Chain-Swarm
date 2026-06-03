@@ -30,7 +30,7 @@
     3. Now create a new symlink with name libglut.so.3 which points to libglut.so.3.12.0:
 
         ```ln -s libglut.so.3.12.0 libglut.so.3```
-- Download argos3_simulator-3.0.0-x86_64-beta59.deb (in Folder *DownloadedPackages*)
+- Download argos3_simulator-3.0.0-x86_64-beta59.deb (in Folder *Dependencies*)
 - ```sudo apt install ./argos3_simulator-3.0.0-x86_64-beta59.deb```
 
 Verify Installation
@@ -42,7 +42,7 @@ Verify Installation
 
 - https://coral.ise.lehigh.edu/jild13/2016/07/11/hello/
     - ```sudo apt-get install libgsl-dev```
-    - Download gsl-latest.tar.gz (in Folder *DownloadedPackages*)
+    - Download gsl-latest.tar.gz (in Folder *Dependencies*)
     - ```tar -zxvf gsl-latest.tar.gz```
     - ```cd gsl-2.8```
     - ```mkdir /home/[yourname]/gsl```
