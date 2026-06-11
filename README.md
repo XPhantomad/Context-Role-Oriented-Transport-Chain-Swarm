@@ -110,8 +110,9 @@ Verify Installation
 - ```chmod +x ./Flocking_removeStopper.sh```
 
 ### Setup Simulation
-- copy the content of the "rosWorkspace" folder in your ```ros_ws``` directory
-- in the directory ```ros_ws```:
+- in your "home" folder: mkdir ros_ws
+- copy the content of the "rosWorkspace" folder in your ```ros_ws``` folder:
+- in the folder ```ros_ws```:
     - ```source /opt/ros/jazzy/setup.bash```
     - in src/argos3-ros2-bridge/CMakeLists.txt comment out line 60: ```add_subdirectory(plugins)``` for the first build
     - in ros_ws directory run: ```colcon build --packages-select argos3_ros2_bridge```
