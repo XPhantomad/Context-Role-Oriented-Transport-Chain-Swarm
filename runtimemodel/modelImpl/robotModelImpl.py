@@ -2,6 +2,7 @@ import math
 
 import numpy as np
 from model.robotModel import *
+import configparser
 
 class RobotImpl(Robot):    
     def __init__(self, xPos=0.0, yPos=0.0, zPos = 0.0, xTarget=0.0, yTarget=0.0, name = "newRobot", id=12, goalReached = True, theta = 0.0, load=False, proximity=False):
@@ -27,15 +28,19 @@ class RobotImpl(Robot):
 
     # calculates and sets the forward and roation speed of the robot
     def calculateSpeeds(self, repulsion):
-        ANGLE_TOLERANCE = 0.2 # TODO spielen
-        MAX_SPEED = 0.6 #Transport chain
+
+        config = configparser.ConfigParser()
+        config.read("config.ini")
+
+        ANGLE_TOLERANCE = float(config["SRL"]["angleTolerance"]) # TODO spielen
+        MAX_SPEED = float(config["SRL"]["maxSpeed"]) #Transport chain
         #MAX_SPEED = 0.3 # Flocking
-        MAX_SPEED_ROT = 1.0
-        MIN_SPEED_ROT = 0.8
-        MIN_SPEED = 0.3  # transport chain
+        MAX_SPEED_ROT = float(config["SRL"]["maxSpeedRot"]) 
+        MIN_SPEED_ROT = float(config["SRL"]["minSpeedRot"]) 
+        MIN_SPEED = float(config["SRL"]["minSpeed"])   # transport chain
         #MIN_SPEED = 0.1 # Flocking
-        GAIN = 0.2
-        ANGLE_GAIN = 0.5 #0.05           
+        GAIN = float(config["SRL"]["gain"]) 
+        ANGLE_GAIN = float(config["SRL"]["angleGain"])  #0.05           
         
         distanceToTarget = self.geDistanceToTarge()
 

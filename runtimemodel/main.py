@@ -7,6 +7,7 @@ import socket
 from modelImpl.robotModelImpl import *
 import re
 import sys
+import configparser
 
 # cli arguments for robot name
 name = sys.argv[1]
@@ -19,8 +20,15 @@ bufferSize = 1024
 HOST = "127.0.0.1"  
 PORT = 2000+int(number[0])*2 # Port to listen on (non-privileged ports are > 1023)
 addrPort = (HOST,PORT)
-DIST_TOLERANCE = 0.15  # Distance tolerance for defining the goal as reached
-DIST_LOADING = 0.3  
+
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+# Access values
+DIST_TOLERANCE = float(config["SRL"]["goalReachedTolerance"])
+DIST_LOADING = float(config["SRL"]["loadingTolerance"])
+
 
 # receives Messages from the Swarm Element Loop
 def receiveMessages():
@@ -58,7 +66,7 @@ print("Staaaart")
 
 
 waiting = StateImpl(1, "waiting", 0.0)
-driving = StateImpl(2, "driving", 1.0)  # 5.0 for Flocking ; 1.0 for Transport Chain
+driving = StateImpl(2, "driving", float(config["SRL"]["drivingSpeed"]))  # 5.0 for Flocking ; 1.0 for Transport Chain
 leading = StateImpl(3, "leading", 0.5)  
 load = StateImpl(5, "load", 0.0, True, False)
 unload = StateImpl(6, "unload", 0.0, False, True)

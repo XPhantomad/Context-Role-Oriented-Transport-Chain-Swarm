@@ -6,6 +6,9 @@ NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the pre
 MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
 ROBOT_PROXIMITY = 0.2	# distance to the detected light blob of the other robot sufficient for load transfer procedure 
 
+EXPLORATION_POS1 = Position(3.0, 0.0) # do not change to values<0 (otherwise tests may crash)
+EXPLORATION_POS2 = Position(6.0, 2.0) 
+
 # Message Types
 msg_Joiner = "Joiner"
 msg_robotWithLoad = "Robot with Load"
@@ -15,7 +18,7 @@ msg_Joiner_Loading = "Joiner with Loading State"
 msg_nothing = "nothing"
 
 # Initials
-nest = Position(-3,1.2)
+nest = Position(-1.0,1.2)
 obj = Object(2)
 first_time = true
 
@@ -129,7 +132,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 
 	#2. Analyse Messages and Robot Data (State) and change swarm runtime model accordingly 
 
-	println(getFirstTeam(robotSelf))
+	#println(getFirstTeam(robotSelf))
 	if timeout
 		println("timeout incoming")
 		robotSelf.goalGiven = false
@@ -289,7 +292,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			@changeRoles ChainTeam 3 begin
 				robotSelf >> Tail()
 				# SPECIAL: only necessary if the robot has no Chain Role before
-				getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), Load)[1] >> Load()
+				#getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), Load)[1] >> Load()
 			end
 		end
 		# robot returns from Nest and finds other Robot with Load -> do nothing -> except of the 3 standard role changes in this case
@@ -448,13 +451,13 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	#3. Plan ascertain the subsequent behavior based on the current state of the swarm runtime model
 
 	# 0 Exploration
-	areaPos1 = Position(3,0) # do not change to values<0 (otherwise tests may crash)
-	areaPos2 = Position(6,2) # do not change to values<0 (otherwise tests may crash)
+	areaPos1 = EXPLORATION_POS1
+	areaPos2 = EXPLORATION_POS2
 	if getRoles(robotSelf) === nothing
 		position = Position(rand(areaPos1.x:areaPos2.x),rand(areaPos1.y:areaPos2.y))
 		while getDistance(position, robotSelf.position) <= MIN_TRANSFERPOINT_DISTANCE
 			position = Position(rand(areaPos1.x:areaPos2.x),rand(areaPos1.y:areaPos2.y))
-			println("same Position")
+			#println("same Position")
 		end
 		println("drive randomly "*string(position))
 		open("time.txt", "a") do file
@@ -522,7 +525,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 
 	# Any goal reached --> waiting
 	elseif robotSelf.goalReached
-		println("Roles: " * string(keys(getRoles(robotSelf)[nothing])) * " wait")
+		#println("Roles: " * string(keys(getRoles(robotSelf)[nothing])) * " wait")
 		robotSelf.waiting = true
 		#load at the prey
 		if !robotSelf.load && (hasRole(robotSelf, ChainMember, SingleRobotChainTeam) || hasRole(robotSelf, Head, ChainTeam))
