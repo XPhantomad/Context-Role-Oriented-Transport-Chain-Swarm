@@ -158,13 +158,13 @@ Verify Installation
     - quit application
 
 ## Run Transport Chain Swarm Application
-### Run Simulation 
+### Part1: Run the simulation 
 - in "~/ros_ws" run: 
     - ```source install/setup.bash```
     - ```argos3 -c transportChainSwarm.argos```
     - start simulation by clicking the **play** button
 
-### Run Robots via Startup Script
+### Part2: Run Robot Controllers via Startup Script
 - in "Context-Role-Oriented-Transport-Chain-Swarm" folder run:
     - ```source ~/ros_ws/install/setup.bash```
     - ```source ./startup/bin/activate```

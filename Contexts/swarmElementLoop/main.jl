@@ -112,7 +112,7 @@ function sendMessageToWebapp(pos, state, message_out)
 	end
 end
 
-
+# SRL Component incoming messages handling
 Threads.@spawn while true
 	global datafromSRL, t1
     if isopen(sockSRL)
@@ -123,6 +123,7 @@ Threads.@spawn while true
 	sleep(0.1)
 end
 
+# Messages Component incoming messages handling
 Threads.@spawn while true
     global message_in
 	if isopen(sockMSG)
@@ -132,6 +133,7 @@ Threads.@spawn while true
 end
 
 counter = 0
+# Initial Checks Loop 
 while true
 	global datafromSRL_old, message_in_old, counter, t1, robotSelf, message_in, datafromSRL
 	if datafromSRL.goalReached || robotSelf.waiting
