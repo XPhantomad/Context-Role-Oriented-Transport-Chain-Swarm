@@ -7,6 +7,9 @@ import configparser
 class RobotImpl(Robot):    
     def __init__(self, xPos=0.0, yPos=0.0, zPos = 0.0, xTarget=0.0, yTarget=0.0, name = "newRobot", id=12, goalReached = True, theta = 0.0, load=False, proximity=False):
         super().__init__(xPos, yPos, zPos, id, name,xTarget,yTarget, goalReached, theta, None, 0.0, 0.0, load, proximity)
+        self.config = configparser.ConfigParser()
+        self.config.read("config.ini")
+        print(self.config["SRL"]["angleTolerance"])
     
     def setPos(self, x, y,z, theta):
         self.xPos =x
@@ -29,18 +32,15 @@ class RobotImpl(Robot):
     # calculates and sets the forward and roation speed of the robot
     def calculateSpeeds(self, repulsion):
 
-        config = configparser.ConfigParser()
-        config.read("config.ini")
-
-        ANGLE_TOLERANCE = float(config["SRL"]["angleTolerance"]) # TODO spielen
-        MAX_SPEED = float(config["SRL"]["maxSpeed"]) #Transport chain
+        ANGLE_TOLERANCE = float(self.config["SRL"]["angleTolerance"]) # TODO spielen
+        MAX_SPEED = float(self.config["SRL"]["maxSpeed"]) #Transport chain
         #MAX_SPEED = 0.3 # Flocking
-        MAX_SPEED_ROT = float(config["SRL"]["maxSpeedRot"]) 
-        MIN_SPEED_ROT = float(config["SRL"]["minSpeedRot"]) 
-        MIN_SPEED = float(config["SRL"]["minSpeed"])   # transport chain
+        MAX_SPEED_ROT = float(self.config["SRL"]["maxSpeedRot"]) 
+        MIN_SPEED_ROT = float(self.config["SRL"]["minSpeedRot"]) 
+        MIN_SPEED = float(self.config["SRL"]["minSpeed"])   # transport chain
         #MIN_SPEED = 0.1 # Flocking
-        GAIN = float(config["SRL"]["gain"]) 
-        ANGLE_GAIN = float(config["SRL"]["angleGain"])  #0.05           
+        GAIN = float(self.config["SRL"]["gain"]) 
+        ANGLE_GAIN = float(self.config["SRL"]["angleGain"])  #0.05           
         
         distanceToTarget = self.geDistanceToTarge()
 

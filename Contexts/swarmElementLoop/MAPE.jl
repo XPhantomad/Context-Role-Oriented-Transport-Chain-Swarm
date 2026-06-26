@@ -6,8 +6,8 @@ NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the pre
 MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
 ROBOT_PROXIMITY = 0.2	# distance to the detected light blob of the other robot sufficient for load transfer procedure 
 
-EXPLORATION_POS1 = Position(3.0, 0.0) # do not change to values<0 (otherwise tests may crash)
-EXPLORATION_POS2 = Position(6.0, 2.0) 
+EXPLORATION_POS1 = Position(1.0, -1.0) # do not change to values<0 (otherwise tests may crash)
+EXPLORATION_POS2 = Position(6.0, 3.0) 
 
 # Message Types
 msg_Joiner = "Joiner"
