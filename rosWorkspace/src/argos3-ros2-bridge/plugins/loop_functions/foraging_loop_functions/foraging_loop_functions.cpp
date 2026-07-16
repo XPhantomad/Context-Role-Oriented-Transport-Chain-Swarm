@@ -15,7 +15,6 @@ CForagingLoopFunctions::CForagingLoopFunctions() :
    m_unCollectedFood(0),
    m_nEnergy(0),
    m_unEnergyPerFoodItem(1),
-   m_preyPosition(5,1),
    m_unEnergyPerWalkingRobot(1) {
 }
 
@@ -33,11 +32,18 @@ void CForagingLoopFunctions::Init(TConfigurationNode& t_node) {
       /* Get the number of food items we want to be scattered from XML */
       GetNodeAttribute(tForaging, "radius", m_fFoodSquareRadius);
       m_fFoodSquareRadius *= m_fFoodSquareRadius;
+      
+      /* Get prey position */
+      float xPos, yPos;	
+      GetNodeAttribute(tForaging, "xpos", xPos);
+      GetNodeAttribute(tForaging, "ypos", yPos);
+      m_preyPosition = CVector2(xPos, yPos);
+
       /* Create a new RNG */
       m_pcRNG = CRandom::CreateRNG("argos");
       /* Distribute uniformly the items in the environment */
       for(UInt32 i = 0; i < unFoodItems; ++i) {
-         m_cFoodPos.push_back(m_preyPosition);
+         m_cFoodPos.push_back(CVector2(xPos, yPos));
       }
    }
    catch(CARGoSException& ex) {
@@ -136,7 +142,7 @@ void CForagingLoopFunctions::PreStep() {
          /* Otherwise place the food item under the robot on the ground so that joiner can load it" */
          if (sFoodData.Unload) {
             /* Place food item on the ground */
-            if (cPos.GetX() <= -2.5) {
+            if (cPos.GetX() <= -0.7) {
               m_cFoodPos[sFoodData.FoodItemIdx].Set(m_preyPosition.GetX(), m_preyPosition.GetY());
             }
             else {

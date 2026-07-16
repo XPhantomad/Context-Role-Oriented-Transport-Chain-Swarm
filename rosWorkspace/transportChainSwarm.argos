@@ -59,7 +59,7 @@
       <sensors>
         <positioning implementation="default" />
         <colored_blob_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="true" />
-        <footbot_proximity implementation="default" show_rays="true" />
+        <footbot_proximity implementation="default" show_rays="false" />
       </sensors>
       
       <params stopWithoutSubscriberCount="20000" />
@@ -74,6 +74,8 @@
                   label="foraging_loop_functions">
     <foraging items="10"
               radius="0.2"
+              xpos="5"
+              ypos="1"
               energy_per_item="1000"
               energy_per_walking_robot="1"
               output="foraging.txt" />
@@ -104,11 +106,7 @@
            pixels_per_meter="50" />
 
     <!-- Place a foot-bot in the origin and bind it to the controller -->
-
-    <!--foot-bot id="Prey">
-      <body position="4,1,0" orientation="0,0,0" />
-      <controller config="lrb"/>
-    </foot-bot-->
+    
     <light id="Prey"
            position="5,1,0.2"
            orientation="0,0,0"
@@ -127,9 +125,9 @@
     </foot-bot-->
 
     <distribute>
-      <position method="uniform" min="-2.5,-2,0" max="3,1,0" />
+      <position method="uniform" min="0,-2,0" max="3,3,0" />
       <orientation method="uniform" min="0,0,0" max="360,0,0" />
-      <entity quantity="4" max_trials="100">
+      <entity quantity="5" max_trials="100">
         <foot-bot id="fb_">
           <controller config="lrb" />
         </foot-bot>
@@ -187,7 +185,7 @@
     <qt-opengl>
       <camera>
         <placements>
-          <placement index="0" position="-4.52034,-5.19179,8.04759" look_at="-4.07464,-4.65656,7.33004" up="0.459163,0.551402,0.696509" lens_focal_length="55" />
+          <placement index="0" position="-3.12877,-3.57022,6.10413" look_at="-2.64795,-3.0625,5.38926" up="0.491555,0.51905,0.699257" lens_focal_length="65" />
         </placements>
       </camera>
       <user_functions library="build/argos3_ros2_bridge/plugins/loop_functions/foraging_loop_functions/libforaging_qt_user_functions.so"
