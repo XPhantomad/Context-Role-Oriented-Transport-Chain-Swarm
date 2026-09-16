@@ -114,7 +114,7 @@
            intensity="1.0"
            medium="leds" />
     <light id="Nest"
-           position="-3,1.2,0.2"
+           position="-1,1.2,0.2"
            orientation="0,0,0"
            color="orange"
            intensity="1.0"
