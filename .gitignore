@@ -41,3 +41,5 @@ Generator/__pycache__/
 robotModel/
 geckodriver.log
 
+.mcp.json
+.vscode/mcp.json
