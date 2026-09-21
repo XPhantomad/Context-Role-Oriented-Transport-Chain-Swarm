@@ -1,5 +1,11 @@
 # Using Context Role-oriented Programming for Swarms to Alleviate the Micro-Macro Problem
 
+**Transport Chain Swarm:** [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb)
+
+**Flocking Swarm:** [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb)
+
+#
+
 This repository contains the code of our implmentation of a Foraging Chain Swarm in ARGoS3 using Context-Role-Oriented Programming.
 
 The overall system is comprised of multiple subsystems, which have to be installed and started independently. 
@@ -28,6 +34,11 @@ The Contexts component requires Julia to be installed.
 Short Teaser: [Watch the video](https://youtu.be/W2dG7L7vDxQ)
 
 Explanation: [Watch the video](https://youtu.be/M2knKsVhV9w)
+
+## Quickstart VRB-EASE Lab
+
+- open the Virtual Research Building EASE Lab of the [Context Role-oriented Transport Chain Swarm](https://vrb.ease-crc.org/explore-labs/cromms-self-organized-transport-chain-swarm/) and explore the content
+- or launch the Lab directly via the binder icon above
 
 ## Quickstart with Docker
 
@@ -192,7 +203,7 @@ Verify Installation
     - Strg+b d  (to detach from tmux)
     - run ```tmux kill-server``` in cli
 
-## Run the Flocking Example
+## Run the V-Shape Flocking Application
 
 ### Run Flocking Simulation
 
