@@ -18,7 +18,7 @@ for i in range(4):
     threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/Contexts/swarmElementLoop/main.jl", robotName])).start()
     time.sleep(15) # TODO: wait until ready
     # start Single Robot Loop 
-    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName])).start()
+    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName, "configTransportChain.ini"])).start()
     time.sleep(2)
     # start Messages Component
     threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messages/main.py", robotName])).start()

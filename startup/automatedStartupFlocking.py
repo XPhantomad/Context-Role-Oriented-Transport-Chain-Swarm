@@ -20,7 +20,7 @@ for i in range(5):
     threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/Contexts/swarmElementLoopFlocking/main.jl", robotName])).start()
     time.sleep(7) # TODO: wait until ready
     # start Single Robot Loop 
-    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName])).start()
+    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName, "configFlocking.ini"])).start()
     time.sleep(2)
     # start Messages Component
     threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messages/mainFlocking.py", robotName])).start()

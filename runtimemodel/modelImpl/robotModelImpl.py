@@ -5,11 +5,13 @@ from model.robotModel import *
 import configparser
 
 class RobotImpl(Robot):    
-    def __init__(self, xPos=0.0, yPos=0.0, zPos = 0.0, xTarget=0.0, yTarget=0.0, name = "newRobot", id=12, goalReached = True, theta = 0.0, load=False, proximity=False):
+    def __init__(self, xPos=0.0, yPos=0.0, zPos = 0.0, xTarget=0.0, yTarget=0.0, name = "newRobot", id=12, config=None, goalReached = True, theta = 0.0, load=False, proximity=False):
         super().__init__(xPos, yPos, zPos, id, name,xTarget,yTarget, goalReached, theta, None, 0.0, 0.0, load, proximity)
-        self.config = configparser.ConfigParser()
-        self.config.read("config.ini")
-        print(self.config["SRL"]["angleTolerance"])
+        if not config:
+            raise ValueError('No Config file given')
+        self.config = config #configparser.ConfigParser()
+        #self.config.read("config.ini")
+        #print(self.config["SRL"]["angleTolerance"])
     
     def setPos(self, x, y,z, theta):
         self.xPos =x

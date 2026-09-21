@@ -13,6 +13,8 @@ import configparser
 name = sys.argv[1]
 number = re.findall(r'\d+', name)   
 
+configFile = str(sys.argv[2])
+
 global addr, udpClientSocket, bufferSize
 addr = None
 start = False
@@ -23,7 +25,7 @@ addrPort = (HOST,PORT)
 
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read(configFile)
 
 # Access values
 DIST_TOLERANCE = float(config["SRL"]["goalReachedTolerance"])
@@ -84,7 +86,7 @@ msg_Deputy = MsgImpl(8, "Deputy", "cyan")
 msg_Follower = MsgImpl(9, "Follower", "orange")
 
 model = ModelImpl(None, [waiting, driving, leading, load, unload], [msg_joiner, msg_robotWithLoad, msg_Chainmember, msg_joinerLoading, msg_nothing, msg_Leader, msg_Deputy, msg_Follower])
-robot1=RobotImpl(0.0, 0.0, 0.0,0.0, 0.0, name, 1)
+robot1=RobotImpl(0.0, 0.0, 0.0,0.0, 0.0, name, 1, config)
 robot1.setstate(waiting)
 robot1.setmessage(msg_nothing)
 model.addRobot(robot1)
