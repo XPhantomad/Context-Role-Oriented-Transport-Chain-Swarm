@@ -1,8 +1,9 @@
 # Using Context Role-oriented Programming for Swarms to Alleviate the Micro-Macro Problem
 
-**Transport Chain Swarm:** [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb)
-
-**Flocking Swarm:** [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb)
+| Use-Case | VRB-EASE Lab| Icon |
+|------|------------|------------------|
+|**Transport Chain Swarm:**| [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb) |![Icon](documentation/Icon-TransportAnts.svg)|
+|**V-Shape Flocking Swarm:**| [![Binder](https://binder.intel4coro.de/badge_logo.svg)](https://binder.intel4coro.de/v2/gh/XPhantomad/VRB-CROM-TransportChainSwarm2/main?urlpath=lab/tree/notebooks/instructions.ipynb)| ![Icon](documentation/Icon-FlockingBirds.svg)| 
 
 #
 
