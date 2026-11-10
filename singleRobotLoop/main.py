@@ -117,7 +117,7 @@ while(True):
     #     oldTime = round(start)
     #     measure = True
     #Monitor
-    robot1.setPos(robotSupervisor.getxPos(), robotSupervisor.getyPos(),robotSupervisor.getzPos(), robotSupervisor.getTheta())
+    robot1.setPos(round(robotSupervisor.getxPos(),2), round(robotSupervisor.getyPos(),2),robotSupervisor.getzPos(), robotSupervisor.getTheta())
     robot1.setLoad(robotSupervisor.getLoad())
     repulsion = robotSupervisor.getv_repulsion()
 

@@ -154,8 +154,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "to close to nest")
 		end
 
-	# robot is to close to prey --> skip role changes
-	elseif !timeout && getFirstTeam(robotSelf) !== nothing && getObjectsOfRole(getFirstTeam(robotSelf), Prey) != [] && getDistance(robotSelf.position, getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]) < (NEST_AND_PREY_LOADING_RANGE+0.15)
+	# robot is to close to prey AND has load --> skip role changes
+	elseif !timeout && getFirstTeam(robotSelf) !== nothing && robotSelf.load && getObjectsOfRole(getFirstTeam(robotSelf), Prey) != [] && getDistance(robotSelf.position, getObjectsOfRole(getFirstTeam(robotSelf), Prey)[1]) < (NEST_AND_PREY_LOADING_RANGE+0.15)
 		println("To close to prey")
 		open("time.txt", "a") do file
 			write(file, "to close to prey")

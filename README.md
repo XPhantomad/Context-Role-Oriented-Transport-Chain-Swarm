@@ -253,7 +253,7 @@ Verify Installation
 
 ## Change Robot Number in Simulation
 - in your "rosWorkspace" change the following parameters
-- in "rosWorkspace_/bridge_example.argos":
+- in "rosWorkspace/bridge_example.argos":
     - change ```position``` of the Prey light (position = x,y,z)
     - change the distributioin of robots by adjusting the ```<position>``` min and max Positions and the ```<entity>``` quantity
     ```html
