@@ -17,13 +17,13 @@ for i in range(5):
     print("start " + robotName)
     time.sleep(2)
     # start Swarm Element Loop
-    threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/Contexts/swarmElementLoopFlocking/main.jl", robotName])).start()
+    threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/swarmElementLoop/flocking/main.jl", robotName])).start()
     time.sleep(7) # TODO: wait until ready
     # start Single Robot Loop 
-    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName, "configFlocking.ini"])).start()
+    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/singleRobotLoop/main.py", robotName, "configFlocking.ini"])).start()
     time.sleep(2)
     # start Messages Component
-    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messages/mainFlocking.py", robotName])).start()
+    threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messagesComponent/mainFlocking.py", robotName])).start()
     time.sleep(2)
 
 threading.Thread(target=lambda: subprocess.run([os.getcwd() + "/Flocking_removeStopper.sh"])).start()

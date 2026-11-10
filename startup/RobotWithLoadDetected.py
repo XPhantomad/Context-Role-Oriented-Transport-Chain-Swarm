@@ -30,11 +30,11 @@ class testGoalAdaption(unittest.TestCase):
 
         threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/webapp/swarmDisplay.py"])).start()
         time.sleep(1)
-        threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/Contexts/swarmElementLoop/main.jl", robotName])).start()
+        threading.Thread(target=lambda: subprocess.run(["julia", os.getcwd() + "/swarmElementLoop/transportChain/main.jl", robotName])).start()
         time.sleep(10)   
-        threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/runtimemodel/main.py", robotName])).start()
+        threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/singleRobotLoop/main.py", robotName])).start()
         time.sleep(1)
-        threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messages/main.py", robotName])).start()
+        threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/messagesComponent/main.py", robotName])).start()
         
         rclpy.init(args=None)
         self.rosNode = TestROSSupervisor(robotName)

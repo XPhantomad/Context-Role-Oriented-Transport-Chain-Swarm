@@ -21,14 +21,14 @@ Besides ROS2, we use ARGoS3 as simulator. Instructions on how to install the sim
 
 Our prototype is comprised of five main parts in the following subdirectories:
 
-- Contexts: contains the implementation of the <b>Swarm Element Loop</b> using [Contexts.jl](https://github.com/cgutsche/Contexts.jl)
+- swarmElementLoop: contains the implementation of the <b>Swarm Element Loop</b> using [Contexts.jl](https://github.com/cgutsche/Contexts.jl)
 - rosWorkspace: contains the implementation of the [ROS2-ARGoS3 bridge](https://github.com/einstein07/collective-decision-making-argos-ros2) including the UI extensions for our example (e.g., showing the names of the robots in ARGoS3)
-- runtime model: contains the single robot loop implemented in Python using PyEcore for the runtime model
-- messages: contains the messages component responsible to process the monitored sensor values from the robots and to pass them to the swarm element loop
+- singleRobotLoop: contains the <b>Single Robot Loop</b> implemented in Python using PyEcore for the runtime model
+- messagesComponent: contains the <b>Messages Component</b> responsible to process the monitored sensor values from the robots and to pass them to the swarm element loop
 - webapp: contains the dashboard to observe the overall system
 
-The runtime model, messages and webapp components all use Python and require an own Python Environment to install the required dependencies.
-The Contexts component requires Julia to be installed.
+The singleRobotLoop, messages and webapp components all use Python and require an own Python Environment to install the required dependencies.
+The swarmElementLoop component requires Julia to be installed.
 
 ## Demo
 
@@ -122,6 +122,7 @@ Verify Installation
 - ```chmod +x ./Flocking_removeStopper.sh```
 
 ### Prepare Simulation
+- (Advanced: If it is planned to use the ARGoS simulator for multiple repos, it is recommended to copy the rosWorkspace folder in the home directory) 
 - open a terminal in the folder "/rosWorkspace":
     - ```source /opt/ros/jazzy/setup.bash```
     - ```./build.sh``` (it colcon builds the argos3-ros2-bridge firstly without plugins and secondly with plugins; it uses two CMake files for that)
@@ -148,7 +149,7 @@ Verify Installation
 
 ### Single-Robot-Loop (only requried for single Robot startup)
 
-- in runtimemodel and messages folder setup venv:
+- in singleRobotLoop and messagesComponent folder setup venv:
     - open terminal and create python venv: ```python3 -m venv ./```
     - ```source bin/activate```
     - install required pip packages (```pip install -r requirements.txt```)
@@ -165,14 +166,14 @@ Verify Installation
 
 ## Run Transport Chain Swarm Application
 ### Part1: Run the simulation 
-- in "~/ros_ws" run: 
+- in "rosWorkspace" run: 
     - ```source install/setup.bash```
     - ```argos3 -c transportChainSwarm.argos```
     - start simulation by clicking the **play** button
 
 ### Part2: Run Robot Controllers via Startup Script
 - in "Context-Role-Oriented-Transport-Chain-Swarm" folder run:
-    - ```source ~/ros_ws/install/setup.bash```
+    - ```source ./rosWorkspace/install/setup.bash```
     - ```source ./startup/bin/activate```
     - ```python3 ./startup/automatedStartup.py``` (adjust number of iterations depending on the number of robots)
 - the "automatedStartup.py" runs the Webapp and the Robots with its 3 components successive
@@ -202,7 +203,7 @@ Verify Installation
 
 ### Run Flocking Simulation
 
-- in "~/ros_ws" run:
+- in "rosWorkspace" run:
     - ```source install/setup.bash```
     - ```argos3 -c flockingSwarm.argos```
     - start simulation by clicking the **play** button
@@ -212,7 +213,7 @@ Verify Installation
 ### Run Flocking Robots via Startup Script
 
 - in "Context-Role-Oriented-Transport-Chain-Swarm" folder run:
-    - ```source ~/ros_ws/install/setup.bash```
+    - ```source ./rosWorkspace/install/setup.bash```
     - ```source ./startup/bin/activate```
     - ```python3 ./startup/automatedStartupFlocking.py```
 - the "automatedStartupFlocking.py" runs the Web App and the Robots with its 3 components successive
@@ -223,7 +224,7 @@ Verify Installation
 ## Run Tests
 
 - in  "Context-Role-Oriented-Transport-Chain-Swarm" folder run:
-    - ```source ~/ros_ws/install/setup.bash```
+    - ```source ./rosWorkspace/install/setup.bash```
     - ```source ./startup/bin/activate```
 - run tests with (e.g.):
     - ```python3 RobotWithLoadDetected.py```
@@ -231,8 +232,8 @@ Verify Installation
 - Execution Times are stored in associated files (e.g. time_RobotWithLoadDetected.txt)
 - After running all tests the ExecutionTime can be plotted with ./ExecutionTimeMeasurements/timePlotToolFSET_4Cases.py
 - For that execute in main folder:
-    - ```source ./ExecutionTimeMeasurements/bin/activate```
-    - ```python3 ./ExecutionTimeMeasurements/timePlotToolFSET_4Cases.py```
+    - ```source ./executionTimeMeasurements/bin/activate```
+    - ```python3 ./executionTimeMeasurements/timePlotToolFSET_4Cases.py```
 
 ### Create SEL-SRL-MSG Execution Time Plot
 - uncomment lines 37 and 77-79 in messages/main.py
@@ -242,29 +243,29 @@ Verify Installation
 - execution times of SRL will be stored in timeSRL.txt
 - execution times of Messages Component will be stored in timeMSG.txt
 - after running the application for a while, stop
-- plot times with ```python3 ExecutionTimeMeasurement/timePlotToolSEL_SRL_MSG.py``` executed from the main folder
+- plot times with ```python3 executionTimeMeasurement/timePlotToolSEL_SRL_MSG.py``` executed from the main folder
 
 ### Create Plot for Scalability
 - run application ([run simulation](#run-simulation) & [startup](#run-robots-via-startup-script)) for different numbers of robots ([change robot number](#change-robot-number-in-simulation))
 - after each run, save the times.txt with another name (e.g. timeXRobots.txt)
-- after having 4 measurements, plot them with ```python3 ExecutionTimeMeasurement/timePlotToolScalability.py``` (change names of the used timeXRobots.txt files)
+- after having 4 measurements, plot them with ```python3 executionTimeMeasurement/timePlotToolScalability.py``` (change names of the used timeXRobots.txt files)
 
 
 ## Change Robot Number in Simulation
-- in your copied ROS Workspace ()"~/ros_ws") change the following parameters
-- in "ros_ws_/bridge_example.argos":
-    - change ```position``` of the Prey light
+- in your "rosWorkspace" change the following parameters
+- in "rosWorkspace_/bridge_example.argos":
+    - change ```position``` of the Prey light (position = x,y,z)
     - change the distributioin of robots by adjusting the ```<position>``` min and max Positions and the ```<entity>``` quantity
     ```html
     <light id="Prey"
-            position="9,1,0.2"
+            position="5,1,0.2"
             orientation="0,0,0"
             color="red"
             intensity="1.0"
             medium="leds" />
     ...   
     <distribute>
-        <position method="uniform" min="-2.5,-2.0,0" max="11.0,4.0,0" />
+        <position method="uniform" min="-2.5,-2.0,0" max="6,4.0,0" />
         <orientation method="uniform" min="0,0,0" max="360,0,0" />
         <entity quantity="15" max_trials="100">
             <foot-bot id="fb_">
@@ -273,18 +274,24 @@ Verify Installation
         </entity>
         </distribute> 
     ``` 
-- in "ros_ws/src/argos3-ros2-bridge/plugins/loop_functions/foraging_loop_functions/foraging_loop_functions.cpp": change the positioning of the load (black circles):
-    - set the ```m_preyPosition(9,1),``` in line 9 to the same position as the Prey light
-    - in "ros_ws" run: ```colcon build --packages-select argos3_ros2_bridge```
-    - run ```source install/setup.bash```
-    - run ```argos3 -c bridge_example.argos``` to see if it worked
-- in "Contexts/swarmElementLoop/MAPE.jl" adjust the Exploration area (lines 451-452) to a new area (optimal around prey; otherwise, the robots need unduly long to find the prey and start forming a chain)
+    - change the position where the black circles will be spawned to the new Prey position: Change the "xpos" and "ypos" paramter in the ```<foraging>``` entry (you can adjust the "radius" and the amount of "items" that will be spawned too)
+    ```html
+        <loop_functions library="build/argos3_ros2_bridge/plugins/loop_functions/foraging_loop_functions/libforaging_loop_functions.so"
+                  label="foraging_loop_functions">
+            <foraging items="10"
+                    radius="0.2"
+                    xpos="5"
+                    ypos="1"
+                    energy_per_item="1000"
+                    energy_per_walking_robot="1"
+                    output="foraging.txt" />
+        </loop_functions>
+    ```
+- in "swarmElementLoop/transportChain/MAPE.jl" adjust the Exploration area constants at the beginning of the file (set the area optimally around the prey; otherwise, the robots need unduly long to find the prey and start forming a chain)
     ```julia
-    # 0 Exploration
-    areaPos1 = Position(5,0) 
-    areaPos2 = Position(11,4) 
-        if getRoles(robotSelf) === nothing
-            ...
+    EXPLORATION_POS1 = Position(1.0, -1.0) 
+    EXPLORATION_POS2 = Position(6.0, 3.0) 
+    ...
     ```
 
 ## Demo
