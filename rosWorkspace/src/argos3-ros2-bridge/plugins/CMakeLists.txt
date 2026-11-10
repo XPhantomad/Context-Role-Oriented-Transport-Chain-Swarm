@@ -1,7 +1,7 @@
 ### START - Adapted from argos3-examples/CMakeLists.txt
 
-cmake_minimum_required(VERSION 2.8.12)
-project(argos3_examples)
+cmake_minimum_required(VERSION 3.8)
+#project(argos3_examples)
 
 # Deactivate RPATH for MacOSX
 set(CMAKE_MACOSX_RPATH 0)

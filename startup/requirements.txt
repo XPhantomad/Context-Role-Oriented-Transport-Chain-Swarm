@@ -7,3 +7,5 @@ SocketIO
 matplotlib
 parameterized
 pyecore
+empy
+lark

@@ -69,11 +69,11 @@ Explanation: [Watch the video](https://youtu.be/M2knKsVhV9w)
 
 ## System Requirements
 
-- Ubuntu 24.04.2 LTS
-- ROS2 Jazzy Desktop (sudo apt install ros-jazzy-desktop)
-- python 3.12
-- python venv (```sudo apt install python3.12-venv```)
-- julia 1.11.6 (```curl -fsSL https://install.julialang.org | sh```)
+- Ubuntu 26.04 LTS
+- ROS2 Lyrical Desktop (sudo apt install ros-lyrical-desktop)
+- python 3.14.4
+- python venv (```sudo apt install python3.14-venv```)
+- julia 1.13.3 (```curl -fsSL https://install.julialang.org | sh```)
 - colcon (```sudo apt install colcon```)
 - rqt
 - tmux 3.4 (```sudo apt-get install tmux```)
@@ -81,7 +81,7 @@ Explanation: [Watch the video](https://youtu.be/M2knKsVhV9w)
 ### Install Argos3 Simulator
 
 - Prerequisites:
-  - ```sudo apt-get install cmake libfreeimage-dev libfreeimageplus-dev qt5-default freeglut3-dev libxi-dev libxmu-dev liblua5.3-dev lua5.3 doxygen graphviz libgraphviz-dev asciidoc ```
+  - ```sudo apt-get install cmake libfreeimage-dev libfreeimageplus-dev qtbase5-dev qtbase5-dev-tools qt5-qmake qtchooser freeglut3-dev libxi-dev libxmu-dev liblua5.3-dev lua5.3 doxygen graphviz libgraphviz-dev asciidoc ```
   - Freeglut 3: Problem with libglut.so.3.12
     1. Install the freeglut3-dev package with:
 
@@ -121,28 +121,22 @@ Verify Installation
 - ```chmod +x ./Flocking_initializeStopper.sh```
 - ```chmod +x ./Flocking_removeStopper.sh```
 
-### Setup Simulation
-- in your "home" folder: mkdir ros_ws
-- copy the content of the "rosWorkspace" folder in your ```ros_ws``` folder:
-- in the folder ```ros_ws```:
+### Prepare Simulation
+- open a terminal in the folder "/rosWorkspace":
     - ```source /opt/ros/jazzy/setup.bash```
-    - in src/argos3-ros2-bridge/CMakeLists.txt comment out line 60: ```add_subdirectory(plugins)``` for the first build
-    - in ros_ws directory run: ```colcon build --packages-select argos3_ros2_bridge```
-    - uncomment line 60 and build it again with: ```colcon build --packages-select argos3_ros2_bridge```
+    - ```./build.sh``` (it colcon builds the argos3-ros2-bridge firstly without plugins and secondly with plugins; it uses two CMake files for that)
     - ```source install/setup.bash```
     - ```argos3 -c transportChainSwarm.argos```
-    - simulation should be ready
+    - --> simulation should be ready
 
 ![Simulation](documentation/SimulationTransportChainSwarm10Robots.png)
 
 ### Setup Swarm-Element-Loop
 
-- in terminal enter:
+- in a new terminal enter:
     - ```julia```
-    - import Pkg 
-    - Pkg.add("Sockets")
-    - Pkg.add("JSON")
-    - Pkg.add("Parameters")
+    - ```import Pkg```
+    - ```Pkg.add(["Sockets", "JSON", "Parameters"])```
 
 ### Setup Startup-Script
 
