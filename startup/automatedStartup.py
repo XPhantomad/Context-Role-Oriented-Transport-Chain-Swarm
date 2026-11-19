@@ -9,8 +9,8 @@ print(os.getcwd())
 # start webapp 
 threading.Thread(target=lambda: subprocess.run(["python3", os.getcwd() + "/webapp/swarmDisplay.py"])).start()
 
-
-for i in range(4):
+numberOfRobots = 4
+for i in range(numberOfRobots):
     robotName = "fb_"+str(i)
     print("start " + robotName)
     time.sleep(2)
