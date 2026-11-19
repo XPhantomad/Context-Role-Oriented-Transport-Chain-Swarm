@@ -293,11 +293,12 @@ Verify Installation
     EXPLORATION_POS2 = Position(6.0, 3.0) 
     ...
     ```
-- in "startup/automatedStartup.py" adjust the ```numberOfRobots``` for starting all three components on one robot (line 13)
+- in "startup/automatedStartup.py" adjust the ```numberOfRobots``` to start all three components on all spawned robots (line 13)
     ```python
     numberOfRobots = 4
     for i in range(numberOfRobots):
       robotName = "fb_"+str(i)
+      ...
     ```
 ## Demo
 
