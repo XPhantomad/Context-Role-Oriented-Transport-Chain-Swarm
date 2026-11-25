@@ -9,29 +9,28 @@ robot_name = ARGS[1]
 robot_number = parse(Int64, filter(x->'0'<=x<='9',robot_name))
 
 # new robot --> Self
-robotSelf = Robot(robot_name, false, false, Position(0,0), false, false, false)
-robotSelf2 = Robot("dummy", false, false, Position(0,0), false, false, false)
+robotSelf = Robot(robot_name, false, Position(0,0), false, false, false)
+robotSelf2 = Robot("dummy", false, Position(0,0), false, false, false)
 
 # Begin Precompilation of Teams to reduce delay
-@assignRoles SingleRobotChainTeam begin
+@assignRoles InitialTeam begin
 	name = 2
-	nest >> Nest()
-	robotSelf >> ChainMember()
-	Position(1,2) >> Prey()
+	nest >> BaseStation()
+	robotSelf >> InformedExplorer()
+	Position(1,2) >> DisasterGuess()
+	robotSelf2 >> Recruit
 end 
-@assignRoles ChainTeam begin
+@assignRoles DisasterChainTeam begin
 	name = 3
-	nest >> Nest()
-	getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
-	robotSelf >> Intermediate()
-end
-@assignRoles JoinChainTeam begin
-	name = 37
-	robotSelf >> JoinChainMember(false)
-	robotSelf2 >> ChainMember()
+	nest >> BaseStation()
+	#getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
+	robotSelf >> Observer()
+	robotSelf2 >> Connector()
 end
 disassignAllRoles()
 # End Precompilation
+
+
 
 # start sockets for connection to messages and single robot loop
 server = listen(ip"127.0.0.1", 2000+robot_number*2)
@@ -85,7 +84,6 @@ function sendMessageToWebapp(pos, state, message_out)
 		# Prepare base data
         robot_data = Dict(
             "name" => robotSelf.name,
-            "load" => robotSelf.load,
             "goalReached" => robotSelf.goalReached,
             "xTarget" => pos.x,
             "yTarget" => pos.y,

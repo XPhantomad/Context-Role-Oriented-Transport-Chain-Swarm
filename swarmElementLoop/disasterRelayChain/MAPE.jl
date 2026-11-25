@@ -18,55 +18,55 @@ msg_Joiner_Loading = "Joiner with Loading State"
 msg_nothing = "nothing"
 
 # Initials
-nest = Position(-1.0,1.2)
+baseStation = Position(-1.0,1.2)
 obj = Object(2)
 first_time = true
+hint = Position(4,1)
 
 function disassignAllRoles()
     if getRoles(robotSelf) !== nothing
         #println(keys(getRoles(robotSelf)[nothing]))
-		disassignRoles(ChainTeam, 3)
-		if getRoles(robotSelf) !== nothing
-			teams = keys(getRoles(robotSelf)[nothing])
-			for team in teams
-				disassignRoles(typeof(team), team.ID )
-			end
+		#disassignRoles(DisasterChainTeam, 3) -> can be left out as far as teams are not nested into each other
+		#if getRoles(robotSelf) !== nothing
+		teams = keys(getRoles(robotSelf)[nothing])
+		for team in teams
+			disassignRoles(typeof(team), team.ID )
 		end
-		
+		#end
     end
 end
 
-function assignSingleRobotChainTeams(prey)
-	global nest, robotSelf
-	@assignRoles SingleRobotChainTeam begin
-		name = 2
-		nest >> Nest()
-		robotSelf >> ChainMember()
-		prey >> Prey()
-	end 
-	@assignRoles ChainTeam begin
-		name = 3
-		nest >> Nest()
-		getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
-	end
-end
+# function assignSingleRobotChainTeams(prey)
+# 	global nest, robotSelf
+# 	@assignRoles SingleRobotChainTeam begin
+# 		name = 2
+# 		nest >> Nest()
+# 		robotSelf >> ChainMember()
+# 		prey >> Prey()
+# 	end 
+# 	@assignRoles ChainTeam begin
+# 		name = 3
+# 		nest >> Nest()
+# 		getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
+# 	end
+# end
 
-function assignSingleRobotChainTeams(prey, load)
-	global nest, robotSelf
-	@assignRoles SingleRobotChainTeam begin
-		name = 2
-		nest >> Nest()
-		robotSelf >> ChainMember()
-		prey >> Prey()
-		load >> Load()
-	end 
-	@assignRoles ChainTeam begin
-		name = 3
-		nest >> Nest()
-		getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
-		load >> Load()
-	end
-end
+# function assignSingleRobotChainTeams(prey, load)
+# 	global nest, robotSelf
+# 	@assignRoles SingleRobotChainTeam begin
+# 		name = 2
+# 		nest >> Nest()
+# 		robotSelf >> ChainMember()
+# 		prey >> Prey()
+# 		load >> Load()
+# 	end 
+# 	@assignRoles ChainTeam begin
+# 		name = 3
+# 		nest >> Nest()
+# 		getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
+# 		load >> Load()
+# 	end
+#end
 
 function disassignJoinChainTeams()
 	# disassign JoinChainTeam and if Robot has no other Role the ChainTeam as well 
@@ -84,7 +84,7 @@ end
 
 
 function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing}, Union{String, Nothing}, Union{String, Nothing}}
-	global robotSelf, nest, first_time
+	global robotSelf, baseStation, first_time
 	
 	#1. Monitor state and behavior of the robot and implement it into the runtime model
 
@@ -132,6 +132,76 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 
 	#2. Analyse Messages and Robot Data (State) and change swarm runtime model accordingly 
 
+	## 00 If Relay Robot detects a robot between itself and the base-station --> assign this as its successor (not relevant for any important movements, only for ColorFlip when chain is fully established)
+	## 00 If Successor of a Relay has the Color Magenta --> Trigger Chain Flip and switch its color 
+	## 00 If Relay Robot lost one of its Pred or Succ --> Flip Chain back
+		#--> drive to Pred. Position to close Lack in the Chain (mentioned in Plan step, if no pred is assigned to a relay robot)
+	
+	## 11 If Informed Explorer has reached the Connector Position and no other is there
+	if hasRole(robotSelf, InformedExplorer, InitialTeam) && robotSelf.goalReached # && no connector perceived && disaster perceived
+		# TODO: correct the disaster position if necessary
+		@assignRoles DisasterChainTeam begin
+			name = 3
+			baseStation >> BaseStation()
+			robotSelf >> Connector()
+			getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1] >> Disaster()
+		end
+		# dissolve initial team, because it is no longer needed
+		disassignRoles(InitialTeam, 2)
+	end
+
+	# A) Hint received:
+		# - asign Initial Team (robot self = informed Explorer, Disaster Guess = rec. Pos, BaseStation = Nest, Recruit = nothing )
+		# - Informed explorer has to expose Color for recruitment
+		# Action: drive to the Disaster (not to fast to give Recruits the oportunity to follow?)
+	if hint != nothing && getRoles(robotSelf) == nothing
+		@assignRoles InitialTeam begin
+			name = 2
+			baseStation >> BaseStation()
+			robotSelf >> InformedExplorer()
+			hint >> DisasterGuess()
+		end 
+
+	# B) Informed Explorer Perceived: become a recruit in that team
+	# - assign Initial Team: (robotSelf = Recruit, Base Station, percRobot = Informed Explorer)
+	# Action: Follow the Informed Robot - drive to its position
+	elseif getRoles(robotSelf) == nothing && infoInMessage(message,  msg_InformedExplorer) != false 
+		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_InformedExplorer)) 
+		@assignRoles InitialTeam begin
+			name = 2
+			baseStation >> BaseStation()
+			perceivedRobot >> InformedExplorer()
+			robotSelf >> Recruit()
+		end 	
+	 
+		
+	# D) Robot Perceives Observer --> assign itself as additional Observer + assign the arrangeTeam for driving to the free position
+		# - disassign current role (or initial Team) 
+		# - assign Observer Role (or new DisasterChainTeam with Observer Role)
+		# Action Observer: drive around the Disaster and stay connected with exactly one Observer/Connector 
+			# no concrete position but a task --> 	
+			# goal fulfilled, when robot is in the distance of MAX-LightRange from another Observer AND perceives another observer/connector not closer than this range 	
+
+	# C) Disaster perceived: become first Connector
+		# - assign DisasterChainTeam (robotSelf = Connector, Disaster-pos, Base Station-pos)
+		# Action: drive to the connector Position (has to be calculated and stored directly at assignment - fixed Position)
+	
+	# E) Perceive part of the Relay Chain (or Connector) without being part of it
+		# - assign 
+
+	elseif
+	# F) Robot Detects the BaseStation and a part of the Relay Chain:
+		# - assign itself as BaseStationRelay and disassign other Relay Role
+
+
+	#3. Plan:
+
+	# 00 Failover
+	#if robotSelf = Relay && robotSelf != NewRelay && getRolesOfTeam(DisasterChain).Predecessor.status == lost
+	#	return Pred.pos = reobotSelf.pos-baseStation + Distance, "driving", msg_RelayChainIncomplete
+
+
+#=
 	#println(getFirstTeam(robotSelf))
 	if timeout
 		println("timeout incoming")
@@ -447,7 +517,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			write(file, "nothing changed")
 		end
 	end
-
+=#
 	#3. Plan ascertain the subsequent behavior based on the current state of the swarm runtime model
 
 	# 0 Exploration
@@ -470,15 +540,15 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	end
 
 
-	# 1 Robot is JoinChainMember
-	if hasRole(robotSelf, JoinChainMember, JoinChainTeam)
-		if getRoleOfTeam(getDynamicTeam(JoinChainTeam, 37), JoinChainMember).loadActive == true
-			robotSelf.waiting = true
-			return (nothing, "load", msg_Joiner_Loading)
-		end
-		pos = getObjectsOfRole(getDynamicTeam(JoinChainTeam, 37), ChainMember)[1].position
-		return pos, "driving", msg_Joiner
+	# 1 Robot is Informed Explorer
+	if hasRole(robotSelf, InformedExplorer, InitialTeam)
+		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
+		connectorPos = getConnectorPosition(disasterPos)
+		return connectorPos, "driving", msg_InformedExplorer
 
+
+
+	#=	
 
 	# 2 Roboter ist in ChainMember(Join) (Robot with load is always ChainMember!!!)
 	elseif hasRole(robotSelf, ChainMember, JoinChainTeam)
@@ -522,6 +592,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			pos = getRoleOfTeam(getDynamicTeam(ChainTeam, 3), Predecessor).transferpointReceive
 		end
 		return pos, "driving", msg_nothing
+
+	=# 
 
 	# Any goal reached --> waiting
 	elseif robotSelf.goalReached
