@@ -15,14 +15,14 @@ robotSelf2 = Robot("dummy", false, Position(0,0), false, false, false)
 # Begin Precompilation of Teams to reduce delay
 @assignRoles InitialTeam begin
 	name = 2
-	nest >> BaseStation()
+	baseStation >> BaseStation()
 	robotSelf >> InformedExplorer()
 	Position(1,2) >> DisasterGuess()
 	robotSelf2 >> Recruit
 end 
 @assignRoles DisasterChainTeam begin
 	name = 3
-	nest >> BaseStation()
+	baseStation >> BaseStation()
 	#getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
 	robotSelf >> Observer()
 	robotSelf2 >> Connector()

@@ -10,16 +10,15 @@ EXPLORATION_POS1 = Position(1.0, -1.0) # do not change to values<0 (otherwise te
 EXPLORATION_POS2 = Position(6.0, 3.0) 
 
 # Message Types
-msg_Joiner = "Joiner"
-msg_robotWithLoad = "Robot with Load"
-msg_prey = "Prey"
-msg_Chainmember_Join = "Chainmember(Join)"
-msg_Joiner_Loading = "Joiner with Loading State"
+msg_InformedExplorer = "Informed Explorer"
+msg_Connector = "Connector"
+msg_BaseStation = "BaseStation"
+msg_RelayChainIncomplete = "RelayChain incomplete"
+msg_RelayChainComplete = "RelayChain complete"
 msg_nothing = "nothing"
 
 # Initials
 baseStation = Position(-1.0,1.2)
-obj = Object(2)
 first_time = true
 hint = Position(4,1)
 
@@ -68,18 +67,18 @@ end
 # 	end
 #end
 
-function disassignJoinChainTeams()
-	# disassign JoinChainTeam and if Robot has no other Role the ChainTeam as well 
-	if length(keys(getRoles(robotSelf)[nothing])) > 1
-		@changeRoles ChainTeam 3 begin
-			getDynamicTeam(JoinChainTeam, 37) << RobotJoining
-		end
-	else		
-		disassignRoles(ChainTeam, 3)
-	end
-	disassignRoles(JoinChainTeam, 37)
-	robotSelf.goalGiven = false
-end
+# function disassignJoinChainTeams()
+# 	# disassign JoinChainTeam and if Robot has no other Role the ChainTeam as well 
+# 	if length(keys(getRoles(robotSelf)[nothing])) > 1
+# 		@changeRoles ChainTeam 3 begin
+# 			getDynamicTeam(JoinChainTeam, 37) << RobotJoining
+# 		end
+# 	else		
+# 		disassignRoles(ChainTeam, 3)
+# 	end
+# 	disassignRoles(JoinChainTeam, 37)
+# 	robotSelf.goalGiven = false
+# end
 
 
 
@@ -89,32 +88,32 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	#1. Monitor state and behavior of the robot and implement it into the runtime model
 
 	# add load state of the robot into swarm runtime model
-	if getRoles(robotSelf) !== nothing
-		if dataMiddle.load == true
-			#println(keys(getRoles(robotSelf)[nothing]))
-			teams = keys(getRoles(robotSelf)[nothing])
-			for team in teams
-				if isempty(getObjectsOfRole(team, Load))
-					@changeRoles typeof(team) team.ID begin
-						obj >> Load()
-					end
-					println("load added")
-					robotSelf.goalGiven=false
-				end
-			end
-		else 
-			#println(keys(getRoles(robotSelf)[nothing]))
-			teams = keys(getRoles(robotSelf)[nothing])
-			for team in teams
-				if !isempty(getObjectsOfRole(team, Load))
-					@changeRoles typeof(team) team.ID begin
-						obj << Load
-					end
-					robotSelf.goalGiven=false
-				end
-			end
-		end
-	end
+	# if getRoles(robotSelf) !== nothing
+	# 	if dataMiddle.load == true
+	# 		#println(keys(getRoles(robotSelf)[nothing]))
+	# 		teams = keys(getRoles(robotSelf)[nothing])
+	# 		for team in teams
+	# 			if isempty(getObjectsOfRole(team, Load))
+	# 				@changeRoles typeof(team) team.ID begin
+	# 					obj >> Load()
+	# 				end
+	# 				println("load added")
+	# 				robotSelf.goalGiven=false
+	# 			end
+	# 		end
+	# 	else 
+	# 		#println(keys(getRoles(robotSelf)[nothing]))
+	# 		teams = keys(getRoles(robotSelf)[nothing])
+	# 		for team in teams
+	# 			if !isempty(getObjectsOfRole(team, Load))
+	# 				@changeRoles typeof(team) team.ID begin
+	# 					obj << Load
+	# 				end
+	# 				robotSelf.goalGiven=false
+	# 			end
+	# 		end
+	# 	end
+	# end
 
 	# if goalReached in SRL switches from true to false --> it is sure, that the goal has been successfully given to the SRL
 	if (robotSelf.goalReached && !dataMiddle.goalReached)
@@ -123,7 +122,6 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	
 	# add Information from Single-Robot-Loop into robotSelf data structure of the swarm runtime model
 	robotSelf.goalReached=dataMiddle.goalReached
-	robotSelf.load=dataMiddle.load
 	robotSelf.position.x=dataMiddle.x
 	robotSelf.position.y=dataMiddle.y
 	robotSelf.proximity=dataMiddle.proximity
@@ -150,6 +148,24 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		disassignRoles(InitialTeam, 2)
 	end
 
+	## 22 ArrangeRelay: Relay perceived which is closer to the base than the current one --> assign new relay (Action updates the goal pos)
+	if hasRole(robotSelf, NewRelay, ArrangeRelayTeam) 
+		currentRelay = getObjectsOfRole(getDynamicTeam(ArrangeRelayTeam, 37), CurrentRelay)[1]
+		if getDistance(infoInMessage(message, msg_RelayChainIncomplete), baseStation) < getDistance(currentRelay.position, baseStation) # TODO: from second distance directly into RoleAttribute of the currentRelay
+			perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_RelayChainIncomplete)) 
+			@changeRoles ArrangeRelayTeam 37 begin
+				currentRelay << CurrentRelay
+				robotSelf >> CurrentRelay()
+			end
+		# if nextRelayPos is reached and no other relay closer to the baseStation found --> disassign ArrangeRelayTeam
+		elseif robotSelf.goalReached
+			@changeRoles DisasterChainTeam 3 begin
+				currentRelay >> Predecessor("incomplete")
+			end
+			disassignRoles(ArrangeRelayTeam, 37)
+		end
+	end
+
 	# A) Hint received:
 		# - asign Initial Team (robot self = informed Explorer, Disaster Guess = rec. Pos, BaseStation = Nest, Recruit = nothing )
 		# - Informed explorer has to expose Color for recruitment
@@ -165,7 +181,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	# B) Informed Explorer Perceived: become a recruit in that team
 	# - assign Initial Team: (robotSelf = Recruit, Base Station, percRobot = Informed Explorer)
 	# Action: Follow the Informed Robot - drive to its position
-	elseif getRoles(robotSelf) == nothing && infoInMessage(message,  msg_InformedExplorer) != false 
+	elseif getRoles(robotSelf) == nothing && infoInMessage(message, msg_InformedExplorer) != false 
 		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_InformedExplorer)) 
 		@assignRoles InitialTeam begin
 			name = 2
@@ -187,11 +203,45 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		# Action: drive to the connector Position (has to be calculated and stored directly at assignment - fixed Position)
 	
 	# E) Perceive part of the Relay Chain (or Connector) without being part of it
-		# - assign 
+		# - assign itself as Connector in the DisasterChainTeam and additionally in the RelayArrange Team
+		# Action: drive to free position in direction of the BaseStation
+	elseif !hasRole(robotSelf, DisasterChainTeam, Relay) && (infoInMessage(message, msg_Connector) != false || infoInMessage(message, msg_RelayChainIncomplete) != false)
+		# case 1: former recruit/informed Explorer --> diassign InitialTeam
+		if getDynamicTeam(InitialTeam, 2) !== nothing
+			disassignRoles(InitialTeam, 2)
+		end
+		# case 2: robot is in no team --> assign DisasterChainTeam
+		if getRoles(robotSelf) == nothing
+			@assignRoles DisasterChainTeam begin
+				name = 3
+				baseStation >> BaseStation()
+				robotSelf >> Relay()
+			end
+			# assign closest relayChain Segment (MSG-component always returns only the closest perceived Relay)
+			perceivedRelayPos = infoInMessage(message, msg_RelayChainIncomplete) != false ? infoInMessage(message, msg_RelayChainIncomplete) : infoInMessage(message, msg_RelayChainIncomplete)
+			perceivedRobot = PerceivedRobot("Dummy", perceivedRelayPos) 
+			@assignRoles ArrangeRelayTeam begin
+				name = 37
+				robotSelf >> NewRelay()
+				perceivedRobot >> CurrentRelay() # assign the perceived relay, the robot has drive past 
+			end
+		else
+			println("unexpected case - ---------------------------  ---------")
+		end
+	
 
-	elseif
 	# F) Robot Detects the BaseStation and a part of the Relay Chain:
 		# - assign itself as BaseStationRelay and disassign other Relay Role
+		# - Trigger: CHAIN FLIP!!!!! -------------------------------------------------- 
+	elseif infoInMessage(message, msg_BaseStation) && hasRole(robotSelf, NewRelay, ArrangeRelayTeam)
+		@changeRoles DisasterChainTeam 3 begin
+			robotSelf << Relay
+			robotSelf >> BaseStationRelay()
+			currentRelay >> Predecessor("incomplete")
+		end
+		disassignRoles(ArrangeRelayTeam, 37)
+
+	end
 
 
 	#3. Plan:
@@ -543,10 +593,35 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	# 1 Robot is Informed Explorer
 	if hasRole(robotSelf, InformedExplorer, InitialTeam)
 		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
-		connectorPos = getConnectorPosition(disasterPos)
+		connectorPos = getPositionOnBaseLine(disasterPos, RADIUS)
 		return connectorPos, "driving", msg_InformedExplorer
+	
+	elseif hasRole(robotSelf, Recruit, InitialTeam)
+		leaderPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), InformedExplorer)[1].position
+		return leaderPos, "driving", msg_nothing
 
+	elseif hasRole(robotSelf, Connector, DisasterChainTeam)
+		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
+		connectorPos = getConnectorPosition(disasterPos)
+		return connectorPos, "driving", msg_Connector
 
+	elseif hasRole(robotSelf, NewRelay, ArrangeRelayTeam)
+		currentRelayPos = getObjectsOfRole(getDynamicTeam(ArrangeRelayTeam, 37), CurrentRelay)[1].position
+		nextRelayPos = getPositionOnBaseLine(currentRelayPos, RELAY_DISTANCE)
+		return nextRelayPos, "driving", msg_nothing
+		
+	# Robot in relay has to stay close to its predecessor but on its distant position from it
+	elseif hasRole(robotSelf, Relay, DisasterChainTeam)
+		predecessorPos = getObjectsOfRole(getDynamicTeam(DisasterChainTeam, 3), Predecessor)[1].position
+		relayPos = getPositionOnBaseLine(predecessorPos, RELAY_DISTANCE)
+		return relayPos, "driving", msg_RelayChainIncomplete
+	
+	# Robot in BaseStation Relay role works similar to above, but initializes the CHAIN FLIP by exposing the complete Message
+	# (Succesors will follow hopefully :) )
+	elseif hasRole(robotSelf, BaseStationRelay, DisasterChainTeam)
+		predecessorPos = getObjectsOfRole(getDynamicTeam(DisasterChainTeam, 3), Predecessor)[1].position
+		relayPos = getMiddlePos(predecessorPos, baseStation)
+		return relayPos, "driving", msg_RelayChainComplete
 
 	#=	
 

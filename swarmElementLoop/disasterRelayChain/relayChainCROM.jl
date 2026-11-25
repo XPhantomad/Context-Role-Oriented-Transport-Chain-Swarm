@@ -53,7 +53,6 @@ end
 		color::String
 	end
 	@role Predecessor << PerceivedRobot [0..1] begin 
-		color::String
 		status::String
 	end
 	# Tail of the Relay Chain
@@ -83,7 +82,5 @@ end
 @newDynamicTeam ArrangeRelayTeam begin  # required to lead a new Relay Robot along the existing chain to its final position
 	@IDAttribute ID::Int64
 	@role NewRelay << Robot [1] begin end
-	@role DistantRelay << PerceivedRobot [1] begin end # far distant from the BaseStation
-	@role CloseObserver << PerceivedRobot [0..1] begin end # Perceived Observer closer to the BaseStation
-	@role BaseStation << Position [1] begin end
+	@role CurrentRelay << PerceivedRobot [1] begin end # Perceived Relay, in the direction of the baseStation
 end

@@ -1,11 +1,25 @@
 # Check, if the message contains the requested information and if this is the case return the attached position
+# function infoInMessage(message, text)
+# 	for info in message 
+# 		if info[1] == text
+# 			return Position(info[2],info[3])
+# 		end
+# 	end
+# 	return false
+# end
+
+# Check, if the message contains the requested information and in case return one or all attached position(s)
 function infoInMessage(message, text)
+	result = []
 	for info in message 
 		if info[1] == text
-			return Position(info[2],info[3])
+			push!(result, Position(info[2],info[3]))
 		end
 	end
-	return false
+	if result == []
+		return false
+	end
+	return length(result) >= 2 ? result : pop!(result)
 end
 
 function getDistance(pos1, pos2)
