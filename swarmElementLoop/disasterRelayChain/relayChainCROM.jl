@@ -47,7 +47,7 @@ abstract type RelayChainMemberType <: Role end
 	@IDAttribute ID::Int64
 	@role BaseStation << Position [1] begin end
 	@role InformedExplorer << AbstractRobot [1] begin end
-	@role DisasterGuess << Position [1] begin end
+	@role DisasterGuess << Position [0..1] begin end
 	@role Recruit << AbstractRobot [0..1] begin end
 
 end

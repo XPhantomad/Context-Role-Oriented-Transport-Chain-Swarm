@@ -11,17 +11,21 @@ using LinearAlgebra
 # end
 
 # Check, if the message contains the requested information and in case return one or all attached position(s)
-function infoInMessage(message, text)
-	result = []
+function infoInMessage(message, text, text2=" ")
+	result = nothing
 	for info in message 
-		if info[1] == text
-			push!(result, Position(info[2],info[3]))
+		if info[1] == text || info[1] == text2
+			# check whether a second result is closer and in case take this
+			if result == nothing || (getDistance(robotSelf.position, result) > getDistance(robotSelf.position, Position(info[2],info[3])))
+				result = Position(info[2],info[3])
+			end
 		end
 	end
-	if result == []
+	if result == nothing
 		return false
 	end
-	return length(result) >= 2 ? result : pop!(result)
+	return result
+	#length(result) >= 2 ? result : pop!(result)
 end
 
 function getDistance(pos1, pos2)
@@ -58,5 +62,6 @@ function getPositionOnBaseLine(disaster::Position, radius)
     # Radius is larger than the distance between disastern and base station -> take base station
     radius >= dist && return baseStation
 
-    return disaster + (radius / dist) * vecDisasterBase
+    resultingPos = disaster + (radius / dist) * vecDisasterBase
+    return Position(round(resultingPos.x; digits=2), round(resultingPos.y; digits=2))
 end

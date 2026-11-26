@@ -2,7 +2,7 @@ include("relayChainCROM.jl")
 include("functions.jl")
 
 # Constants
-RADIUS = 1
+RADIUS = 0.5
 RELAY_DISTANCE = 0.7
 NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the prey light which is around 0.7
 MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
@@ -22,7 +22,7 @@ msg_nothing = "nothing"
 # Initials
 baseStation = Position(-1.0,1.2)
 first_time = true
-hint = Position(5,1)
+hint = nothing
 
 function disassignAllRoles()
     if getRoles(robotSelf) !== nothing
@@ -131,13 +131,14 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	# ---------------------------------------
 
 	#2. Analyse Messages and Robot Data (State) and change swarm runtime model accordingly 
-
+	println("START+++++++++")
 	## 00 If Relay Robot detects a robot between itself and the base-station --> assign this as its successor (not relevant for any important movements, only for ColorFlip when chain is fully established)
 	## 00 If Successor of a Relay has the Color Magenta --> Trigger Chain Flip and switch its color 
 	## 00 If Relay Robot lost one of its Pred or Succ --> Flip Chain back
 		#--> drive to Pred. Position to close Lack in the Chain (mentioned in Plan step, if no pred is assigned to a relay robot)
 	
 	## 11 If Informed Explorer has reached the Connector Position and no other is there
+	# TODO: weiter ans Ende
 	if hasRole(robotSelf, InformedExplorer, InitialTeam) && robotSelf.goalReached # && no connector perceived && disaster perceived
 		# TODO: correct the disaster position if necessary
 		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
@@ -151,11 +152,23 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		disassignRoles(InitialTeam, 2)
 	end
 
+	# Update Recruit, if Informed Robot moves
+	if hasRole(robotSelf, Recruit, InitialTeam) && infoInMessage(message, msg_InformedExplorer) != false 
+		println("update perceived Informed Explorer for Recruit -------------------")
+		perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_InformedExplorer)) 
+		@changeRoles InitialTeam 2 begin
+			getObjectsOfRole(getDynamicTeam(InitialTeam, 2), InformedExplorer)[1] << InformedExplorer
+			perceivedRobot >> InformedExplorer()
+		end
+	end 
+
 	## 22 ArrangeRelay: Relay perceived which is closer to the base than the current one --> assign new relay (Action updates the goal pos)
 	if hasRole(robotSelf, NewRelay, ArrangeRelayTeam) 
 		currentRelay = getObjectsOfRole(getDynamicTeam(ArrangeRelayTeam, 37), CurrentRelay)[1]
-		if getDistance(infoInMessage(message, msg_RelayChainIncomplete), baseStation) < getDistance(currentRelay.position, baseStation) # TODO: from second distance directly into RoleAttribute of the currentRelay
-			perceivedRobot = PerceivedRobot("Dummy", infoInMessage(message, msg_RelayChainIncomplete)) 
+		perceivedRelayPos = infoInMessage(message, msg_RelayChainIncomplete) != false ? infoInMessage(message, msg_RelayChainIncomplete) : infoInMessage(message, msg_Connector)
+		if perceivedRelayPos != false && getDistance(perceivedRelayPos, baseStation) < getDistance(currentRelay.position, baseStation) # TODO: form second distance directly into RoleAttribute of the currentRelay
+			println("update Current Relay pos")
+			perceivedRobot = PerceivedRobot("Dummy", perceivedRelayPos) 
 			@changeRoles ArrangeRelayTeam 37 begin
 				currentRelay << CurrentRelay
 				robotSelf >> CurrentRelay()
@@ -166,6 +179,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				currentRelay >> Predecessor("incomplete")
 			end
 			disassignRoles(ArrangeRelayTeam, 37)
+			println("final Relay position reached")
 		end
 	end
 
@@ -173,7 +187,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		# - asign Initial Team (robot self = informed Explorer, Disaster Guess = rec. Pos, BaseStation = Nest, Recruit = nothing )
 		# - Informed explorer has to expose Color for recruitment
 		# Action: drive to the Disaster (not to fast to give Recruits the oportunity to follow?)
-	if hint != nothing && getRoles(robotSelf) == nothing
+	if robotSelf.name == "fb_0" && getRoles(robotSelf) == nothing
+		hint = Position(5,1) # TODO bring back to the beginnig and make this available for all robots
 		@assignRoles InitialTeam begin
 			name = 2
 			baseStation >> BaseStation()
@@ -191,8 +206,10 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 			baseStation >> BaseStation()
 			perceivedRobot >> InformedExplorer()
 			robotSelf >> Recruit()
-		end 	
-	 
+		end 
+		println("become recruit and follow informed explorer")
+		
+		
 		
 	# D) Robot Perceives Observer --> assign itself as additional Observer + assign the arrangeTeam for driving to the free position
 		# - disassign current role (or initial Team) 
@@ -221,7 +238,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				robotSelf >> Relay()
 			end
 			# assign closest relayChain Segment (MSG-component always returns only the closest perceived Relay)
-			perceivedRelayPos = infoInMessage(message, msg_RelayChainIncomplete) != false ? infoInMessage(message, msg_RelayChainIncomplete) : infoInMessage(message, msg_RelayChainIncomplete)
+			perceivedRelayPos = infoInMessage(message, msg_RelayChainIncomplete) != false ? infoInMessage(message, msg_RelayChainIncomplete) : infoInMessage(message, msg_Connector)
 			perceivedRobot = PerceivedRobot("Dummy", perceivedRelayPos) 
 			@assignRoles ArrangeRelayTeam begin
 				name = 37
@@ -229,7 +246,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				perceivedRobot >> CurrentRelay() # assign the perceived relay, the robot has drive past 
 			end
 		else
-			println("unexpected case - ---------------------------  ---------")
+			println("unexpected case - ---------------------------  ---------")	
+			println(getRoles(robotSelf))
 		end
 	
 
@@ -589,7 +607,7 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 				first_time = false
 			end
 		end
-		return position, "driving", msg_nothing
+		return position, "waiting", msg_nothing
 	end
 
 

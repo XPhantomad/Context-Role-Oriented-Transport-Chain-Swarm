@@ -137,8 +137,7 @@ while true
 	if datafromSRL.goalReached || robotSelf.waiting
 		counter+=1
 	end
-	if counter >= 200 || datafromSRL.load != datafromSRL_old.load || datafromSRL.goalReached != datafromSRL_old.goalReached || datafromSRL.proximity != datafromSRL_old.proximity || message_in[1][1] != message_in_old[1][1] || size(message_in) != size(message_in_old)
-		robotSelf.waiting = false
+	if counter >= 200 || datafromSRL.goalReached != datafromSRL_old.goalReached  || message_in != message_in_old
 		
 		#println(getRoles(robotSelf))
 		goal = mapeLoop(datafromSRL, message_in, counter >= 200)
