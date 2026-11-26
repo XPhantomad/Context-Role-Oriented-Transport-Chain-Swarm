@@ -2,6 +2,8 @@ include("ChainCROM.jl")
 include("functions.jl")
 
 # Constants
+RADIUS = 1
+RELAY_DISTANCE = 0.7
 NEST_AND_PREY_LOADING_RANGE = 0.7  # value must be at least the range of the prey light which is around 0.7
 MIN_TRANSFERPOINT_DISTANCE = 0.2   # if to low: robot does not move; if to high: robots never join because of the delayed reaction time
 ROBOT_PROXIMITY = 0.2	# distance to the detected light blob of the other robot sufficient for load transfer procedure 
