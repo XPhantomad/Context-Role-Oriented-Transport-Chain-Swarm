@@ -18,19 +18,19 @@ robotSelf2 = Robot("dummy", false, Position(0,0), false, false, false)
 	baseStation >> BaseStation()
 	robotSelf >> InformedExplorer()
 	Position(1,2) >> DisasterGuess()
-	robotSelf2 >> Recruit
+	robotSelf2 >> Recruit()
 end 
 @assignRoles DisasterChainTeam begin
 	name = 3
 	baseStation >> BaseStation()
 	#getDynamicTeam(SingleRobotChainTeam, 2) >> SingleRobotChain()
 	robotSelf >> Observer()
-	robotSelf2 >> Connector()
+	robotSelf2 >> Connector(Position(1,2))
 end
 disassignAllRoles()
 # End Precompilation
 
-
+print("precompilation finishe")
 
 # start sockets for connection to messages and single robot loop
 server = listen(ip"127.0.0.1", 2000+robot_number*2)

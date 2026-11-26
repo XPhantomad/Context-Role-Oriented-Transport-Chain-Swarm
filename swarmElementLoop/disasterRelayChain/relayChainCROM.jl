@@ -10,6 +10,11 @@ mutable struct Position
 end
 
 Base.:(==)(a::Position, b::Position) = a.x == b.x && a.y == b.y
+# Arithmetic for Positions
+Base.:-(a::Position, b::Position) = Position(a.x - b.x, a.y - b.y)
+Base.:+(a::Position, b::Position) = Position(a.x + b.x, a.y + b.y)
+Base.:*(s::Real, a::Position)     = Position(s * a.x, s * a.y)
+Base.:*(a::Position, s::Real)     = s * a
 
 mutable struct Robot <: AbstractRobot
 	name::String
@@ -43,7 +48,7 @@ abstract type RelayChainMemberType <: Role end
 	@role BaseStation << Position [1] begin end
 	@role InformedExplorer << AbstractRobot [1] begin end
 	@role DisasterGuess << Position [1] begin end
-	@role Recruit << AbstractRobot [0..1]
+	@role Recruit << AbstractRobot [0..1] begin end
 
 end
 

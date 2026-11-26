@@ -1,3 +1,5 @@
+using LinearAlgebra
+
 # Check, if the message contains the requested information and if this is the case return the attached position
 # function infoInMessage(message, text)
 # 	for info in message 
@@ -42,4 +44,19 @@ function getFirstTeam(object)
     else
         return nothing
     end
+end
+
+function getPositionOnBaseLine(disaster::Position, radius)
+	global baseStation
+
+	vecDisasterBase = baseStation - disaster
+	dist = hypot(vecDisasterBase.x, vecDisasterBase.y)
+	#print(dist)
+
+    dist == 0 && error("Disaster and BaseStation are at the same point --> direction not definable")
+
+    # Radius is larger than the distance between disastern and base station -> take base station
+    radius >= dist && return baseStation
+
+    return disaster + (radius / dist) * vecDisasterBase
 end

@@ -1,3 +1,6 @@
 pyyaml
 numpy
 pyecore
+empy
+lark
+typing_extensions

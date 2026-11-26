@@ -73,18 +73,27 @@ leading = StateImpl(3, "leading", 0.5)
 load = StateImpl(5, "load", 0.0, True, False)
 unload = StateImpl(6, "unload", 0.0, False, True)
 
-msg_InformedExplorer =      MsgImpl(1, "Informed Explorer", "magenta")
-msg_Connector =             MsgImpl(1, "Connector", "red")    
-msg_BaseStation =           MsgImpl(1, "BaseStation", "orange")
-msg_RelayChainIncomplete =  MsgImpl(1, "RelayChain incomplete", "cyan")
-msg_RelayChainComplete =    MsgImpl(1, "RelayChain complete", "green")
+# Initial: Transport Chain
+msg_joiner = MsgImpl(1,"Joiner", "green")
+msg_robotWithLoad = MsgImpl(2, "Robot with Load", "yellow")
+#msg_prey = MsgImpl(3, "Prey", "red")
+msg_Chainmember= MsgImpl(4, "Chainmember(Join)", "magenta")
+msg_joinerLoading = MsgImpl(5, "Joiner with Loading State", "white")
 msg_nothing =               MsgImpl(6, "nothing", "black")
+
+# EXTRA: Disaster Relay Chain
+msg_InformedExplorer =      MsgImpl(1, "Informed Explorer", "magenta")
+msg_Connector =             MsgImpl(2, "Connector", "red")    
+msg_BaseStation =           MsgImpl(3, "BaseStation", "orange")
+msg_RelayChainIncomplete =  MsgImpl(4, "RelayChain incomplete", "cyan")
+msg_RelayChainComplete =    MsgImpl(5, "RelayChain complete", "green")
+
 # EXTRA:Flocking
 msg_Leader = MsgImpl(7, "Leader", "purple")
 msg_Deputy = MsgImpl(8, "Deputy", "cyan")
 msg_Follower = MsgImpl(9, "Follower", "orange")
 
-model = ModelImpl(None, [waiting, driving, leading, load, unload], [msg_InformedExplorer, msg_BaseStation, msg_Connector, msg_RelayChainComplete, msg_RelayChainIncomplete, msg_nothing, msg_Leader, msg_Deputy, msg_Follower])
+model = ModelImpl(None, [waiting, driving, leading, load, unload], [msg_joiner, msg_robotWithLoad, msg_Chainmember, msg_joinerLoading, msg_InformedExplorer, msg_BaseStation, msg_Connector, msg_RelayChainComplete, msg_RelayChainIncomplete, msg_nothing, msg_Leader, msg_Deputy, msg_Follower]) 
 robot1=RobotImpl(0.0, 0.0, 0.0,0.0, 0.0, name, 1, config)
 robot1.setstate(waiting)
 robot1.setmessage(msg_nothing)

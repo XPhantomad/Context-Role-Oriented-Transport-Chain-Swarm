@@ -1,4 +1,4 @@
-include("ChainCROM.jl")
+include("relayChainCROM.jl")
 include("functions.jl")
 
 # Constants
@@ -22,7 +22,7 @@ msg_nothing = "nothing"
 # Initials
 baseStation = Position(-1.0,1.2)
 first_time = true
-hint = Position(4,1)
+hint = Position(5,1)
 
 function disassignAllRoles()
     if getRoles(robotSelf) !== nothing
@@ -140,11 +140,12 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	## 11 If Informed Explorer has reached the Connector Position and no other is there
 	if hasRole(robotSelf, InformedExplorer, InitialTeam) && robotSelf.goalReached # && no connector perceived && disaster perceived
 		# TODO: correct the disaster position if necessary
+		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
 		@assignRoles DisasterChainTeam begin
 			name = 3
 			baseStation >> BaseStation()
-			robotSelf >> Connector()
-			getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1] >> Disaster()
+			robotSelf >> Connector(getPositionOnBaseLine(disasterPos, RADIUS))
+			disasterPos >> Disaster()
 		end
 		# dissolve initial team, because it is no longer needed
 		disassignRoles(InitialTeam, 2)
@@ -603,9 +604,12 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 		return leaderPos, "driving", msg_nothing
 
 	elseif hasRole(robotSelf, Connector, DisasterChainTeam)
-		disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
-		connectorPos = getConnectorPosition(disasterPos)
-		return connectorPos, "driving", msg_Connector
+		#disasterPos = getObjectsOfRole(getDynamicTeam(InitialTeam, 2), DisasterGuess)[1]
+		#connectorPos = getPositionOnBaseLine(disasterPos, RADIUS)
+
+		pos = getRoleOfTeam(getDynamicTeam(DisasterChainTeam, 3), Connector).fixedPosition
+
+		return pos, "driving", msg_Connector
 
 	elseif hasRole(robotSelf, NewRelay, ArrangeRelayTeam)
 		currentRelayPos = getObjectsOfRole(getDynamicTeam(ArrangeRelayTeam, 37), CurrentRelay)[1].position
@@ -622,7 +626,8 @@ function mapeLoop(dataMiddle, message, timeout) #::Tuple{Union{Position, Nothing
 	# (Succesors will follow hopefully :) )
 	elseif hasRole(robotSelf, BaseStationRelay, DisasterChainTeam)
 		predecessorPos = getObjectsOfRole(getDynamicTeam(DisasterChainTeam, 3), Predecessor)[1].position
-		relayPos = getMiddlePos(predecessorPos, baseStation)
+		relayPos = 0.5*(predecessorPos+baseStation) # calculate the midpoint
+		print("baseConnector" * relayPos)
 		return relayPos, "driving", msg_RelayChainComplete
 
 	#=	
